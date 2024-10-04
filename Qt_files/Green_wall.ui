@@ -74,7 +74,7 @@
         <widget class="QWidget" name="widget_4" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="watering_page_btn">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -87,7 +87,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="solutio_page_btn">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -100,7 +100,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="cams_page_btn">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -113,7 +113,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="chart_page_btn">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -149,7 +149,7 @@
          <property name="currentIndex">
           <number>3</number>
          </property>
-         <widget class="QWidget" name="page">
+         <widget class="QWidget" name="watering_pg">
           <layout class="QGridLayout" name="gridLayout">
            <item row="4" column="1">
             <widget class="QWidget" name="widget_26" native="true"/>
@@ -272,7 +272,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page_3">
+         <widget class="QWidget" name="solution_pg">
           <layout class="QVBoxLayout" name="verticalLayout_8">
            <item>
             <widget class="QWidget" name="widget_10" native="true">
@@ -301,7 +301,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_7">
+               <widget class="QPushButton" name="solution_dir_btn">
                 <property name="minimumSize">
                  <size>
                   <width>35</width>
@@ -361,7 +361,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page_4">
+         <widget class="QWidget" name="chart_pg">
           <layout class="QHBoxLayout" name="horizontalLayout_6">
            <item>
             <widget class="QWidget" name="widget_41" native="true">
@@ -416,7 +416,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page_2">
+         <widget class="QWidget" name="camera_pg">
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
             <widget class="QWidget" name="widget_6" native="true">
@@ -438,7 +438,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_8">
+               <widget class="QPushButton" name="cam_dir_btn">
                 <property name="minimumSize">
                  <size>
                   <width>35</width>
@@ -611,7 +611,7 @@
      <x>0</x>
      <y>0</y>
      <width>1264</width>
-     <height>23</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
