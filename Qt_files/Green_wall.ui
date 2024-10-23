@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1264</width>
+    <width>1298</width>
     <height>888</height>
    </rect>
   </property>
@@ -160,7 +160,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="widget_16" native="true">
+     <widget class="QWidget" name="expand_wgt" native="true">
       <property name="minimumSize">
        <size>
         <width>40</width>
@@ -217,11 +217,8 @@
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
-         <widget class="QWidget" name="page_2">
-          <layout class="QVBoxLayout" name="verticalLayout_16"/>
-         </widget>
          <widget class="QWidget" name="solution_pg">
           <layout class="QVBoxLayout" name="verticalLayout_8">
            <item>
@@ -350,10 +347,43 @@
                   <number>1</number>
                  </property>
                  <item>
-                  <widget class="QWidget" name="widget_43" native="true"/>
+                  <widget class="QWidget" name="widget_43" native="true">
+                   <layout class="QHBoxLayout" name="chart_1">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                   </layout>
+                  </widget>
                  </item>
                  <item>
-                  <widget class="QWidget" name="widget_44" native="true"/>
+                  <widget class="QWidget" name="widget_44" native="true">
+                   <layout class="QHBoxLayout" name="chart_2">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                   </layout>
+                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -510,7 +540,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>957</width>
+                <width>991</width>
                 <height>1596</height>
                </rect>
               </property>
@@ -6749,7 +6779,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1264</width>
+     <width>1298</width>
      <height>24</height>
     </rect>
    </property>

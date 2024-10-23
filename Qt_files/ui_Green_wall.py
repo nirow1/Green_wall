@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_walllNHiEm.ui'
+## Form generated from reading UI file 'Green_wallZwEIWY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1264, 888)
+        MainWindow.resize(1298, 888)
         MainWindow.setStyleSheet(u"border: 1px solid;")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -122,11 +122,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.stackedWidget = QStackedWidget(self.widget_2)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.page_2 = QWidget()
-        self.page_2.setObjectName(u"page_2")
-        self.verticalLayout_16 = QVBoxLayout(self.page_2)
-        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.stackedWidget.addWidget(self.page_2)
         self.solution_pg = QWidget()
         self.solution_pg.setObjectName(u"solution_pg")
         self.verticalLayout_8 = QVBoxLayout(self.solution_pg)
@@ -218,11 +213,18 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setContentsMargins(1, 1, 1, 1)
         self.widget_43 = QWidget(self.widget_41)
         self.widget_43.setObjectName(u"widget_43")
+        self.chart_1 = QHBoxLayout(self.widget_43)
+        self.chart_1.setSpacing(0)
+        self.chart_1.setObjectName(u"chart_1")
+        self.chart_1.setContentsMargins(0, 0, 0, 0)
 
         self.verticalLayout_9.addWidget(self.widget_43)
 
         self.widget_44 = QWidget(self.widget_41)
         self.widget_44.setObjectName(u"widget_44")
+        self.chart_2 = QHBoxLayout(self.widget_44)
+        self.chart_2.setObjectName(u"chart_2")
+        self.chart_2.setContentsMargins(0, 0, 0, 0)
 
         self.verticalLayout_9.addWidget(self.widget_44)
 
@@ -305,7 +307,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 957, 1596))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 991, 1596))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.widget_77 = QWidget(self.scrollAreaWidgetContents)
@@ -3102,7 +3104,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1264, 24))
+        self.menubar.setGeometry(QRect(0, 0, 1298, 24))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -3110,7 +3112,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

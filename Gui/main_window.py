@@ -1,10 +1,13 @@
+from random import randrange
+
 from PySide6.QtWidgets import QMainWindow, QFileDialog, QLineEdit, QBoxLayout, QSizePolicy, QPushButton, QMessageBox
-from PySide6.QtGui import QIcon, QPixmap
-from PySide6.QtCore import QSize, QPropertyAnimation
+from PySide6.QtGui import QIcon
+from PySide6.QtCore import QPropertyAnimation, QTimer
 from functools import partial
 
 from Qt_files.ui_Green_wall import Ui_MainWindow
 from Device_communication.logo import LogoControl
+from Gui.Charts.line_chart import LineChart
 
 
 class MainWindow(QMainWindow):
@@ -15,6 +18,11 @@ class MainWindow(QMainWindow):
         self._init_graphical_changes()
         self.logo = LogoControl()
         #self.logo.start()
+        self.line_chart = LineChart("test", 200, (-100, 100), ["test_line", "test_line_2"], 2)
+        self.line_chart_2 = LineChart("test2", 200, (-100, 100))
+        self.ui.chart_1.addWidget(self.line_chart)
+        self.ui.chart_2.addWidget(self.line_chart_2)
+
 
         self.button_functions()
 
@@ -32,7 +40,6 @@ class MainWindow(QMainWindow):
         self.showMaximized()
 
     def button_functions(self):
-        #self.ui.logo_4j_btn.clicked.connect(self._collapse_menu)
         self.ui.logo_4j_btn.clicked.connect(lambda: self.menu_animation(True))
         self.ui.expand_menu_btn.clicked.connect(lambda: self.menu_animation(False))
 
@@ -48,6 +55,9 @@ class MainWindow(QMainWindow):
         self.ui.fill_column_btn_2.clicked.connect(lambda: self.fill_column(1))
         self.ui.fill_column_btn_3.clicked.connect(lambda: self.fill_column(2))
         self.bind_waterinG_panel_btns()
+        timer = QTimer(self)
+        timer.timeout.connect(self.update_charts)
+        timer.start(1000)
 
     def bind_waterinG_panel_btns(self):
         for i in range(1, 22):
@@ -91,3 +101,9 @@ class MainWindow(QMainWindow):
         self.animation.finished.connect(lambda: self.ui.widget.setMaximumWidth(end))
         self.animation.start()
         self.ui.expand_wgt.setHidden(not state)
+
+    def update_charts(self):
+        chart1 = randrange(0, 101)
+        chart2 = randrange(-50, 50)
+        self.line_chart.update_chart([chart1, chart2])
+        self.line_chart_2.update_chart([chart2])
