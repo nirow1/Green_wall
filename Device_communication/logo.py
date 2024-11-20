@@ -9,9 +9,9 @@ class LogoControl(QThread):
     LOGO_DATA = Signal(list)
     VFD_CON = Signal(bool)
 
-    def __init__(self):
+    def __init__(self, ip :str="192.168.1.3"):
         super().__init__()
-        self.ip = "192.168.1.3"
+        self.ip = ip
         self.port = 512
         self.vfd = bytearray(b'\x05')
         self.connected = False
@@ -29,13 +29,13 @@ class LogoControl(QThread):
                 self.logo = Logo()
                 self.logo.connect(self.ip, 768, self.port)
                 self.connected = True
-                self._get_current_velocity()
+                self._get_logo_data()
                 break
             except Exception as e:
                 print(e)
                 sleep(5)
 
-    def _get_current_velocity(self):
+    def _get_logo_data(self):
         while self.connected:
             if not self.sending:
                 self.sending = True
@@ -47,71 +47,24 @@ class LogoControl(QThread):
             else:
                 sleep(0.05)
 
-    def write_requested_velocity(self, velocity: int):
+    def write_logo_ushort(self, pos: int, request: int):
         while self.connected:
             if not self.sending:
-                velocity_in_bytes = struct.pack('>H', velocity)
+                ushort_in_bytes = struct.pack('>H', request)
                 self.sending = True
-                success = self.logo.db_write(0, 12, bytearray(velocity_in_bytes))
-                print(f"sending velocity: {velocity}, in bytes: {velocity_in_bytes}, result: {success} ")
+                self.logo.db_write(0, pos, bytearray(ushort_in_bytes))
                 self.sending = False
                 break
             else:
                 sleep(0.05)
 
-    def switch_lasers(self, laser_pos):
-        if self.lasers[laser_pos] == 0:
-            if laser_pos == 0:
-                self.lasers[laser_pos] = 1
-                on_off = True
-            elif laser_pos == 1:
-                on_off = True
-                self.lasers[laser_pos] = 2
-            else:
-                on_off = True
-                self.lasers[laser_pos] = 4
-        else:
-            on_off = False
-            self.lasers[laser_pos] = 0
-
-        self._set_lasers()
-        return on_off
-
-    def _set_lasers(self):
-        byte_lasers = bytearray(sum(self.lasers).to_bytes(1))
+    def write_logo_byte(self, pos :int, logo_bytes: bytearray):
         while self.connected:
             if not self.sending:
                 self.sending = True
-                self.logo.db_write(0, 2, byte_lasers)
+                print(f"{pos}, {logo_bytes}")
+                self.logo.db_write(0, pos, logo_bytes)
                 self.sending = False
-                break
-            else:
-                sleep(0.05)
-
-    def connect_to_vfd(self):
-        while self.connected:
-            if not self.sending:
-                self.sending = True
-                if not self.vfd_connected:
-                    self.logo.db_write(0, 10, bytearray(b'\x00\x01'))
-                else:
-                    self.logo.db_write(0, 10, bytearray(b'\x00\x00'))
-                self.sending = False
-                self.vfd_connected = not self.vfd_connected
-                break
-            else:
-                sleep(0.05)
-
-    def connect_to_drivers(self):
-        while self.connected:
-            if not self.sending:
-                self.sending = True
-                if not self.drivers_connected:
-                    self.logo.db_write(0, 34, bytearray(b'\x07'))
-                else:
-                    self.logo.db_write(0, 34, bytearray(b'\x00'))
-                self.sending = False
-                self.drivers_connected = not self.drivers_connected
                 break
             else:
                 sleep(0.05)

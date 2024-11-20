@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_wallZwEIWY.ui'
+## Form generated from reading UI file 'Green_wallDnGRGC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -20,20 +20,56 @@ from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QSizePolicy, QSpacerItem, QStackedWidget, QStatusBar,
     QVBoxLayout, QWidget)
 
+from Gui.Custom_widgets.toggle import AnimatedToggle
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1298, 888)
-        MainWindow.setStyleSheet(u"border: 1px solid;")
+        MainWindow.resize(1574, 896)
+        MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u"QWidget{\n"
+"background-color: rgb(250, 250, 250);\n"
+"border-radius: 3px;\n"
+"font: 11pt \\\"Yu Gothic UI\\\";\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"	border: 1px solid rgb(180, 180, 180);\n"
+"	border-radius: 5px;\n"
+"	\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #4CAF50;\n"
+"}\n"
+"QPushButton {\n"
+"    border-radius: 5px;\n"
+"    border: 1px solid #4CAF50;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(230, 230, 230);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #729D1F;\n"
+"}\n"
+"\n"
+"#widget, #widget_2, #widget_6, #widget_10, #widget_40, #widget_39, #widget_38, #widget_32, #widget_31,#widget_30, #widget_75, #widget_14, #widget_77, #widget_78, #widget_79, #scrollArea{\n"
+"	border: 1px solid #ccc;\n"
+"}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
         self.widget.setMinimumSize(QSize(0, 0))
         self.widget.setMaximumSize(QSize(180, 16777215))
+        self.widget.setStyleSheet(u"QWidget{\n"
+"	background-color: #ccc;\n"
+"}\n"
+"")
         self.verticalLayout = QVBoxLayout(self.widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.widget_3 = QWidget(self.widget)
@@ -55,6 +91,18 @@ class Ui_MainWindow(object):
 
         self.widget_4 = QWidget(self.widget)
         self.widget_4.setObjectName(u"widget_4")
+        self.widget_4.setStyleSheet(u"QPushButton {\n"
+"    border-radius: 5px;\n"
+"    border: 1px solid #4CAF50;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(230, 230, 230);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #729D1F;\n"
+"}")
         self.verticalLayout_3 = QVBoxLayout(self.widget_4)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.watering_page_btn = QPushButton(self.widget_4)
@@ -69,6 +117,14 @@ class Ui_MainWindow(object):
         self.solutio_page_btn.setMaximumSize(QSize(16777215, 40))
 
         self.verticalLayout_3.addWidget(self.solutio_page_btn)
+
+        self.pushButton_6 = QPushButton(self.widget_4)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.pushButton_6.setEnabled(False)
+        self.pushButton_6.setMinimumSize(QSize(0, 0))
+        self.pushButton_6.setMaximumSize(QSize(16777215, 40))
+
+        self.verticalLayout_3.addWidget(self.pushButton_6)
 
         self.cams_page_btn = QPushButton(self.widget_4)
         self.cams_page_btn.setObjectName(u"cams_page_btn")
@@ -85,11 +141,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.widget_4)
 
-        self.widget_5 = QWidget(self.widget)
-        self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setMaximumSize(QSize(16777215, 150))
+        self.stop_watering = QWidget(self.widget)
+        self.stop_watering.setObjectName(u"stop_watering")
+        self.stop_watering.setEnabled(False)
+        self.stop_watering.setMaximumSize(QSize(16777215, 150))
+        self.horizontalLayout_143 = QHBoxLayout(self.stop_watering)
+        self.horizontalLayout_143.setObjectName(u"horizontalLayout_143")
+        self.pushButton_5 = QPushButton(self.stop_watering)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setMaximumSize(QSize(16777215, 40))
 
-        self.verticalLayout.addWidget(self.widget_5)
+        self.horizontalLayout_143.addWidget(self.pushButton_5)
+
+
+        self.verticalLayout.addWidget(self.stop_watering)
 
 
         self.horizontalLayout.addWidget(self.widget)
@@ -149,11 +214,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.solution_dir_btn)
 
-        self.pushButton_6 = QPushButton(self.widget_10)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setMinimumSize(QSize(100, 35))
+        self.stop_saving_btn = QPushButton(self.widget_10)
+        self.stop_saving_btn.setObjectName(u"stop_saving_btn")
+        self.stop_saving_btn.setMinimumSize(QSize(100, 35))
 
-        self.horizontalLayout_4.addWidget(self.pushButton_6)
+        self.horizontalLayout_4.addWidget(self.stop_saving_btn)
+
+        self.start_saving_btn = QPushButton(self.widget_10)
+        self.start_saving_btn.setObjectName(u"start_saving_btn")
+        self.start_saving_btn.setMinimumSize(QSize(100, 35))
+
+        self.horizontalLayout_4.addWidget(self.start_saving_btn)
 
 
         self.verticalLayout_8.addWidget(self.widget_10)
@@ -163,36 +234,645 @@ class Ui_MainWindow(object):
         self.widget_35.setMinimumSize(QSize(0, 200))
         self.horizontalLayout_5 = QHBoxLayout(self.widget_35)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.widget_38 = QWidget(self.widget_35)
-        self.widget_38.setObjectName(u"widget_38")
-
-        self.horizontalLayout_5.addWidget(self.widget_38)
-
-        self.widget_39 = QWidget(self.widget_35)
+        self.horizontalLayout_5.setContentsMargins(-1, 1, -1, 1)
+        self.widget_166 = QWidget(self.widget_35)
+        self.widget_166.setObjectName(u"widget_166")
+        self.widget_166.setMaximumSize(QSize(1100, 16777215))
+        self.horizontalLayout_141 = QHBoxLayout(self.widget_166)
+        self.horizontalLayout_141.setObjectName(u"horizontalLayout_141")
+        self.horizontalLayout_141.setContentsMargins(-1, 0, -1, 0)
+        self.widget_39 = QWidget(self.widget_166)
         self.widget_39.setObjectName(u"widget_39")
+        self.widget_39.setMaximumSize(QSize(350, 16777215))
+        self.verticalLayout_18 = QVBoxLayout(self.widget_39)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.verticalLayout_18.setContentsMargins(1, 1, 1, 1)
+        self.label_185 = QLabel(self.widget_39)
+        self.label_185.setObjectName(u"label_185")
+        self.label_185.setMaximumSize(QSize(16777215, 20))
+        self.label_185.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_5.addWidget(self.widget_39)
+        self.verticalLayout_18.addWidget(self.label_185)
 
-        self.widget_40 = QWidget(self.widget_35)
+        self.widget_22 = QWidget(self.widget_39)
+        self.widget_22.setObjectName(u"widget_22")
+        self.horizontalLayout_123 = QHBoxLayout(self.widget_22)
+        self.horizontalLayout_123.setObjectName(u"horizontalLayout_123")
+        self.horizontalLayout_123.setContentsMargins(0, 0, 0, 0)
+        self.label_186 = QLabel(self.widget_22)
+        self.label_186.setObjectName(u"label_186")
+        self.label_186.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_123.addWidget(self.label_186)
+
+        self.wall_tep_lbl = QLabel(self.widget_22)
+        self.wall_tep_lbl.setObjectName(u"wall_tep_lbl")
+
+        self.horizontalLayout_123.addWidget(self.wall_tep_lbl)
+
+
+        self.verticalLayout_18.addWidget(self.widget_22)
+
+        self.widget_23 = QWidget(self.widget_39)
+        self.widget_23.setObjectName(u"widget_23")
+        self.horizontalLayout_124 = QHBoxLayout(self.widget_23)
+        self.horizontalLayout_124.setObjectName(u"horizontalLayout_124")
+        self.horizontalLayout_124.setContentsMargins(0, 0, 0, 0)
+        self.label_188 = QLabel(self.widget_23)
+        self.label_188.setObjectName(u"label_188")
+        self.label_188.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_124.addWidget(self.label_188)
+
+        self.wall_hum_lbl = QLabel(self.widget_23)
+        self.wall_hum_lbl.setObjectName(u"wall_hum_lbl")
+
+        self.horizontalLayout_124.addWidget(self.wall_hum_lbl)
+
+
+        self.verticalLayout_18.addWidget(self.widget_23)
+
+        self.widget_24 = QWidget(self.widget_39)
+        self.widget_24.setObjectName(u"widget_24")
+        self.horizontalLayout_125 = QHBoxLayout(self.widget_24)
+        self.horizontalLayout_125.setObjectName(u"horizontalLayout_125")
+        self.horizontalLayout_125.setContentsMargins(0, 0, 0, 0)
+        self.label_190 = QLabel(self.widget_24)
+        self.label_190.setObjectName(u"label_190")
+        self.label_190.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_125.addWidget(self.label_190)
+
+        self.wall_co2_lbl = QLabel(self.widget_24)
+        self.wall_co2_lbl.setObjectName(u"wall_co2_lbl")
+
+        self.horizontalLayout_125.addWidget(self.wall_co2_lbl)
+
+
+        self.verticalLayout_18.addWidget(self.widget_24)
+
+
+        self.horizontalLayout_141.addWidget(self.widget_39)
+
+        self.widget_38 = QWidget(self.widget_166)
+        self.widget_38.setObjectName(u"widget_38")
+        self.widget_38.setMaximumSize(QSize(350, 16777215))
+        self.verticalLayout_16 = QVBoxLayout(self.widget_38)
+        self.verticalLayout_16.setSpacing(2)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_16.setContentsMargins(1, 1, 1, 1)
+        self.label_6 = QLabel(self.widget_38)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMaximumSize(QSize(16777215, 20))
+        self.label_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_16.addWidget(self.label_6)
+
+        self.widget_16 = QWidget(self.widget_38)
+        self.widget_16.setObjectName(u"widget_16")
+        self.horizontalLayout_6 = QHBoxLayout(self.widget_16)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.label_7 = QLabel(self.widget_16)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_6.addWidget(self.label_7)
+
+        self.water_oxyd_lbl = QLabel(self.widget_16)
+        self.water_oxyd_lbl.setObjectName(u"water_oxyd_lbl")
+
+        self.horizontalLayout_6.addWidget(self.water_oxyd_lbl)
+
+
+        self.verticalLayout_16.addWidget(self.widget_16)
+
+        self.widget_18 = QWidget(self.widget_38)
+        self.widget_18.setObjectName(u"widget_18")
+        self.horizontalLayout_119 = QHBoxLayout(self.widget_18)
+        self.horizontalLayout_119.setObjectName(u"horizontalLayout_119")
+        self.horizontalLayout_119.setContentsMargins(0, 0, 0, 0)
+        self.label_177 = QLabel(self.widget_18)
+        self.label_177.setObjectName(u"label_177")
+        self.label_177.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_119.addWidget(self.label_177)
+
+        self.water_ph_lbl = QLabel(self.widget_18)
+        self.water_ph_lbl.setObjectName(u"water_ph_lbl")
+
+        self.horizontalLayout_119.addWidget(self.water_ph_lbl)
+
+
+        self.verticalLayout_16.addWidget(self.widget_18)
+
+        self.widget_19 = QWidget(self.widget_38)
+        self.widget_19.setObjectName(u"widget_19")
+        self.horizontalLayout_120 = QHBoxLayout(self.widget_19)
+        self.horizontalLayout_120.setObjectName(u"horizontalLayout_120")
+        self.horizontalLayout_120.setContentsMargins(0, 0, 0, 0)
+        self.label_179 = QLabel(self.widget_19)
+        self.label_179.setObjectName(u"label_179")
+        self.label_179.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_120.addWidget(self.label_179)
+
+        self.water_redox_lbl = QLabel(self.widget_19)
+        self.water_redox_lbl.setObjectName(u"water_redox_lbl")
+
+        self.horizontalLayout_120.addWidget(self.water_redox_lbl)
+
+
+        self.verticalLayout_16.addWidget(self.widget_19)
+
+        self.widget_21 = QWidget(self.widget_38)
+        self.widget_21.setObjectName(u"widget_21")
+        self.horizontalLayout_121 = QHBoxLayout(self.widget_21)
+        self.horizontalLayout_121.setObjectName(u"horizontalLayout_121")
+        self.horizontalLayout_121.setContentsMargins(0, 0, 0, 0)
+        self.label_181 = QLabel(self.widget_21)
+        self.label_181.setObjectName(u"label_181")
+        self.label_181.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_121.addWidget(self.label_181)
+
+        self.water_cond_lbl = QLabel(self.widget_21)
+        self.water_cond_lbl.setObjectName(u"water_cond_lbl")
+
+        self.horizontalLayout_121.addWidget(self.water_cond_lbl)
+
+
+        self.verticalLayout_16.addWidget(self.widget_21)
+
+        self.widget_20 = QWidget(self.widget_38)
+        self.widget_20.setObjectName(u"widget_20")
+        self.horizontalLayout_122 = QHBoxLayout(self.widget_20)
+        self.horizontalLayout_122.setObjectName(u"horizontalLayout_122")
+        self.horizontalLayout_122.setContentsMargins(0, 0, 0, 0)
+        self.label_183 = QLabel(self.widget_20)
+        self.label_183.setObjectName(u"label_183")
+        self.label_183.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_122.addWidget(self.label_183)
+
+        self.water_temp_lbl = QLabel(self.widget_20)
+        self.water_temp_lbl.setObjectName(u"water_temp_lbl")
+
+        self.horizontalLayout_122.addWidget(self.water_temp_lbl)
+
+
+        self.verticalLayout_16.addWidget(self.widget_20)
+
+
+        self.horizontalLayout_141.addWidget(self.widget_38)
+
+        self.widget_40 = QWidget(self.widget_166)
         self.widget_40.setObjectName(u"widget_40")
+        self.widget_40.setMaximumSize(QSize(350, 16777215))
+        self.verticalLayout_19 = QVBoxLayout(self.widget_40)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.verticalLayout_19.setContentsMargins(1, 1, 1, 1)
+        self.label_194 = QLabel(self.widget_40)
+        self.label_194.setObjectName(u"label_194")
+        self.label_194.setMaximumSize(QSize(16777215, 20))
+        self.label_194.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_5.addWidget(self.widget_40)
+        self.verticalLayout_19.addWidget(self.label_194)
+
+        self.widget_26 = QWidget(self.widget_40)
+        self.widget_26.setObjectName(u"widget_26")
+        self.horizontalLayout_127 = QHBoxLayout(self.widget_26)
+        self.horizontalLayout_127.setObjectName(u"horizontalLayout_127")
+        self.horizontalLayout_127.setContentsMargins(0, 0, 0, 0)
+        self.label_195 = QLabel(self.widget_26)
+        self.label_195.setObjectName(u"label_195")
+        self.label_195.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_127.addWidget(self.label_195)
+
+        self.outside_temp_lbl = QLabel(self.widget_26)
+        self.outside_temp_lbl.setObjectName(u"outside_temp_lbl")
+
+        self.horizontalLayout_127.addWidget(self.outside_temp_lbl)
+
+
+        self.verticalLayout_19.addWidget(self.widget_26)
+
+        self.widget_27 = QWidget(self.widget_40)
+        self.widget_27.setObjectName(u"widget_27")
+        self.horizontalLayout_128 = QHBoxLayout(self.widget_27)
+        self.horizontalLayout_128.setObjectName(u"horizontalLayout_128")
+        self.horizontalLayout_128.setContentsMargins(0, 0, 0, 0)
+        self.label_197 = QLabel(self.widget_27)
+        self.label_197.setObjectName(u"label_197")
+        self.label_197.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_128.addWidget(self.label_197)
+
+        self.outside_hum_lbl = QLabel(self.widget_27)
+        self.outside_hum_lbl.setObjectName(u"outside_hum_lbl")
+
+        self.horizontalLayout_128.addWidget(self.outside_hum_lbl)
+
+
+        self.verticalLayout_19.addWidget(self.widget_27)
+
+        self.widget_25 = QWidget(self.widget_40)
+        self.widget_25.setObjectName(u"widget_25")
+        self.horizontalLayout_126 = QHBoxLayout(self.widget_25)
+        self.horizontalLayout_126.setObjectName(u"horizontalLayout_126")
+        self.horizontalLayout_126.setContentsMargins(0, 0, 0, 0)
+        self.label_192 = QLabel(self.widget_25)
+        self.label_192.setObjectName(u"label_192")
+        self.label_192.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_126.addWidget(self.label_192)
+
+        self.outside_co2_lbl = QLabel(self.widget_25)
+        self.outside_co2_lbl.setObjectName(u"outside_co2_lbl")
+
+        self.horizontalLayout_126.addWidget(self.outside_co2_lbl)
+
+
+        self.verticalLayout_19.addWidget(self.widget_25)
+
+
+        self.horizontalLayout_141.addWidget(self.widget_40)
+
+
+        self.horizontalLayout_5.addWidget(self.widget_166)
 
 
         self.verticalLayout_8.addWidget(self.widget_35)
 
+        self.widget_165 = QWidget(self.solution_pg)
+        self.widget_165.setObjectName(u"widget_165")
+        self.widget_165.setMaximumSize(QSize(16777215, 20))
+
+        self.verticalLayout_8.addWidget(self.widget_165)
+
         self.widget_12 = QWidget(self.solution_pg)
         self.widget_12.setObjectName(u"widget_12")
+        self.horizontalLayout_136 = QHBoxLayout(self.widget_12)
+        self.horizontalLayout_136.setObjectName(u"horizontalLayout_136")
+        self.horizontalLayout_136.setContentsMargins(-1, 1, 9, 1)
+        self.widget_167 = QWidget(self.widget_12)
+        self.widget_167.setObjectName(u"widget_167")
+        self.widget_167.setMaximumSize(QSize(1100, 16777215))
+        self.horizontalLayout_142 = QHBoxLayout(self.widget_167)
+        self.horizontalLayout_142.setObjectName(u"horizontalLayout_142")
+        self.horizontalLayout_142.setContentsMargins(-1, 0, -1, 0)
+        self.widget_31 = QWidget(self.widget_167)
+        self.widget_31.setObjectName(u"widget_31")
+        self.widget_31.setMaximumSize(QSize(350, 16777215))
+        self.verticalLayout_24 = QVBoxLayout(self.widget_31)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.verticalLayout_24.setContentsMargins(9, 9, 9, 9)
+        self.label_208 = QLabel(self.widget_31)
+        self.label_208.setObjectName(u"label_208")
+        self.label_208.setMaximumSize(QSize(16777215, 25))
+        self.label_208.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_24.addWidget(self.label_208)
+
+        self.widget_48 = QWidget(self.widget_31)
+        self.widget_48.setObjectName(u"widget_48")
+        self.horizontalLayout_131 = QHBoxLayout(self.widget_48)
+        self.horizontalLayout_131.setObjectName(u"horizontalLayout_131")
+        self.horizontalLayout_131.setContentsMargins(0, -1, 0, -1)
+        self.label_202 = QLabel(self.widget_48)
+        self.label_202.setObjectName(u"label_202")
+        self.label_202.setMaximumSize(QSize(150, 16777215))
+        self.label_202.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_131.addWidget(self.label_202)
+
+        self.ph_reg_le = QLineEdit(self.widget_48)
+        self.ph_reg_le.setObjectName(u"ph_reg_le")
+        self.ph_reg_le.setMinimumSize(QSize(0, 35))
+        self.ph_reg_le.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_131.addWidget(self.ph_reg_le)
+
+        self.ph_on_btn = QPushButton(self.widget_48)
+        self.ph_on_btn.setObjectName(u"ph_on_btn")
+        self.ph_on_btn.setMinimumSize(QSize(0, 35))
+        self.ph_on_btn.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_131.addWidget(self.ph_on_btn)
+
+        self.ph_off_btn = QPushButton(self.widget_48)
+        self.ph_off_btn.setObjectName(u"ph_off_btn")
+        self.ph_off_btn.setMinimumSize(QSize(0, 35))
+        self.ph_off_btn.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_131.addWidget(self.ph_off_btn)
+
+
+        self.verticalLayout_24.addWidget(self.widget_48)
+
+        self.widget_50 = QWidget(self.widget_31)
+        self.widget_50.setObjectName(u"widget_50")
+        self.horizontalLayout_132 = QHBoxLayout(self.widget_50)
+        self.horizontalLayout_132.setObjectName(u"horizontalLayout_132")
+        self.horizontalLayout_132.setContentsMargins(0, -1, 0, -1)
+        self.label_203 = QLabel(self.widget_50)
+        self.label_203.setObjectName(u"label_203")
+        self.label_203.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_132.addWidget(self.label_203)
+
+        self.add_ph_solution_le = QLineEdit(self.widget_50)
+        self.add_ph_solution_le.setObjectName(u"add_ph_solution_le")
+        self.add_ph_solution_le.setMinimumSize(QSize(0, 35))
+        self.add_ph_solution_le.setMaximumSize(QSize(80, 16777215))
+
+        self.horizontalLayout_132.addWidget(self.add_ph_solution_le)
+
+        self.label_204 = QLabel(self.widget_50)
+        self.label_204.setObjectName(u"label_204")
+
+        self.horizontalLayout_132.addWidget(self.label_204)
+
+        self.pushButton_10 = QPushButton(self.widget_50)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+        self.pushButton_10.setMinimumSize(QSize(50, 35))
+
+        self.horizontalLayout_132.addWidget(self.pushButton_10)
+
+
+        self.verticalLayout_24.addWidget(self.widget_50)
+
+
+        self.horizontalLayout_142.addWidget(self.widget_31)
+
+        self.widget_75 = QWidget(self.widget_167)
+        self.widget_75.setObjectName(u"widget_75")
+        self.widget_75.setMaximumSize(QSize(350, 16777215))
+        self.verticalLayout_20 = QVBoxLayout(self.widget_75)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.label_211 = QLabel(self.widget_75)
+        self.label_211.setObjectName(u"label_211")
+        self.label_211.setMaximumSize(QSize(16777215, 25))
+        self.label_211.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_20.addWidget(self.label_211)
+
+        self.widget_76 = QWidget(self.widget_75)
+        self.widget_76.setObjectName(u"widget_76")
+        self.horizontalLayout_139 = QHBoxLayout(self.widget_76)
+        self.horizontalLayout_139.setObjectName(u"horizontalLayout_139")
+        self.horizontalLayout_139.setContentsMargins(0, -1, 0, -1)
+        self.label_210 = QLabel(self.widget_76)
+        self.label_210.setObjectName(u"label_210")
+        self.label_210.setMaximumSize(QSize(150, 16777215))
+        self.label_210.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_139.addWidget(self.label_210)
+
+        self.oxygenation_reg_le = QLineEdit(self.widget_76)
+        self.oxygenation_reg_le.setObjectName(u"oxygenation_reg_le")
+        self.oxygenation_reg_le.setMinimumSize(QSize(0, 35))
+        self.oxygenation_reg_le.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_139.addWidget(self.oxygenation_reg_le)
+
+        self.oxidation_on_btn = QPushButton(self.widget_76)
+        self.oxidation_on_btn.setObjectName(u"oxidation_on_btn")
+        self.oxidation_on_btn.setMinimumSize(QSize(0, 35))
+        self.oxidation_on_btn.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_139.addWidget(self.oxidation_on_btn)
+
+        self.oxidation_off_btn = QPushButton(self.widget_76)
+        self.oxidation_off_btn.setObjectName(u"oxidation_off_btn")
+        self.oxidation_off_btn.setMinimumSize(QSize(0, 35))
+        self.oxidation_off_btn.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_139.addWidget(self.oxidation_off_btn)
+
+
+        self.verticalLayout_20.addWidget(self.widget_76)
+
+        self.widget_164 = QWidget(self.widget_75)
+        self.widget_164.setObjectName(u"widget_164")
+        self.horizontalLayout_140 = QHBoxLayout(self.widget_164)
+        self.horizontalLayout_140.setObjectName(u"horizontalLayout_140")
+        self.widget_169 = QWidget(self.widget_164)
+        self.widget_169.setObjectName(u"widget_169")
+        self.widget_169.setMaximumSize(QSize(180, 35))
+        self.horizontalLayout_144 = QHBoxLayout(self.widget_169)
+        self.horizontalLayout_144.setObjectName(u"horizontalLayout_144")
+        self.horizontalLayout_144.setContentsMargins(0, 0, 0, 0)
+        self.pump_chb = AnimatedToggle(self.widget_169)
+        self.pump_chb.setObjectName(u"pump_chb")
+        self.pump_chb.setMaximumSize(QSize(60, 16777215))
+
+        self.horizontalLayout_144.addWidget(self.pump_chb)
+
+        self.label_212 = QLabel(self.widget_169)
+        self.label_212.setObjectName(u"label_212")
+        self.label_212.setMaximumSize(QSize(140, 16777215))
+
+        self.horizontalLayout_144.addWidget(self.label_212)
+
+
+        self.horizontalLayout_140.addWidget(self.widget_169)
+
+
+        self.verticalLayout_20.addWidget(self.widget_164)
+
+
+        self.horizontalLayout_142.addWidget(self.widget_75)
+
+        self.widget_32 = QWidget(self.widget_167)
+        self.widget_32.setObjectName(u"widget_32")
+        self.widget_32.setMaximumSize(QSize(350, 16777215))
+        self.verticalLayout_23 = QVBoxLayout(self.widget_32)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.verticalLayout_23.setContentsMargins(9, 9, 9, 9)
+        self.label_207 = QLabel(self.widget_32)
+        self.label_207.setObjectName(u"label_207")
+        self.label_207.setMaximumSize(QSize(16777215, 25))
+        self.label_207.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_23.addWidget(self.label_207)
+
+        self.widget_33 = QWidget(self.widget_32)
+        self.widget_33.setObjectName(u"widget_33")
+        self.horizontalLayout_129 = QHBoxLayout(self.widget_33)
+        self.horizontalLayout_129.setObjectName(u"horizontalLayout_129")
+        self.horizontalLayout_129.setContentsMargins(0, -1, 0, -1)
+        self.label_199 = QLabel(self.widget_33)
+        self.label_199.setObjectName(u"label_199")
+        self.label_199.setMaximumSize(QSize(150, 16777215))
+        self.label_199.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_129.addWidget(self.label_199)
+
+        self.cond_reg_le = QLineEdit(self.widget_33)
+        self.cond_reg_le.setObjectName(u"cond_reg_le")
+        self.cond_reg_le.setMinimumSize(QSize(0, 35))
+        self.cond_reg_le.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_129.addWidget(self.cond_reg_le)
+
+        self.cond_reg_on_btn = QPushButton(self.widget_33)
+        self.cond_reg_on_btn.setObjectName(u"cond_reg_on_btn")
+        self.cond_reg_on_btn.setMinimumSize(QSize(0, 35))
+        self.cond_reg_on_btn.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_129.addWidget(self.cond_reg_on_btn)
+
+        self.cond_reg_off_btn = QPushButton(self.widget_33)
+        self.cond_reg_off_btn.setObjectName(u"cond_reg_off_btn")
+        self.cond_reg_off_btn.setMinimumSize(QSize(0, 35))
+        self.cond_reg_off_btn.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_129.addWidget(self.cond_reg_off_btn)
+
+
+        self.verticalLayout_23.addWidget(self.widget_33)
+
+        self.widget_34 = QWidget(self.widget_32)
+        self.widget_34.setObjectName(u"widget_34")
+        self.horizontalLayout_130 = QHBoxLayout(self.widget_34)
+        self.horizontalLayout_130.setObjectName(u"horizontalLayout_130")
+        self.horizontalLayout_130.setContentsMargins(0, -1, 0, -1)
+        self.label_200 = QLabel(self.widget_34)
+        self.label_200.setObjectName(u"label_200")
+        self.label_200.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_130.addWidget(self.label_200)
+
+        self.add_cond_solution_le = QLineEdit(self.widget_34)
+        self.add_cond_solution_le.setObjectName(u"add_cond_solution_le")
+        self.add_cond_solution_le.setMinimumSize(QSize(0, 35))
+        self.add_cond_solution_le.setMaximumSize(QSize(80, 16777215))
+
+        self.horizontalLayout_130.addWidget(self.add_cond_solution_le)
+
+        self.label_201 = QLabel(self.widget_34)
+        self.label_201.setObjectName(u"label_201")
+
+        self.horizontalLayout_130.addWidget(self.label_201)
+
+        self.pushButton_3 = QPushButton(self.widget_34)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setMinimumSize(QSize(50, 35))
+
+        self.horizontalLayout_130.addWidget(self.pushButton_3)
+
+
+        self.verticalLayout_23.addWidget(self.widget_34)
+
+
+        self.horizontalLayout_142.addWidget(self.widget_32)
+
+
+        self.horizontalLayout_136.addWidget(self.widget_167)
+
 
         self.verticalLayout_8.addWidget(self.widget_12)
 
         self.widget_36 = QWidget(self.solution_pg)
         self.widget_36.setObjectName(u"widget_36")
+        self.horizontalLayout_137 = QHBoxLayout(self.widget_36)
+        self.horizontalLayout_137.setObjectName(u"horizontalLayout_137")
+        self.horizontalLayout_137.setContentsMargins(-1, 1, -1, 1)
+        self.widget_30 = QWidget(self.widget_36)
+        self.widget_30.setObjectName(u"widget_30")
+        self.widget_30.setMaximumSize(QSize(350, 16777215))
+        self.verticalLayout_25 = QVBoxLayout(self.widget_30)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.verticalLayout_25.setContentsMargins(9, 9, 9, 9)
+        self.label_209 = QLabel(self.widget_30)
+        self.label_209.setObjectName(u"label_209")
+        self.label_209.setMaximumSize(QSize(16777215, 25))
+        self.label_209.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_25.addWidget(self.label_209)
+
+        self.widget_51 = QWidget(self.widget_30)
+        self.widget_51.setObjectName(u"widget_51")
+        self.horizontalLayout_133 = QHBoxLayout(self.widget_51)
+        self.horizontalLayout_133.setObjectName(u"horizontalLayout_133")
+        self.horizontalLayout_133.setContentsMargins(0, 1, 0, 1)
+        self.label_205 = QLabel(self.widget_51)
+        self.label_205.setObjectName(u"label_205")
+
+        self.horizontalLayout_133.addWidget(self.label_205)
+
+        self.lights_on_le = QLineEdit(self.widget_51)
+        self.lights_on_le.setObjectName(u"lights_on_le")
+        self.lights_on_le.setMinimumSize(QSize(0, 35))
+        self.lights_on_le.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_133.addWidget(self.lights_on_le)
+
+
+        self.verticalLayout_25.addWidget(self.widget_51)
+
+        self.widget_52 = QWidget(self.widget_30)
+        self.widget_52.setObjectName(u"widget_52")
+        self.horizontalLayout_134 = QHBoxLayout(self.widget_52)
+        self.horizontalLayout_134.setObjectName(u"horizontalLayout_134")
+        self.horizontalLayout_134.setContentsMargins(0, 1, 0, 1)
+        self.label_206 = QLabel(self.widget_52)
+        self.label_206.setObjectName(u"label_206")
+
+        self.horizontalLayout_134.addWidget(self.label_206)
+
+        self.lights_off_le = QLineEdit(self.widget_52)
+        self.lights_off_le.setObjectName(u"lights_off_le")
+        self.lights_off_le.setMinimumSize(QSize(0, 35))
+        self.lights_off_le.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_134.addWidget(self.lights_off_le)
+
+
+        self.verticalLayout_25.addWidget(self.widget_52)
+
+        self.widget_74 = QWidget(self.widget_30)
+        self.widget_74.setObjectName(u"widget_74")
+        self.widget_74.setMaximumSize(QSize(16777215, 35))
+        self.horizontalLayout_135 = QHBoxLayout(self.widget_74)
+        self.horizontalLayout_135.setObjectName(u"horizontalLayout_135")
+        self.horizontalLayout_135.setContentsMargins(0, 0, 0, 0)
+        self.save_lights_btn = QPushButton(self.widget_74)
+        self.save_lights_btn.setObjectName(u"save_lights_btn")
+        self.save_lights_btn.setMinimumSize(QSize(0, 35))
+        self.save_lights_btn.setMaximumSize(QSize(60, 16777215))
+
+        self.horizontalLayout_135.addWidget(self.save_lights_btn)
+
+        self.lights_on_btn = QPushButton(self.widget_74)
+        self.lights_on_btn.setObjectName(u"lights_on_btn")
+        self.lights_on_btn.setMaximumSize(QSize(110, 35))
+
+        self.horizontalLayout_135.addWidget(self.lights_on_btn)
+
+        self.lights_off_btn = QPushButton(self.widget_74)
+        self.lights_off_btn.setObjectName(u"lights_off_btn")
+        self.lights_off_btn.setMaximumSize(QSize(110, 35))
+
+        self.horizontalLayout_135.addWidget(self.lights_off_btn)
+
+
+        self.verticalLayout_25.addWidget(self.widget_74)
+
+
+        self.horizontalLayout_137.addWidget(self.widget_30)
+
 
         self.verticalLayout_8.addWidget(self.widget_36)
 
         self.widget_37 = QWidget(self.solution_pg)
         self.widget_37.setObjectName(u"widget_37")
+        self.widget_37.setMaximumSize(QSize(16777215, 50))
+        self.horizontalLayout_138 = QHBoxLayout(self.widget_37)
+        self.horizontalLayout_138.setObjectName(u"horizontalLayout_138")
+        self.horizontalLayout_138.setContentsMargins(9, 1, 9, 1)
 
         self.verticalLayout_8.addWidget(self.widget_37)
 
@@ -272,23 +952,32 @@ class Ui_MainWindow(object):
         self.widget_14.setObjectName(u"widget_14")
         self.horizontalLayout_7 = QHBoxLayout(self.widget_14)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_8 = QPushButton(self.widget_14)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setMinimumSize(QSize(0, 40))
-        self.pushButton_8.setMaximumSize(QSize(150, 16777215))
+        self.horizontalLayout_7.setContentsMargins(0, 3, 0, 3)
+        self.save_watering_setting_btn = QPushButton(self.widget_14)
+        self.save_watering_setting_btn.setObjectName(u"save_watering_setting_btn")
+        self.save_watering_setting_btn.setMinimumSize(QSize(0, 40))
+        self.save_watering_setting_btn.setMaximumSize(QSize(150, 16777215))
 
-        self.horizontalLayout_7.addWidget(self.pushButton_8)
+        self.horizontalLayout_7.addWidget(self.save_watering_setting_btn)
+
+        self.enable_auto_watering_btn = QPushButton(self.widget_14)
+        self.enable_auto_watering_btn.setObjectName(u"enable_auto_watering_btn")
+        self.enable_auto_watering_btn.setEnabled(False)
+        self.enable_auto_watering_btn.setMaximumSize(QSize(175, 40))
+
+        self.horizontalLayout_7.addWidget(self.enable_auto_watering_btn)
 
         self.pushButton_4 = QPushButton(self.widget_14)
         self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setEnabled(False)
         self.pushButton_4.setMinimumSize(QSize(0, 40))
-        self.pushButton_4.setMaximumSize(QSize(150, 16777215))
+        self.pushButton_4.setMaximumSize(QSize(173, 16777215))
 
         self.horizontalLayout_7.addWidget(self.pushButton_4)
 
         self.water_all_btn = QPushButton(self.widget_14)
         self.water_all_btn.setObjectName(u"water_all_btn")
+        self.water_all_btn.setEnabled(False)
         self.water_all_btn.setMinimumSize(QSize(0, 40))
         self.water_all_btn.setMaximumSize(QSize(150, 16777215))
 
@@ -307,14 +996,15 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 991, 1596))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1269, 1732))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.widget_77 = QWidget(self.scrollAreaWidgetContents)
         self.widget_77.setObjectName(u"widget_77")
+        self.widget_77.setMinimumSize(QSize(0, 50))
         self.horizontalLayout_10 = QHBoxLayout(self.widget_77)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(1, 1, 1, 1)
+        self.horizontalLayout_10.setContentsMargins(9, 1, 9, 1)
         self.label_2 = QLabel(self.widget_77)
         self.label_2.setObjectName(u"label_2")
 
@@ -330,7 +1020,7 @@ class Ui_MainWindow(object):
         self.fill_column_btn_1 = QPushButton(self.widget_77)
         self.fill_column_btn_1.setObjectName(u"fill_column_btn_1")
         self.fill_column_btn_1.setMinimumSize(QSize(0, 40))
-        self.fill_column_btn_1.setMaximumSize(QSize(100, 16777215))
+        self.fill_column_btn_1.setMaximumSize(QSize(120, 16777215))
 
         self.horizontalLayout_10.addWidget(self.fill_column_btn_1)
 
@@ -358,13 +1048,13 @@ class Ui_MainWindow(object):
 
         self.widget_80 = QWidget(self.widget_53)
         self.widget_80.setObjectName(u"widget_80")
-        self.widget_80.setMaximumSize(QSize(190, 16777215))
+        self.widget_80.setMaximumSize(QSize(200, 16777215))
         self.horizontalLayout_13 = QHBoxLayout(self.widget_80)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.horizontalLayout_13.setContentsMargins(2, 2, 2, 2)
         self.label_9 = QLabel(self.widget_80)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setMaximumSize(QSize(100, 16777215))
+        self.label_9.setMaximumSize(QSize(115, 16777215))
 
         self.horizontalLayout_13.addWidget(self.label_9)
 
@@ -385,13 +1075,13 @@ class Ui_MainWindow(object):
 
         self.widget_81 = QWidget(self.widget_53)
         self.widget_81.setObjectName(u"widget_81")
-        self.widget_81.setMaximumSize(QSize(160, 16777215))
+        self.widget_81.setMaximumSize(QSize(165, 16777215))
         self.horizontalLayout_14 = QHBoxLayout(self.widget_81)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.horizontalLayout_14.setContentsMargins(2, 2, 2, 2)
         self.label_10 = QLabel(self.widget_81)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setMaximumSize(QSize(70, 16777215))
+        self.label_10.setMaximumSize(QSize(75, 16777215))
 
         self.horizontalLayout_14.addWidget(self.label_10)
 
@@ -412,13 +1102,13 @@ class Ui_MainWindow(object):
 
         self.widget_82 = QWidget(self.widget_53)
         self.widget_82.setObjectName(u"widget_82")
-        self.widget_82.setMaximumSize(QSize(200, 16777215))
+        self.widget_82.setMaximumSize(QSize(210, 16777215))
         self.horizontalLayout_15 = QHBoxLayout(self.widget_82)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.horizontalLayout_15.setContentsMargins(2, 2, 2, 2)
         self.label_11 = QLabel(self.widget_82)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setMaximumSize(QSize(95, 16777215))
+        self.label_11.setMaximumSize(QSize(110, 16777215))
 
         self.horizontalLayout_15.addWidget(self.label_11)
 
@@ -439,13 +1129,13 @@ class Ui_MainWindow(object):
 
         self.widget_83 = QWidget(self.widget_53)
         self.widget_83.setObjectName(u"widget_83")
-        self.widget_83.setMaximumSize(QSize(190, 16777215))
+        self.widget_83.setMaximumSize(QSize(195, 16777215))
         self.horizontalLayout_16 = QHBoxLayout(self.widget_83)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.horizontalLayout_16.setContentsMargins(2, 2, 2, 2)
         self.label_12 = QLabel(self.widget_83)
         self.label_12.setObjectName(u"label_12")
-        self.label_12.setMaximumSize(QSize(90, 16777215))
+        self.label_12.setMaximumSize(QSize(105, 16777215))
 
         self.horizontalLayout_16.addWidget(self.label_12)
 
@@ -481,13 +1171,13 @@ class Ui_MainWindow(object):
 
         self.widget_85 = QWidget(self.widget_54)
         self.widget_85.setObjectName(u"widget_85")
-        self.widget_85.setMaximumSize(QSize(190, 16777215))
+        self.widget_85.setMaximumSize(QSize(200, 16777215))
         self.horizontalLayout_18 = QHBoxLayout(self.widget_85)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(2, 2, 2, 2)
         self.label_19 = QLabel(self.widget_85)
         self.label_19.setObjectName(u"label_19")
-        self.label_19.setMaximumSize(QSize(100, 16777215))
+        self.label_19.setMaximumSize(QSize(115, 16777215))
 
         self.horizontalLayout_18.addWidget(self.label_19)
 
@@ -508,13 +1198,13 @@ class Ui_MainWindow(object):
 
         self.widget_87 = QWidget(self.widget_54)
         self.widget_87.setObjectName(u"widget_87")
-        self.widget_87.setMaximumSize(QSize(160, 16777215))
+        self.widget_87.setMaximumSize(QSize(165, 16777215))
         self.horizontalLayout_20 = QHBoxLayout(self.widget_87)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.horizontalLayout_20.setContentsMargins(2, 2, 2, 2)
         self.label_23 = QLabel(self.widget_87)
         self.label_23.setObjectName(u"label_23")
-        self.label_23.setMaximumSize(QSize(70, 16777215))
+        self.label_23.setMaximumSize(QSize(75, 16777215))
 
         self.horizontalLayout_20.addWidget(self.label_23)
 
@@ -535,13 +1225,13 @@ class Ui_MainWindow(object):
 
         self.widget_84 = QWidget(self.widget_54)
         self.widget_84.setObjectName(u"widget_84")
-        self.widget_84.setMaximumSize(QSize(200, 16777215))
+        self.widget_84.setMaximumSize(QSize(210, 16777215))
         self.horizontalLayout_17 = QHBoxLayout(self.widget_84)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.horizontalLayout_17.setContentsMargins(2, 2, 2, 2)
         self.label_17 = QLabel(self.widget_84)
         self.label_17.setObjectName(u"label_17")
-        self.label_17.setMaximumSize(QSize(95, 16777215))
+        self.label_17.setMaximumSize(QSize(110, 16777215))
 
         self.horizontalLayout_17.addWidget(self.label_17)
 
@@ -562,13 +1252,13 @@ class Ui_MainWindow(object):
 
         self.widget_86 = QWidget(self.widget_54)
         self.widget_86.setObjectName(u"widget_86")
-        self.widget_86.setMaximumSize(QSize(190, 16777215))
+        self.widget_86.setMaximumSize(QSize(195, 16777215))
         self.horizontalLayout_19 = QHBoxLayout(self.widget_86)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.horizontalLayout_19.setContentsMargins(2, 2, 2, 2)
         self.label_21 = QLabel(self.widget_86)
         self.label_21.setObjectName(u"label_21")
-        self.label_21.setMaximumSize(QSize(90, 16777215))
+        self.label_21.setMaximumSize(QSize(105, 16777215))
 
         self.horizontalLayout_19.addWidget(self.label_21)
 
@@ -1208,11 +1898,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12.addWidget(self.col_wg_1)
 
+        self.widget_28 = QWidget(self.scrollAreaWidgetContents)
+        self.widget_28.setObjectName(u"widget_28")
+        self.widget_28.setMinimumSize(QSize(0, 50))
+
+        self.verticalLayout_12.addWidget(self.widget_28)
+
         self.widget_78 = QWidget(self.scrollAreaWidgetContents)
         self.widget_78.setObjectName(u"widget_78")
+        self.widget_78.setMinimumSize(QSize(0, 50))
         self.horizontalLayout_11 = QHBoxLayout(self.widget_78)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(1, 1, 1, 1)
+        self.horizontalLayout_11.setContentsMargins(9, 1, 9, 1)
         self.label_13 = QLabel(self.widget_78)
         self.label_13.setObjectName(u"label_13")
 
@@ -1228,7 +1925,7 @@ class Ui_MainWindow(object):
         self.fill_column_btn_2 = QPushButton(self.widget_78)
         self.fill_column_btn_2.setObjectName(u"fill_column_btn_2")
         self.fill_column_btn_2.setMinimumSize(QSize(0, 40))
-        self.fill_column_btn_2.setMaximumSize(QSize(100, 16777215))
+        self.fill_column_btn_2.setMaximumSize(QSize(120, 16777215))
 
         self.horizontalLayout_11.addWidget(self.fill_column_btn_2)
 
@@ -2105,11 +2802,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12.addWidget(self.col_wg_2)
 
+        self.widget_29 = QWidget(self.scrollAreaWidgetContents)
+        self.widget_29.setObjectName(u"widget_29")
+        self.widget_29.setMinimumSize(QSize(0, 50))
+
+        self.verticalLayout_12.addWidget(self.widget_29)
+
         self.widget_79 = QWidget(self.scrollAreaWidgetContents)
         self.widget_79.setObjectName(u"widget_79")
+        self.widget_79.setMinimumSize(QSize(0, 50))
         self.horizontalLayout_12 = QHBoxLayout(self.widget_79)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.horizontalLayout_12.setContentsMargins(1, 1, 1, 1)
+        self.horizontalLayout_12.setContentsMargins(9, 1, 9, 1)
         self.label_3 = QLabel(self.widget_79)
         self.label_3.setObjectName(u"label_3")
 
@@ -2125,7 +2829,7 @@ class Ui_MainWindow(object):
         self.fill_column_btn_3 = QPushButton(self.widget_79)
         self.fill_column_btn_3.setObjectName(u"fill_column_btn_3")
         self.fill_column_btn_3.setMinimumSize(QSize(0, 40))
-        self.fill_column_btn_3.setMaximumSize(QSize(100, 16777215))
+        self.fill_column_btn_3.setMaximumSize(QSize(120, 16777215))
 
         self.horizontalLayout_12.addWidget(self.fill_column_btn_3)
 
@@ -3034,12 +3738,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.cam_dir_btn)
 
-        self.pushButton_5 = QPushButton(self.widget_6)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setMinimumSize(QSize(100, 0))
-        self.pushButton_5.setMaximumSize(QSize(150, 35))
+        self.save_frame_btn = QPushButton(self.widget_6)
+        self.save_frame_btn.setObjectName(u"save_frame_btn")
+        self.save_frame_btn.setMinimumSize(QSize(100, 0))
+        self.save_frame_btn.setMaximumSize(QSize(150, 35))
 
-        self.horizontalLayout_3.addWidget(self.pushButton_5)
+        self.horizontalLayout_3.addWidget(self.save_frame_btn)
 
 
         self.verticalLayout_5.addWidget(self.widget_6)
@@ -3054,12 +3758,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_6 = QVBoxLayout(self.widget_8)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(3, 3, 3, 3)
-        self.verticalSpacer = QSpacerItem(20, 150, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
+        self.verticalSpacer = QSpacerItem(20, 100, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
 
         self.verticalLayout_6.addItem(self.verticalSpacer)
 
         self.widget_11 = QWidget(self.widget_8)
         self.widget_11.setObjectName(u"widget_11")
+        self.verticalLayout_21 = QVBoxLayout(self.widget_11)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.cam_lbl_1 = QLabel(self.widget_11)
+        self.cam_lbl_1.setObjectName(u"cam_lbl_1")
+
+        self.verticalLayout_21.addWidget(self.cam_lbl_1)
+
 
         self.verticalLayout_6.addWidget(self.widget_11)
 
@@ -3075,12 +3786,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_7 = QVBoxLayout(self.widget_9)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.verticalLayout_7.setContentsMargins(3, 3, 3, 3)
-        self.verticalSpacer_3 = QSpacerItem(20, 150, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
+        self.verticalSpacer_3 = QSpacerItem(20, 100, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
 
         self.verticalLayout_7.addItem(self.verticalSpacer_3)
 
         self.widget_13 = QWidget(self.widget_9)
         self.widget_13.setObjectName(u"widget_13")
+        self.verticalLayout_22 = QVBoxLayout(self.widget_13)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.cam_lbl_2 = QLabel(self.widget_13)
+        self.cam_lbl_2.setObjectName(u"cam_lbl_2")
+
+        self.verticalLayout_22.addWidget(self.cam_lbl_2)
+
 
         self.verticalLayout_7.addWidget(self.widget_13)
 
@@ -3104,7 +3822,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1298, 24))
+        self.menubar.setGeometry(QRect(0, 0, 1574, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -3112,7 +3830,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3123,14 +3841,69 @@ class Ui_MainWindow(object):
         self.logo_4j_btn.setText("")
         self.watering_page_btn.setText(QCoreApplication.translate("MainWindow", u"Zavla\u017eov\u00e1n\u00ed", None))
         self.solutio_page_btn.setText(QCoreApplication.translate("MainWindow", u"Nastaven\u00ed roztoku", None))
+        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Ukladan\u00ed roztoku", None))
         self.cams_page_btn.setText(QCoreApplication.translate("MainWindow", u"Kamery", None))
         self.chart_page_btn.setText(QCoreApplication.translate("MainWindow", u"Grafy", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Zastavit zal\u00e9v\u00e1n\u00ed", None))
         self.expand_menu_btn.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.solution_dir_btn.setText("")
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit do csv", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit nastaven\u00ed", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"???", None))
+        self.stop_saving_btn.setText(QCoreApplication.translate("MainWindow", u"P\u0159estat ukl\u00e1dat", None))
+        self.start_saving_btn.setText(QCoreApplication.translate("MainWindow", u"Za\u010d\u00edt ukl\u00e1dat", None))
+        self.label_185.setText(QCoreApplication.translate("MainWindow", u"Vn\u011bj\u0161\u00ed podm\u00ednky prestabn\u00ed st\u011bna", None))
+        self.label_186.setText(QCoreApplication.translate("MainWindow", u"Teplota", None))
+        self.wall_tep_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_188.setText(QCoreApplication.translate("MainWindow", u"Vlhkost:", None))
+        self.wall_hum_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_190.setText(QCoreApplication.translate("MainWindow", u"CO2:", None))
+        self.wall_co2_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Parametry vody", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Kysl\u00edk:", None))
+        self.water_oxyd_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_177.setText(QCoreApplication.translate("MainWindow", u"Ph:", None))
+        self.water_ph_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_179.setText(QCoreApplication.translate("MainWindow", u"Redox potenci\u00e1l:", None))
+        self.water_redox_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_181.setText(QCoreApplication.translate("MainWindow", u"Elektrick\u00e1 vodivost:", None))
+        self.water_cond_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_183.setText(QCoreApplication.translate("MainWindow", u"Teplota vody:", None))
+        self.water_temp_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_194.setText(QCoreApplication.translate("MainWindow", u"Vn\u011bj\u0161\u00ed podm\u00ednky studovna", None))
+        self.label_195.setText(QCoreApplication.translate("MainWindow", u"Teplota", None))
+        self.outside_temp_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_197.setText(QCoreApplication.translate("MainWindow", u"Vlhkost:", None))
+        self.outside_hum_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_192.setText(QCoreApplication.translate("MainWindow", u"CO2:", None))
+        self.outside_co2_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
+        self.label_208.setText(QCoreApplication.translate("MainWindow", u"Regulace Ph", None))
+        self.label_202.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
+        self.ph_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
+        self.ph_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
+        self.label_203.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat: ", None))
+        self.label_204.setText(QCoreApplication.translate("MainWindow", u"ml roztoku", None))
+        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat", None))
+        self.label_211.setText(QCoreApplication.translate("MainWindow", u"Regulace okysli\u010den\u00ed", None))
+        self.label_210.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
+        self.oxidation_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
+        self.oxidation_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
+        self.pump_chb.setText("")
+        self.label_212.setText(QCoreApplication.translate("MainWindow", u"Kompresor", None))
+        self.label_207.setText(QCoreApplication.translate("MainWindow", u"Regulace vodivosti", None))
+        self.label_199.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
+        self.cond_reg_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
+        self.cond_reg_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
+        self.label_200.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat: ", None))
+        self.label_201.setText(QCoreApplication.translate("MainWindow", u"ml roztoku", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat", None))
+        self.label_209.setText(QCoreApplication.translate("MainWindow", u"Nastaven\u00ed sv\u011btel", None))
+        self.label_205.setText(QCoreApplication.translate("MainWindow", u"\u010cas v\u00fdchodu slunce:", None))
+        self.label_206.setText(QCoreApplication.translate("MainWindow", u"\u010cas z\u00e1padu slunce:", None))
+        self.save_lights_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit", None))
+        self.lights_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout sv\u011btla", None))
+        self.lights_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout sv\u011btla", None))
+        self.save_watering_setting_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit nastaven\u00ed", None))
+        self.enable_auto_watering_btn.setText(QCoreApplication.translate("MainWindow", u"Povolit auto. zavla\u017eov\u00e1n\u00ed", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Vratit aktualn\u00ed nastaven\u00ed", None))
         self.water_all_btn.setText(QCoreApplication.translate("MainWindow", u"Zal\u00edt v\u0161e", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Sloupec 1:", None))
         self.water_col_btn_1.setText(QCoreApplication.translate("MainWindow", u"Zal\u00edt sloupec", None))
@@ -3332,6 +4105,8 @@ class Ui_MainWindow(object):
         self.label_176.setText(QCoreApplication.translate("MainWindow", u"\u010das", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.cam_dir_btn.setText("")
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit sn\u00edmek", None))
+        self.save_frame_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit sn\u00edmek", None))
+        self.cam_lbl_1.setText("")
+        self.cam_lbl_2.setText("")
     # retranslateUi
 

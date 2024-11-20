@@ -6,17 +6,49 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1298</width>
-    <height>888</height>
+    <width>1574</width>
+    <height>896</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 1px solid;</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+background-color: rgb(250, 250, 250);
+border-radius: 3px;
+font: 11pt \&quot;Yu Gothic UI\&quot;;
+}
+
+QLineEdit {
+	border: 1px solid rgb(180, 180, 180);
+	border-radius: 5px;
+	
+}
+QLineEdit:focus {
+    border: 1px solid #4CAF50;
+}
+QPushButton {
+    border-radius: 5px;
+    border: 1px solid #4CAF50;
+}
+
+QPushButton:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+QPushButton:pressed {
+    background-color: #729D1F;
+}
+
+#widget, #widget_2, #widget_6, #widget_10, #widget_40, #widget_39, #widget_38, #widget_32, #widget_31,#widget_30, #widget_75, #widget_14, #widget_77, #widget_78, #widget_79, #scrollArea{
+	border: 1px solid #ccc;
+}</string>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QWidget" name="widget" native="true">
@@ -31,6 +63,12 @@
         <width>180</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color: #ccc;
+}
+</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -84,6 +122,20 @@
        </item>
        <item>
         <widget class="QWidget" name="widget_4" native="true">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border-radius: 5px;
+    border: 1px solid #4CAF50;
+}
+
+QPushButton:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+QPushButton:pressed {
+    background-color: #729D1F;
+}</string>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
            <widget class="QPushButton" name="watering_page_btn">
@@ -118,6 +170,28 @@
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Ukladaní roztoku</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="cams_page_btn">
             <property name="maximumSize">
              <size>
@@ -147,13 +221,31 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="widget_5" native="true">
+        <widget class="QWidget" name="stop_watering" native="true">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
            <height>150</height>
           </size>
          </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_143">
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Zastavit zalévání</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -217,7 +309,7 @@
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="solution_pg">
           <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -267,7 +359,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_6">
+               <widget class="QPushButton" name="stop_saving_btn">
                 <property name="minimumSize">
                  <size>
                   <width>100</width>
@@ -275,7 +367,20 @@
                  </size>
                 </property>
                 <property name="text">
-                 <string>Uložit do csv</string>
+                 <string>Přestat ukládat</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="start_saving_btn">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Začít ukládat</string>
                 </property>
                </widget>
               </item>
@@ -291,26 +396,1330 @@
               </size>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <property name="topMargin">
+               <number>1</number>
+              </property>
+              <property name="bottomMargin">
+               <number>1</number>
+              </property>
               <item>
-               <widget class="QWidget" name="widget_38" native="true"/>
-              </item>
-              <item>
-               <widget class="QWidget" name="widget_39" native="true"/>
-              </item>
-              <item>
-               <widget class="QWidget" name="widget_40" native="true"/>
+               <widget class="QWidget" name="widget_166" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>1100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_141">
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QWidget" name="widget_39" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>350</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                    <property name="leftMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>1</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_185">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Vnější podmínky prestabní stěna</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_22" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_123">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_186">
+                         <property name="text">
+                          <string>Teplota</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="wall_tep_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_23" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_124">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_188">
+                         <property name="text">
+                          <string>Vlhkost:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="wall_hum_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_24" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_125">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_190">
+                         <property name="text">
+                          <string>CO2:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="wall_co2_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_38" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>350</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_16">
+                    <property name="spacing">
+                     <number>2</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>1</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_6">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Parametry vody</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_16" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_6">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_7">
+                         <property name="text">
+                          <string>Kyslík:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="water_oxyd_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_18" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_119">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_177">
+                         <property name="text">
+                          <string>Ph:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="water_ph_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_19" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_120">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_179">
+                         <property name="text">
+                          <string>Redox potenciál:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="water_redox_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_21" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_121">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_181">
+                         <property name="text">
+                          <string>Elektrická vodivost:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="water_cond_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_20" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_122">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_183">
+                         <property name="text">
+                          <string>Teplota vody:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="water_temp_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_40" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>350</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_19">
+                    <property name="leftMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>1</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_194">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Vnější podmínky studovna</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_26" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_127">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_195">
+                         <property name="text">
+                          <string>Teplota</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="outside_temp_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_27" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_128">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_197">
+                         <property name="text">
+                          <string>Vlhkost:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="outside_hum_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_25" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_126">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_192">
+                         <property name="text">
+                          <string>CO2:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="outside_co2_lbl">
+                         <property name="text">
+                          <string>00.0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </item>
              </layout>
             </widget>
            </item>
            <item>
-            <widget class="QWidget" name="widget_12" native="true"/>
+            <widget class="QWidget" name="widget_165" native="true">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
            </item>
            <item>
-            <widget class="QWidget" name="widget_36" native="true"/>
+            <widget class="QWidget" name="widget_12" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_136">
+              <property name="topMargin">
+               <number>1</number>
+              </property>
+              <property name="rightMargin">
+               <number>9</number>
+              </property>
+              <property name="bottomMargin">
+               <number>1</number>
+              </property>
+              <item>
+               <widget class="QWidget" name="widget_167" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>1100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_142">
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QWidget" name="widget_31" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>350</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_24">
+                    <property name="leftMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>9</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_208">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Regulace Ph</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_48" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_131">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_202">
+                         <property name="maximumSize">
+                          <size>
+                           <width>150</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Vyžadovaná hodnota:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="ph_reg_le">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="ph_on_btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Zapnout</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="ph_off_btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Vypnout</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_50" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_132">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_203">
+                         <property name="text">
+                          <string>Přidat: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="add_ph_solution_le">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>80</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_204">
+                         <property name="text">
+                          <string>ml roztoku</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="pushButton_10">
+                         <property name="minimumSize">
+                          <size>
+                           <width>50</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Přidat</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_75" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>350</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_20">
+                    <item>
+                     <widget class="QLabel" name="label_211">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Regulace okysličení</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_76" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_139">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_210">
+                         <property name="maximumSize">
+                          <size>
+                           <width>150</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Vyžadovaná hodnota:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="oxygenation_reg_le">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="oxidation_on_btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Zapnout</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="oxidation_off_btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Vypnout</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_164" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_140">
+                       <item>
+                        <widget class="QWidget" name="widget_169" native="true">
+                         <property name="maximumSize">
+                          <size>
+                           <width>180</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_144">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="AnimatedToggle" name="pump_chb">
+                            <property name="maximumSize">
+                             <size>
+                              <width>60</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="label_212">
+                            <property name="maximumSize">
+                             <size>
+                              <width>140</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="text">
+                             <string>Kompresor</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_32" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>350</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_23">
+                    <property name="leftMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>9</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_207">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Regulace vodivosti</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_33" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_129">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_199">
+                         <property name="maximumSize">
+                          <size>
+                           <width>150</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Vyžadovaná hodnota:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="cond_reg_le">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="cond_reg_on_btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Zapnout</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="cond_reg_off_btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Vypnout</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_34" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_130">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_200">
+                         <property name="text">
+                          <string>Přidat: </string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="add_cond_solution_le">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>80</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_201">
+                         <property name="text">
+                          <string>ml roztoku</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="pushButton_3">
+                         <property name="minimumSize">
+                          <size>
+                           <width>50</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Přidat</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </item>
            <item>
-            <widget class="QWidget" name="widget_37" native="true"/>
+            <widget class="QWidget" name="widget_36" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_137">
+              <property name="topMargin">
+               <number>1</number>
+              </property>
+              <property name="bottomMargin">
+               <number>1</number>
+              </property>
+              <item>
+               <widget class="QWidget" name="widget_30" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>350</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_25">
+                 <property name="leftMargin">
+                  <number>9</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>9</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>9</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>9</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_209">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Nastavení světel</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_51" native="true">
+                   <layout class="QHBoxLayout" name="horizontalLayout_133">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>1</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_205">
+                      <property name="text">
+                       <string>Čas východu slunce:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lights_on_le">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_52" native="true">
+                   <layout class="QHBoxLayout" name="horizontalLayout_134">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>1</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_206">
+                      <property name="text">
+                       <string>Čas západu slunce:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lights_off_le">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_74" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_135">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QPushButton" name="save_lights_btn">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Uložit</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="lights_on_btn">
+                      <property name="maximumSize">
+                       <size>
+                        <width>110</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Zapnout světla</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="lights_off_btn">
+                      <property name="maximumSize">
+                       <size>
+                        <width>110</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Vypnout světla</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_37" native="true">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_138">
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>1</number>
+              </property>
+              <property name="rightMargin">
+               <number>9</number>
+              </property>
+              <property name="bottomMargin">
+               <number>1</number>
+              </property>
+             </layout>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -450,16 +1859,16 @@
                   <number>0</number>
                  </property>
                  <property name="topMargin">
-                  <number>0</number>
+                  <number>3</number>
                  </property>
                  <property name="rightMargin">
                   <number>0</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>0</number>
+                  <number>3</number>
                  </property>
                  <item>
-                  <widget class="QPushButton" name="pushButton_8">
+                  <widget class="QPushButton" name="save_watering_setting_btn">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -478,7 +1887,26 @@
                   </widget>
                  </item>
                  <item>
+                  <widget class="QPushButton" name="enable_auto_watering_btn">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>175</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Povolit auto. zavlažování</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QPushButton" name="pushButton_4">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -487,17 +1915,20 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>150</width>
+                     <width>173</width>
                      <height>16777215</height>
                     </size>
                    </property>
                    <property name="text">
-                    <string>???</string>
+                    <string>Vratit aktualní nastavení</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QPushButton" name="water_all_btn">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -540,22 +1971,28 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>991</width>
-                <height>1596</height>
+                <width>1269</width>
+                <height>1732</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_12">
                <item>
                 <widget class="QWidget" name="widget_77" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_10">
                   <property name="leftMargin">
-                   <number>1</number>
+                   <number>9</number>
                   </property>
                   <property name="topMargin">
                    <number>1</number>
                   </property>
                   <property name="rightMargin">
-                   <number>1</number>
+                   <number>9</number>
                   </property>
                   <property name="bottomMargin">
                    <number>1</number>
@@ -596,7 +2033,7 @@
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>16777215</height>
                      </size>
                     </property>
@@ -670,7 +2107,7 @@
                       <widget class="QWidget" name="widget_80" native="true">
                        <property name="maximumSize">
                         <size>
-                         <width>190</width>
+                         <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -691,7 +2128,7 @@
                          <widget class="QLabel" name="label_9">
                           <property name="maximumSize">
                            <size>
-                            <width>100</width>
+                            <width>115</width>
                             <height>16777215</height>
                            </size>
                           </property>
@@ -730,7 +2167,7 @@
                       <widget class="QWidget" name="widget_81" native="true">
                        <property name="maximumSize">
                         <size>
-                         <width>160</width>
+                         <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -751,7 +2188,7 @@
                          <widget class="QLabel" name="label_10">
                           <property name="maximumSize">
                            <size>
-                            <width>70</width>
+                            <width>75</width>
                             <height>16777215</height>
                            </size>
                           </property>
@@ -790,7 +2227,7 @@
                       <widget class="QWidget" name="widget_82" native="true">
                        <property name="maximumSize">
                         <size>
-                         <width>200</width>
+                         <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -811,7 +2248,7 @@
                          <widget class="QLabel" name="label_11">
                           <property name="maximumSize">
                            <size>
-                            <width>95</width>
+                            <width>110</width>
                             <height>16777215</height>
                            </size>
                           </property>
@@ -850,7 +2287,7 @@
                       <widget class="QWidget" name="widget_83" native="true">
                        <property name="maximumSize">
                         <size>
-                         <width>190</width>
+                         <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -871,7 +2308,7 @@
                          <widget class="QLabel" name="label_12">
                           <property name="maximumSize">
                            <size>
-                            <width>90</width>
+                            <width>105</width>
                             <height>16777215</height>
                            </size>
                           </property>
@@ -944,7 +2381,7 @@
                       <widget class="QWidget" name="widget_85" native="true">
                        <property name="maximumSize">
                         <size>
-                         <width>190</width>
+                         <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -965,7 +2402,7 @@
                          <widget class="QLabel" name="label_19">
                           <property name="maximumSize">
                            <size>
-                            <width>100</width>
+                            <width>115</width>
                             <height>16777215</height>
                            </size>
                           </property>
@@ -1004,7 +2441,7 @@
                       <widget class="QWidget" name="widget_87" native="true">
                        <property name="maximumSize">
                         <size>
-                         <width>160</width>
+                         <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -1025,7 +2462,7 @@
                          <widget class="QLabel" name="label_23">
                           <property name="maximumSize">
                            <size>
-                            <width>70</width>
+                            <width>75</width>
                             <height>16777215</height>
                            </size>
                           </property>
@@ -1064,7 +2501,7 @@
                       <widget class="QWidget" name="widget_84" native="true">
                        <property name="maximumSize">
                         <size>
-                         <width>200</width>
+                         <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -1085,7 +2522,7 @@
                          <widget class="QLabel" name="label_17">
                           <property name="maximumSize">
                            <size>
-                            <width>95</width>
+                            <width>110</width>
                             <height>16777215</height>
                            </size>
                           </property>
@@ -1124,7 +2561,7 @@
                       <widget class="QWidget" name="widget_86" native="true">
                        <property name="maximumSize">
                         <size>
-                         <width>190</width>
+                         <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -1145,7 +2582,7 @@
                          <widget class="QLabel" name="label_21">
                           <property name="maximumSize">
                            <size>
-                            <width>90</width>
+                            <width>105</width>
                             <height>16777215</height>
                            </size>
                           </property>
@@ -2557,16 +3994,32 @@
                 </widget>
                </item>
                <item>
+                <widget class="QWidget" name="widget_28" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QWidget" name="widget_78" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_11">
                   <property name="leftMargin">
-                   <number>1</number>
+                   <number>9</number>
                   </property>
                   <property name="topMargin">
                    <number>1</number>
                   </property>
                   <property name="rightMargin">
-                   <number>1</number>
+                   <number>9</number>
                   </property>
                   <property name="bottomMargin">
                    <number>1</number>
@@ -2607,7 +4060,7 @@
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>16777215</height>
                      </size>
                     </property>
@@ -4562,16 +6015,32 @@
                 </widget>
                </item>
                <item>
+                <widget class="QWidget" name="widget_29" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QWidget" name="widget_79" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_12">
                   <property name="leftMargin">
-                   <number>1</number>
+                   <number>9</number>
                   </property>
                   <property name="topMargin">
                    <number>1</number>
                   </property>
                   <property name="rightMargin">
-                   <number>1</number>
+                   <number>9</number>
                   </property>
                   <property name="bottomMargin">
                    <number>1</number>
@@ -4612,7 +6081,7 @@
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>16777215</height>
                      </size>
                     </property>
@@ -6620,7 +8089,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_5">
+               <widget class="QPushButton" name="save_frame_btn">
                 <property name="minimumSize">
                  <size>
                   <width>100</width>
@@ -6682,13 +8151,23 @@
                    <property name="sizeHint" stdset="0">
                     <size>
                      <width>20</width>
-                     <height>150</height>
+                     <height>100</height>
                     </size>
                    </property>
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QWidget" name="widget_11" native="true"/>
+                  <widget class="QWidget" name="widget_11" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_21">
+                    <item>
+                     <widget class="QLabel" name="cam_lbl_1">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
                  </item>
                  <item>
                   <spacer name="verticalSpacer_2">
@@ -6735,13 +8214,23 @@
                    <property name="sizeHint" stdset="0">
                     <size>
                      <width>20</width>
-                     <height>150</height>
+                     <height>100</height>
                     </size>
                    </property>
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QWidget" name="widget_13" native="true"/>
+                  <widget class="QWidget" name="widget_13" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_22">
+                    <item>
+                     <widget class="QLabel" name="cam_lbl_2">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
                  </item>
                  <item>
                   <spacer name="verticalSpacer_4">
@@ -6779,13 +8268,20 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1298</width>
-     <height>24</height>
+     <width>1574</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AnimatedToggle</class>
+   <extends>QCheckBox</extends>
+   <header>Gui/Custom_widgets/toggle.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
