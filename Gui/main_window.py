@@ -23,18 +23,18 @@ class MainWindow(QMainWindow):
         self._init_graphical_changes()
 
         # variables
-        self.valve_byte_1 = bytearray(b'\x00\x00')
-        self.valve_byte_2 = bytearray(b'\x00\x00')
+        self.valve_byte_1 =  {i: False for i in range(1, 17)}
+        self.valve_byte_2 = {i: False for i in range(1, 17)}
 
         self.logo = LogoControl("192.168.1.10")
         self.logo_2 = LogoControl("192.168.1.11")
         self.cam = Camera("192.168.1.50", 10)
         self.cam_2 = Camera("192.168.1.51", 10)
 
-        self.logo.start()
-        self.logo_2.start()
-        self.cam.start()
-        self.cam_2.start()
+        #self.logo.start()
+        #self.logo_2.start()
+        #self.cam.start()
+        #self.cam_2.start()
 
         # cart initializations
         self.line_chart = LineChart("test", 200, (-100, 100), ["test_line", "test_line_2"], 2)
@@ -59,6 +59,8 @@ class MainWindow(QMainWindow):
         self.ui.ph_off_btn.hide()
         self.ui.oxidation_off_btn.hide()
         self.ui.lights_off_btn.hide()
+
+        self._switch_all_leds("grey")
 
         self.setWindowIcon(QIcon("./App_data/ico.png"))
         self.setWindowTitle("Pěstevní stěna")
@@ -93,8 +95,8 @@ class MainWindow(QMainWindow):
         self.ui.expand_menu_btn.clicked.connect(lambda: self._menu_animation(False))
 
         self.ui.watering_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.watering_pg))
-        self.ui.save_watering_setting_btn.clicked.connect(self._save_watering_data
-                                                          )
+        self.ui.save_watering_setting_btn.clicked.connect(self._save_watering_data)
+
         self.ui.solutio_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.solution_pg))
         self.ui.cams_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.camera_pg))
         self.ui.chart_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.chart_pg))
@@ -102,6 +104,12 @@ class MainWindow(QMainWindow):
         self.ui.cam_dir_btn.clicked.connect(lambda: self._open_dir_dialog(self.ui.cam_dir_le))
         self.ui.solution_dir_btn.clicked.connect(lambda: self._open_dir_dialog(self.ui.solution_dir_le))
 
+        self.ui.water_all_btn.clicked.connect(lambda: self._manage_all(b'\xff\xff', "green"))
+        self.ui.stop_watering_btn.clicked.connect(lambda: self._manage_all(b'\x00\x00', "grey"))
+
+        self.ui.water_col_btn_1.clicked.connect(lambda: self._manage_col(1, True))
+        self.ui.water_col_btn_2.clicked.connect(lambda: self._manage_col(2, True))
+        self.ui.water_col_btn_3.clicked.connect(lambda: self._manage_col(3, True))
         self.ui.fill_column_btn_1.clicked.connect(lambda: self._fill_column(0))
         self.ui.fill_column_btn_2.clicked.connect(lambda: self._fill_column(1))
         self.ui.fill_column_btn_3.clicked.connect(lambda: self._fill_column(2))
@@ -117,17 +125,41 @@ class MainWindow(QMainWindow):
     def _bind_watering_panel_btns(self):
         for i in range(1, 22):
             water_btn: QPushButton = self.ui.scrollArea.findChild(QPushButton, f"water_btn_{i}")
-            water_btn.clicked.connect(partial(self._start_watering, i=i))
+            water_btn.clicked.connect(partial(self._open_valve, i=i))
 
         self.ui.pushButton_4.clicked.connect(lambda: print(f"{self.valve_byte_1}, {self.valve_byte_2}"))
 
-    def _start_watering(self, i):
+    def _open_valve(self, i):
         if i <= 8:
-            self.valve_byte_1 = self._on_off_bit(i, self.valve_byte_1)
-            self.logo.write_logo_byte(1, self.valve_byte_1)
+            self.valve_byte_1[i] = not self.valve_byte_1[i]
+            self.logo.write_logo_byte(1, self._dict_to_bytearray(self.valve_byte_1))
+            self._switch_led(i, "green" if self.valve_byte_1[i] else "grey")
+            print(self._dict_to_bytearray(self.valve_byte_1))
         else:
-            self.valve_byte_2 = self._on_off_bit(i-8, self.valve_byte_2)
-            self.logo_2.write_logo_byte(1, self.valve_byte_2)
+            self.valve_byte_2[i-8] = not self.valve_byte_2[i-8]
+            self.logo_2.write_logo_byte(1, self._dict_to_bytearray(self.valve_byte_2))
+            self._switch_led(i, "green" if self.valve_byte_2[i-8] else "grey")
+            print(self._dict_to_bytearray(self.valve_byte_2))
+
+    def _manage_col(self, col: int, state: bool):
+        if col == 1:
+            for i in range(1, 8):
+                self.valve_byte_1[i] = state
+                self._switch_led(i, "green" if state else "gray")
+            self.logo.write_logo_byte(1, self._dict_to_bytearray(self.valve_byte_1))
+        elif col == 2:
+            self.valve_byte_1[8] = state
+            self._switch_led(8,  "green" if state else "gray")
+            for i in range(1, 7):
+                self.valve_byte_2[i] = state
+                self._switch_led(i + 8, "green" if state else "gray")
+            self.logo.write_logo_byte(1, self._dict_to_bytearray(self.valve_byte_1))
+            self.logo_2.write_logo_byte(1, self._dict_to_bytearray(self.valve_byte_2))
+        else:
+            for i in range(7, 14):
+                self.valve_byte_2[i] = state
+                self._switch_led(i + 8, "green" if state else "gray")
+            self.logo_2.write_logo_byte(1, self._dict_to_bytearray(self.valve_byte_2))
 
     def _fill_column(self, col):
         alert = QMessageBox.question(self.ui.scrollArea,
@@ -143,6 +175,11 @@ class MainWindow(QMainWindow):
                 for j, name in enumerate(le_names):
                     start_le: QLineEdit = self.ui.scrollArea.findChild(QLineEdit, name + str(i))
                     start_le.setText(le_values[j])
+
+    def _manage_all(self, message: bytes, color: str):
+        self.logo.write_logo_byte(1, bytearray(message))
+        self.logo_2.write_logo_byte(1, bytearray(message))
+        self._switch_all_leds(color)
 
     def _open_dir_dialog(self, lineedit: QLineEdit):
         options = QFileDialog(self).options()
@@ -161,7 +198,6 @@ class MainWindow(QMainWindow):
 
     def _update_cam_view(self, i: str, frame):
         cam_display: QLabel= self.ui.widget_7.findChild(QLabel, f"cam_lbl_{i}")
-        # Ensure correct color format
         h, w, ch = frame.shape
         window_width = cam_display.width()
         window_height = cam_display.height()
@@ -202,6 +238,23 @@ class MainWindow(QMainWindow):
             data_array += self._time_to_hexa(self.ui.scrollArea.findChild(QLineEdit, f"water_end_le_{str(i)}").text())
         return bytearray(data_array)
 
+    def _switch_led(self, led, color):
+        led: QLabel = self.ui.scrollArea.findChild(QLabel, f"valve_state_lbl_{led}")
+        led.setPixmap(QPixmap(f'./App_data/{color}_led_15.png'))
+
+    def _switch_all_leds(self, color: str):
+        led = f'./App_data/{color}_led_15.png'
+
+        for i in range(1,8):
+            valve_state: QLabel = self.ui.col_wg_1.findChild(QLabel, f"valve_state_lbl_{i}")
+            valve_state.setPixmap(QPixmap(led))
+        for i in range(8,15):
+            valve_state: QLabel = self.ui.col_wg_2.findChild(QLabel, f"valve_state_lbl_{i}")
+            valve_state.setPixmap(QPixmap(led))
+        for i in range(15,22):
+            valve_state: QLabel = self.ui.col_wg_3.findChild(QLabel, f"valve_state_lbl_{i}")
+            valve_state.setPixmap(QPixmap(led))
+
     @staticmethod
     def _on_off_bit(i :int, current_byte: bytearray):
         logo_byte = current_byte
@@ -223,6 +276,12 @@ class MainWindow(QMainWindow):
             time = "0000"
         return bytearray.fromhex(time.replace(':', ''))
 
-    """string = self.ui.water_start_le_1.text().replace(':', '')
-        hexa_array = [string[i:i+2]for i in range(0, len(string), 2)]
-        my_bytearray = bytearray(int(pair, 16)for pair in hexa_array)"""
+    @staticmethod
+    def _dict_to_bytearray(dictionary):
+                byte1 = 0
+                byte2 = 0
+                for i in range(1, 9):
+                    byte1 |= (1 if dictionary[i] else 0) << (i - 1)
+                for i in range(9, 17):
+                    byte2 |= (1 if dictionary[i] else 0) << (i - 9)
+                return bytearray([byte1,byte2])
