@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1482</width>
-    <height>896</height>
+    <height>873</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -174,9 +174,9 @@ QPushButton:pressed {
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_6">
+           <widget class="QPushButton" name="solution_config_btn">
             <property name="enabled">
-             <bool>false</bool>
+             <bool>true</bool>
             </property>
             <property name="minimumSize">
              <size>
@@ -333,7 +333,7 @@ QPushButton:pressed {
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="solution_pg">
           <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -347,9 +347,61 @@ QPushButton:pressed {
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_4">
               <item>
+               <widget class="QLabel" name="label_176">
+                <property name="text">
+                 <string>Jmeno:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="dir_name_le">
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>35</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="dir_name_btn">
+                <property name="minimumSize">
+                 <size>
+                  <width>110</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>120</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Nastavit jmeno</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Policy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>60</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
                <widget class="QLabel" name="label">
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string>Uložiště:</string>
                 </property>
                </widget>
               </item>
@@ -1154,7 +1206,7 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="pushButton_10">
+                        <widget class="QPushButton" name="ph_add_btn">
                          <property name="minimumSize">
                           <size>
                            <width>50</width>
@@ -1437,6 +1489,9 @@ QPushButton:pressed {
                        </item>
                        <item>
                         <widget class="QPushButton" name="cond_reg_off_btn">
+                         <property name="enabled">
+                          <bool>true</bool>
+                         </property>
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -1500,7 +1555,7 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="pushButton_3">
+                        <widget class="QPushButton" name="cond_add_btn">
                          <property name="minimumSize">
                           <size>
                            <width>50</width>
@@ -2029,6 +2084,19 @@ QPushButton:pressed {
                    </widget>
                   </item>
                   <item>
+                   <widget class="QPushButton" name="stop_watering_col_1">
+                    <property name="maximumSize">
+                     <size>
+                      <width>120</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Zastavit zalévání</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QPushButton" name="water_col_btn_1">
                     <property name="minimumSize">
                      <size>
@@ -2168,14 +2236,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_80" native="true">
+                      <widget class="QWidget" name="widget_95" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_13">
+                       <layout class="QHBoxLayout" name="horizontalLayout_30">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2189,7 +2257,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_9">
+                         <widget class="QLabel" name="label_39">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -2202,7 +2270,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_1">
+                         <widget class="QLineEdit" name="water_start_le_7">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2218,7 +2286,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_15">
+                         <widget class="QLabel" name="label_40">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -2228,14 +2296,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_81" native="true">
+                      <widget class="QWidget" name="widget_99" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_14">
+                       <layout class="QHBoxLayout" name="horizontalLayout_34">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2249,7 +2317,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_10">
+                         <widget class="QLabel" name="label_46">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -2262,7 +2330,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_1">
+                         <widget class="QLineEdit" name="water_dur_le_7">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2278,7 +2346,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_4">
+                         <widget class="QLabel" name="label_47">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -2288,14 +2356,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_82" native="true">
+                      <widget class="QWidget" name="widget_103" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_15">
+                       <layout class="QHBoxLayout" name="horizontalLayout_38">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2309,7 +2377,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_11">
+                         <widget class="QLabel" name="label_54">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -2322,7 +2390,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_1">
+                         <widget class="QLineEdit" name="water_interval_le_7">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2338,7 +2406,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_14">
+                         <widget class="QLabel" name="label_55">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -2348,14 +2416,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_83" native="true">
+                      <widget class="QWidget" name="widget_107" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_16">
+                       <layout class="QHBoxLayout" name="horizontalLayout_42">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2369,7 +2437,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_12">
+                         <widget class="QLabel" name="label_62">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -2382,7 +2450,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_1">
+                         <widget class="QLineEdit" name="water_end_le_7">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2398,7 +2466,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_16">
+                         <widget class="QLabel" name="label_63">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -2479,14 +2547,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_85" native="true">
+                      <widget class="QWidget" name="widget_94" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_18">
+                       <layout class="QHBoxLayout" name="horizontalLayout_29">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2500,7 +2568,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_19">
+                         <widget class="QLabel" name="label_37">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -2513,7 +2581,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_2">
+                         <widget class="QLineEdit" name="water_start_le_6">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2529,7 +2597,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_20">
+                         <widget class="QLabel" name="label_38">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -2539,14 +2607,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_87" native="true">
+                      <widget class="QWidget" name="widget_98" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_20">
+                       <layout class="QHBoxLayout" name="horizontalLayout_33">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2560,7 +2628,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_23">
+                         <widget class="QLabel" name="label_44">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -2573,7 +2641,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_2">
+                         <widget class="QLineEdit" name="water_dur_le_6">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2589,7 +2657,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_24">
+                         <widget class="QLabel" name="label_45">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -2599,14 +2667,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_84" native="true">
+                      <widget class="QWidget" name="widget_102" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_17">
+                       <layout class="QHBoxLayout" name="horizontalLayout_37">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2620,7 +2688,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_17">
+                         <widget class="QLabel" name="label_52">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -2633,7 +2701,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_2">
+                         <widget class="QLineEdit" name="water_interval_le_6">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2649,7 +2717,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_18">
+                         <widget class="QLabel" name="label_53">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -2659,14 +2727,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_86" native="true">
+                      <widget class="QWidget" name="widget_106" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_19">
+                       <layout class="QHBoxLayout" name="horizontalLayout_41">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2680,7 +2748,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_21">
+                         <widget class="QLabel" name="label_60">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -2693,7 +2761,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_2">
+                         <widget class="QLineEdit" name="water_end_le_6">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2709,7 +2777,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_22">
+                         <widget class="QLabel" name="label_61">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -2787,14 +2855,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_88" native="true">
+                      <widget class="QWidget" name="widget_93" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_22">
+                       <layout class="QHBoxLayout" name="horizontalLayout_28">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2808,7 +2876,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_25">
+                         <widget class="QLabel" name="label_35">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -2821,7 +2889,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_3">
+                         <widget class="QLineEdit" name="water_start_le_5">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2837,7 +2905,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_26">
+                         <widget class="QLabel" name="label_36">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -2847,14 +2915,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_89" native="true">
+                      <widget class="QWidget" name="widget_97" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_23">
+                       <layout class="QHBoxLayout" name="horizontalLayout_32">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2868,7 +2936,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_27">
+                         <widget class="QLabel" name="label_42">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -2881,7 +2949,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_3">
+                         <widget class="QLineEdit" name="water_dur_le_5">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2897,7 +2965,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_28">
+                         <widget class="QLabel" name="label_43">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -2907,14 +2975,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_90" native="true">
+                      <widget class="QWidget" name="widget_101" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_24">
+                       <layout class="QHBoxLayout" name="horizontalLayout_36">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2928,7 +2996,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_29">
+                         <widget class="QLabel" name="label_50">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -2941,7 +3009,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_3">
+                         <widget class="QLineEdit" name="water_interval_le_5">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -2957,7 +3025,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_30">
+                         <widget class="QLabel" name="label_51">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -2967,14 +3035,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_91" native="true">
+                      <widget class="QWidget" name="widget_105" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_25">
+                       <layout class="QHBoxLayout" name="horizontalLayout_40">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -2988,7 +3056,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_31">
+                         <widget class="QLabel" name="label_58">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -3001,7 +3069,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_3">
+                         <widget class="QLineEdit" name="water_end_le_5">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3017,7 +3085,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_32">
+                         <widget class="QLabel" name="label_59">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -3403,14 +3471,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_93" native="true">
+                      <widget class="QWidget" name="widget_88" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_28">
+                       <layout class="QHBoxLayout" name="horizontalLayout_22">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -3424,7 +3492,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_35">
+                         <widget class="QLabel" name="label_25">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -3437,7 +3505,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_5">
+                         <widget class="QLineEdit" name="water_start_le_3">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3453,7 +3521,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_36">
+                         <widget class="QLabel" name="label_26">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -3463,14 +3531,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_97" native="true">
+                      <widget class="QWidget" name="widget_89" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_32">
+                       <layout class="QHBoxLayout" name="horizontalLayout_23">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -3484,7 +3552,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_42">
+                         <widget class="QLabel" name="label_27">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -3497,7 +3565,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_5">
+                         <widget class="QLineEdit" name="water_dur_le_3">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3513,7 +3581,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_43">
+                         <widget class="QLabel" name="label_28">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -3523,14 +3591,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_101" native="true">
+                      <widget class="QWidget" name="widget_90" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_36">
+                       <layout class="QHBoxLayout" name="horizontalLayout_24">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -3544,7 +3612,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_50">
+                         <widget class="QLabel" name="label_29">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -3557,7 +3625,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_5">
+                         <widget class="QLineEdit" name="water_interval_le_3">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3573,7 +3641,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_51">
+                         <widget class="QLabel" name="label_30">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -3583,14 +3651,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_105" native="true">
+                      <widget class="QWidget" name="widget_91" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_40">
+                       <layout class="QHBoxLayout" name="horizontalLayout_25">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -3604,7 +3672,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_58">
+                         <widget class="QLabel" name="label_31">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -3617,7 +3685,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_5">
+                         <widget class="QLineEdit" name="water_end_le_3">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3633,7 +3701,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_59">
+                         <widget class="QLabel" name="label_32">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -3711,14 +3779,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_94" native="true">
+                      <widget class="QWidget" name="widget_85" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_29">
+                       <layout class="QHBoxLayout" name="horizontalLayout_18">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -3732,7 +3800,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_37">
+                         <widget class="QLabel" name="label_19">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -3745,7 +3813,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_6">
+                         <widget class="QLineEdit" name="water_start_le_2">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3761,7 +3829,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_38">
+                         <widget class="QLabel" name="label_20">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -3771,14 +3839,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_98" native="true">
+                      <widget class="QWidget" name="widget_87" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_33">
+                       <layout class="QHBoxLayout" name="horizontalLayout_20">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -3792,7 +3860,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_44">
+                         <widget class="QLabel" name="label_23">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -3805,7 +3873,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_6">
+                         <widget class="QLineEdit" name="water_dur_le_2">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3821,7 +3889,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_45">
+                         <widget class="QLabel" name="label_24">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -3831,14 +3899,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_102" native="true">
+                      <widget class="QWidget" name="widget_84" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_37">
+                       <layout class="QHBoxLayout" name="horizontalLayout_17">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -3852,7 +3920,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_52">
+                         <widget class="QLabel" name="label_17">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -3865,7 +3933,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_6">
+                         <widget class="QLineEdit" name="water_interval_le_2">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3881,7 +3949,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_53">
+                         <widget class="QLabel" name="label_18">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -3891,14 +3959,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_106" native="true">
+                      <widget class="QWidget" name="widget_86" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_41">
+                       <layout class="QHBoxLayout" name="horizontalLayout_19">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -3912,7 +3980,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_60">
+                         <widget class="QLabel" name="label_21">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -3925,7 +3993,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_6">
+                         <widget class="QLineEdit" name="water_end_le_2">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -3941,7 +4009,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_61">
+                         <widget class="QLabel" name="label_22">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -4019,14 +4087,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_95" native="true">
+                      <widget class="QWidget" name="widget_80" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_30">
+                       <layout class="QHBoxLayout" name="horizontalLayout_13">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4040,7 +4108,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_39">
+                         <widget class="QLabel" name="label_9">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -4053,7 +4121,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_7">
+                         <widget class="QLineEdit" name="water_start_le_1">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4069,7 +4137,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_40">
+                         <widget class="QLabel" name="label_15">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -4079,14 +4147,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_99" native="true">
+                      <widget class="QWidget" name="widget_81" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_34">
+                       <layout class="QHBoxLayout" name="horizontalLayout_14">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4100,7 +4168,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_46">
+                         <widget class="QLabel" name="label_10">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -4113,7 +4181,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_7">
+                         <widget class="QLineEdit" name="water_dur_le_1">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4129,7 +4197,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_47">
+                         <widget class="QLabel" name="label_4">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -4139,14 +4207,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_103" native="true">
+                      <widget class="QWidget" name="widget_82" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_38">
+                       <layout class="QHBoxLayout" name="horizontalLayout_15">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4160,7 +4228,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_54">
+                         <widget class="QLabel" name="label_11">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -4173,7 +4241,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_7">
+                         <widget class="QLineEdit" name="water_interval_le_1">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4189,7 +4257,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_55">
+                         <widget class="QLabel" name="label_14">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -4199,14 +4267,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_107" native="true">
+                      <widget class="QWidget" name="widget_83" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_42">
+                       <layout class="QHBoxLayout" name="horizontalLayout_16">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4220,7 +4288,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_62">
+                         <widget class="QLabel" name="label_12">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -4233,7 +4301,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_7">
+                         <widget class="QLineEdit" name="water_end_le_1">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4249,7 +4317,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_63">
+                         <widget class="QLabel" name="label_16">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -4299,6 +4367,19 @@ QPushButton:pressed {
                    <widget class="QLabel" name="label_13">
                     <property name="text">
                      <string>Sloupec 2:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="stop_watering_col_2">
+                    <property name="maximumSize">
+                     <size>
+                      <width>120</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Zastavit zalévání</string>
                     </property>
                    </widget>
                   </item>
@@ -4430,14 +4511,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_108" native="true">
+                      <widget class="QWidget" name="widget_114" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_47">
+                       <layout class="QHBoxLayout" name="horizontalLayout_53">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4451,7 +4532,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_64">
+                         <widget class="QLabel" name="label_76">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -4464,7 +4545,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_8">
+                         <widget class="QLineEdit" name="water_start_le_14">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4480,7 +4561,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_65">
+                         <widget class="QLabel" name="label_77">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -4490,14 +4571,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_115" native="true">
+                      <widget class="QWidget" name="widget_121" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_54">
+                       <layout class="QHBoxLayout" name="horizontalLayout_60">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4511,7 +4592,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_78">
+                         <widget class="QLabel" name="label_90">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -4524,7 +4605,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_8">
+                         <widget class="QLineEdit" name="water_dur_le_14">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4540,7 +4621,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_79">
+                         <widget class="QLabel" name="label_91">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -4550,14 +4631,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_122" native="true">
+                      <widget class="QWidget" name="widget_128" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_61">
+                       <layout class="QHBoxLayout" name="horizontalLayout_67">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4571,7 +4652,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_92">
+                         <widget class="QLabel" name="label_104">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -4584,7 +4665,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_8">
+                         <widget class="QLineEdit" name="water_interval_le_14">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4600,7 +4681,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_93">
+                         <widget class="QLabel" name="label_105">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -4610,14 +4691,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_129" native="true">
+                      <widget class="QWidget" name="widget_135" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_68">
+                       <layout class="QHBoxLayout" name="horizontalLayout_74">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4631,7 +4712,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_106">
+                         <widget class="QLabel" name="label_118">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -4644,7 +4725,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_8">
+                         <widget class="QLineEdit" name="water_end_le_14">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4660,7 +4741,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_107">
+                         <widget class="QLabel" name="label_119">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -4738,14 +4819,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_109" native="true">
+                      <widget class="QWidget" name="widget_113" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_48">
+                       <layout class="QHBoxLayout" name="horizontalLayout_52">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4759,7 +4840,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_66">
+                         <widget class="QLabel" name="label_74">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -4772,7 +4853,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_9">
+                         <widget class="QLineEdit" name="water_start_le_13">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4788,7 +4869,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_67">
+                         <widget class="QLabel" name="label_75">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -4798,14 +4879,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_116" native="true">
+                      <widget class="QWidget" name="widget_120" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_55">
+                       <layout class="QHBoxLayout" name="horizontalLayout_59">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4819,7 +4900,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_80">
+                         <widget class="QLabel" name="label_88">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -4832,7 +4913,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_9">
+                         <widget class="QLineEdit" name="water_dur_le_13">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4848,7 +4929,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_81">
+                         <widget class="QLabel" name="label_89">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -4858,14 +4939,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_123" native="true">
+                      <widget class="QWidget" name="widget_127" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_62">
+                       <layout class="QHBoxLayout" name="horizontalLayout_66">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4879,7 +4960,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_94">
+                         <widget class="QLabel" name="label_102">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -4892,7 +4973,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_9">
+                         <widget class="QLineEdit" name="water_interval_le_13">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4908,7 +4989,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_95">
+                         <widget class="QLabel" name="label_103">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -4918,14 +4999,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_130" native="true">
+                      <widget class="QWidget" name="widget_134" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_69">
+                       <layout class="QHBoxLayout" name="horizontalLayout_73">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -4939,7 +5020,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_108">
+                         <widget class="QLabel" name="label_116">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -4952,7 +5033,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_9">
+                         <widget class="QLineEdit" name="water_end_le_13">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -4968,7 +5049,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_109">
+                         <widget class="QLabel" name="label_117">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -5046,14 +5127,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_110" native="true">
+                      <widget class="QWidget" name="widget_112" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_49">
+                       <layout class="QHBoxLayout" name="horizontalLayout_51">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5067,7 +5148,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_68">
+                         <widget class="QLabel" name="label_72">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -5080,7 +5161,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_10">
+                         <widget class="QLineEdit" name="water_start_le_12">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -5096,7 +5177,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_69">
+                         <widget class="QLabel" name="label_73">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -5106,14 +5187,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_117" native="true">
+                      <widget class="QWidget" name="widget_119" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_56">
+                       <layout class="QHBoxLayout" name="horizontalLayout_58">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5127,7 +5208,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_82">
+                         <widget class="QLabel" name="label_86">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -5140,7 +5221,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_10">
+                         <widget class="QLineEdit" name="water_dur_le_12">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -5156,7 +5237,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_83">
+                         <widget class="QLabel" name="label_87">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -5166,14 +5247,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_124" native="true">
+                      <widget class="QWidget" name="widget_126" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_63">
+                       <layout class="QHBoxLayout" name="horizontalLayout_65">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5187,7 +5268,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_96">
+                         <widget class="QLabel" name="label_100">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -5200,7 +5281,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_10">
+                         <widget class="QLineEdit" name="water_interval_le_12">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -5216,7 +5297,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_97">
+                         <widget class="QLabel" name="label_101">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -5226,14 +5307,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_131" native="true">
+                      <widget class="QWidget" name="widget_133" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_70">
+                       <layout class="QHBoxLayout" name="horizontalLayout_72">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5247,7 +5328,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_110">
+                         <widget class="QLabel" name="label_114">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -5260,7 +5341,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_10">
+                         <widget class="QLineEdit" name="water_end_le_12">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -5276,7 +5357,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_111">
+                         <widget class="QLabel" name="label_115">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -5662,14 +5743,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_112" native="true">
+                      <widget class="QWidget" name="widget_110" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_51">
+                       <layout class="QHBoxLayout" name="horizontalLayout_49">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5683,7 +5764,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_72">
+                         <widget class="QLabel" name="label_68">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -5696,7 +5777,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_12">
+                         <widget class="QLineEdit" name="water_start_le_10">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -5712,7 +5793,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_73">
+                         <widget class="QLabel" name="label_69">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -5722,14 +5803,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_119" native="true">
+                      <widget class="QWidget" name="widget_117" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_58">
+                       <layout class="QHBoxLayout" name="horizontalLayout_56">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5743,7 +5824,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_86">
+                         <widget class="QLabel" name="label_82">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -5756,7 +5837,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_12">
+                         <widget class="QLineEdit" name="water_dur_le_10">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -5772,7 +5853,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_87">
+                         <widget class="QLabel" name="label_83">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -5782,14 +5863,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_126" native="true">
+                      <widget class="QWidget" name="widget_124" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_65">
+                       <layout class="QHBoxLayout" name="horizontalLayout_63">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5803,7 +5884,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_100">
+                         <widget class="QLabel" name="label_96">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -5816,7 +5897,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_12">
+                         <widget class="QLineEdit" name="water_interval_le_10">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -5832,7 +5913,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_101">
+                         <widget class="QLabel" name="label_97">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -5842,14 +5923,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_133" native="true">
+                      <widget class="QWidget" name="widget_131" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_72">
+                       <layout class="QHBoxLayout" name="horizontalLayout_70">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5863,7 +5944,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_114">
+                         <widget class="QLabel" name="label_110">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -5876,7 +5957,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_12">
+                         <widget class="QLineEdit" name="water_end_le_10">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -5892,7 +5973,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_115">
+                         <widget class="QLabel" name="label_111">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -5970,14 +6051,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_113" native="true">
+                      <widget class="QWidget" name="widget_109" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_52">
+                       <layout class="QHBoxLayout" name="horizontalLayout_48">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -5991,7 +6072,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_74">
+                         <widget class="QLabel" name="label_66">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -6004,7 +6085,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_13">
+                         <widget class="QLineEdit" name="water_start_le_9">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6020,7 +6101,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_75">
+                         <widget class="QLabel" name="label_67">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -6030,14 +6111,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_120" native="true">
+                      <widget class="QWidget" name="widget_116" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_59">
+                       <layout class="QHBoxLayout" name="horizontalLayout_55">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6051,7 +6132,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_88">
+                         <widget class="QLabel" name="label_80">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -6064,7 +6145,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_13">
+                         <widget class="QLineEdit" name="water_dur_le_9">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6080,7 +6161,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_89">
+                         <widget class="QLabel" name="label_81">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -6090,14 +6171,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_127" native="true">
+                      <widget class="QWidget" name="widget_123" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_66">
+                       <layout class="QHBoxLayout" name="horizontalLayout_62">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6111,7 +6192,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_102">
+                         <widget class="QLabel" name="label_94">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -6124,7 +6205,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_13">
+                         <widget class="QLineEdit" name="water_interval_le_9">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6140,7 +6221,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_103">
+                         <widget class="QLabel" name="label_95">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -6150,14 +6231,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_134" native="true">
+                      <widget class="QWidget" name="widget_130" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_73">
+                       <layout class="QHBoxLayout" name="horizontalLayout_69">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6171,7 +6252,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_116">
+                         <widget class="QLabel" name="label_108">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -6184,7 +6265,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_13">
+                         <widget class="QLineEdit" name="water_end_le_9">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6200,7 +6281,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_117">
+                         <widget class="QLabel" name="label_109">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -6278,14 +6359,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_114" native="true">
+                      <widget class="QWidget" name="widget_108" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_53">
+                       <layout class="QHBoxLayout" name="horizontalLayout_47">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6299,7 +6380,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_76">
+                         <widget class="QLabel" name="label_64">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -6312,7 +6393,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_14">
+                         <widget class="QLineEdit" name="water_start_le_8">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6328,7 +6409,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_77">
+                         <widget class="QLabel" name="label_65">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -6338,14 +6419,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_121" native="true">
+                      <widget class="QWidget" name="widget_115" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_60">
+                       <layout class="QHBoxLayout" name="horizontalLayout_54">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6359,7 +6440,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_90">
+                         <widget class="QLabel" name="label_78">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -6372,7 +6453,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_14">
+                         <widget class="QLineEdit" name="water_dur_le_8">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6388,7 +6469,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_91">
+                         <widget class="QLabel" name="label_79">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -6398,14 +6479,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_128" native="true">
+                      <widget class="QWidget" name="widget_122" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_67">
+                       <layout class="QHBoxLayout" name="horizontalLayout_61">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6419,7 +6500,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_104">
+                         <widget class="QLabel" name="label_92">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -6432,7 +6513,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_14">
+                         <widget class="QLineEdit" name="water_interval_le_8">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6448,7 +6529,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_105">
+                         <widget class="QLabel" name="label_93">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -6458,14 +6539,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_135" native="true">
+                      <widget class="QWidget" name="widget_129" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_74">
+                       <layout class="QHBoxLayout" name="horizontalLayout_68">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6479,7 +6560,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_118">
+                         <widget class="QLabel" name="label_106">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -6492,7 +6573,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_14">
+                         <widget class="QLineEdit" name="water_end_le_8">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6508,7 +6589,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_119">
+                         <widget class="QLabel" name="label_107">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -6558,6 +6639,19 @@ QPushButton:pressed {
                    <widget class="QLabel" name="label_3">
                     <property name="text">
                      <string>Sloupec 3:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="stop_watering_col_3">
+                    <property name="maximumSize">
+                     <size>
+                      <width>120</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Zastavit zalévání</string>
                     </property>
                    </widget>
                   </item>
@@ -6692,14 +6786,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_136" native="true">
+                      <widget class="QWidget" name="widget_142" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_82">
+                       <layout class="QHBoxLayout" name="horizontalLayout_88">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6713,7 +6807,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_120">
+                         <widget class="QLabel" name="label_132">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -6726,7 +6820,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_15">
+                         <widget class="QLineEdit" name="water_start_le_21">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6742,7 +6836,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_121">
+                         <widget class="QLabel" name="label_133">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -6752,14 +6846,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_143" native="true">
+                      <widget class="QWidget" name="widget_149" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_89">
+                       <layout class="QHBoxLayout" name="horizontalLayout_95">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6773,7 +6867,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_134">
+                         <widget class="QLabel" name="label_146">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -6786,7 +6880,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_15">
+                         <widget class="QLineEdit" name="water_dur_le_21">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6802,7 +6896,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_135">
+                         <widget class="QLabel" name="label_147">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -6812,14 +6906,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_150" native="true">
+                      <widget class="QWidget" name="widget_156" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_96">
+                       <layout class="QHBoxLayout" name="horizontalLayout_102">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6833,7 +6927,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_148">
+                         <widget class="QLabel" name="label_160">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -6846,7 +6940,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_15">
+                         <widget class="QLineEdit" name="water_interval_le_21">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6862,7 +6956,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_149">
+                         <widget class="QLabel" name="label_161">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -6872,14 +6966,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_157" native="true">
+                      <widget class="QWidget" name="widget_163" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_103">
+                       <layout class="QHBoxLayout" name="horizontalLayout_109">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -6893,7 +6987,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_162">
+                         <widget class="QLabel" name="label_174">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -6906,7 +7000,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_15">
+                         <widget class="QLineEdit" name="water_end_le_21">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -6922,7 +7016,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_163">
+                         <widget class="QLabel" name="label_175">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -7000,14 +7094,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_137" native="true">
+                      <widget class="QWidget" name="widget_141" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_83">
+                       <layout class="QHBoxLayout" name="horizontalLayout_87">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7021,7 +7115,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_122">
+                         <widget class="QLabel" name="label_130">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -7034,7 +7128,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_16">
+                         <widget class="QLineEdit" name="water_start_le_20">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7050,7 +7144,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_123">
+                         <widget class="QLabel" name="label_131">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -7060,14 +7154,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_144" native="true">
+                      <widget class="QWidget" name="widget_148" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_90">
+                       <layout class="QHBoxLayout" name="horizontalLayout_94">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7081,7 +7175,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_136">
+                         <widget class="QLabel" name="label_144">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -7094,7 +7188,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_16">
+                         <widget class="QLineEdit" name="water_dur_le_20">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7110,7 +7204,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_137">
+                         <widget class="QLabel" name="label_145">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -7120,14 +7214,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_151" native="true">
+                      <widget class="QWidget" name="widget_155" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_97">
+                       <layout class="QHBoxLayout" name="horizontalLayout_101">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7141,7 +7235,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_150">
+                         <widget class="QLabel" name="label_158">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -7154,7 +7248,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_16">
+                         <widget class="QLineEdit" name="water_interval_le_20">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7170,7 +7264,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_151">
+                         <widget class="QLabel" name="label_159">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -7180,14 +7274,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_158" native="true">
+                      <widget class="QWidget" name="widget_162" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_104">
+                       <layout class="QHBoxLayout" name="horizontalLayout_108">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7201,7 +7295,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_164">
+                         <widget class="QLabel" name="label_172">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -7214,7 +7308,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_16">
+                         <widget class="QLineEdit" name="water_end_le_20">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7230,7 +7324,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_165">
+                         <widget class="QLabel" name="label_173">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -7308,14 +7402,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_138" native="true">
+                      <widget class="QWidget" name="widget_140" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_84">
+                       <layout class="QHBoxLayout" name="horizontalLayout_86">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7329,7 +7423,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_124">
+                         <widget class="QLabel" name="label_128">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -7342,7 +7436,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_17">
+                         <widget class="QLineEdit" name="water_start_le_19">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7358,7 +7452,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_125">
+                         <widget class="QLabel" name="label_129">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -7368,14 +7462,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_145" native="true">
+                      <widget class="QWidget" name="widget_147" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_91">
+                       <layout class="QHBoxLayout" name="horizontalLayout_93">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7389,7 +7483,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_138">
+                         <widget class="QLabel" name="label_142">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -7402,7 +7496,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_17">
+                         <widget class="QLineEdit" name="water_dur_le_19">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7418,7 +7512,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_139">
+                         <widget class="QLabel" name="label_143">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -7428,14 +7522,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_152" native="true">
+                      <widget class="QWidget" name="widget_154" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_98">
+                       <layout class="QHBoxLayout" name="horizontalLayout_100">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7449,7 +7543,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_152">
+                         <widget class="QLabel" name="label_156">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -7462,7 +7556,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_17">
+                         <widget class="QLineEdit" name="water_interval_le_19">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7478,7 +7572,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_153">
+                         <widget class="QLabel" name="label_157">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -7488,14 +7582,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_159" native="true">
+                      <widget class="QWidget" name="widget_161" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_105">
+                       <layout class="QHBoxLayout" name="horizontalLayout_107">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7509,7 +7603,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_166">
+                         <widget class="QLabel" name="label_170">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -7522,7 +7616,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_17">
+                         <widget class="QLineEdit" name="water_end_le_19">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7538,7 +7632,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_167">
+                         <widget class="QLabel" name="label_171">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -7924,14 +8018,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_140" native="true">
+                      <widget class="QWidget" name="widget_138" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_86">
+                       <layout class="QHBoxLayout" name="horizontalLayout_84">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -7945,7 +8039,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_128">
+                         <widget class="QLabel" name="label_124">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -7958,7 +8052,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_19">
+                         <widget class="QLineEdit" name="water_start_le_17">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -7974,7 +8068,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_129">
+                         <widget class="QLabel" name="label_125">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -7984,14 +8078,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_147" native="true">
+                      <widget class="QWidget" name="widget_145" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_93">
+                       <layout class="QHBoxLayout" name="horizontalLayout_91">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8005,7 +8099,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_142">
+                         <widget class="QLabel" name="label_138">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -8018,7 +8112,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_19">
+                         <widget class="QLineEdit" name="water_dur_le_17">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8034,7 +8128,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_143">
+                         <widget class="QLabel" name="label_139">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -8044,14 +8138,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_154" native="true">
+                      <widget class="QWidget" name="widget_152" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_100">
+                       <layout class="QHBoxLayout" name="horizontalLayout_98">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8065,7 +8159,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_156">
+                         <widget class="QLabel" name="label_152">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -8078,7 +8172,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_19">
+                         <widget class="QLineEdit" name="water_interval_le_17">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8094,7 +8188,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_157">
+                         <widget class="QLabel" name="label_153">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -8104,14 +8198,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_161" native="true">
+                      <widget class="QWidget" name="widget_159" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_107">
+                       <layout class="QHBoxLayout" name="horizontalLayout_105">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8125,7 +8219,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_170">
+                         <widget class="QLabel" name="label_166">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -8138,7 +8232,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_19">
+                         <widget class="QLineEdit" name="water_end_le_17">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8154,7 +8248,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_171">
+                         <widget class="QLabel" name="label_167">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -8232,14 +8326,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_141" native="true">
+                      <widget class="QWidget" name="widget_137" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_87">
+                       <layout class="QHBoxLayout" name="horizontalLayout_83">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8253,7 +8347,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_130">
+                         <widget class="QLabel" name="label_122">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -8266,7 +8360,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_20">
+                         <widget class="QLineEdit" name="water_start_le_16">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8282,7 +8376,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_131">
+                         <widget class="QLabel" name="label_123">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -8292,14 +8386,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_148" native="true">
+                      <widget class="QWidget" name="widget_144" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_94">
+                       <layout class="QHBoxLayout" name="horizontalLayout_90">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8313,7 +8407,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_144">
+                         <widget class="QLabel" name="label_136">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -8326,7 +8420,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_20">
+                         <widget class="QLineEdit" name="water_dur_le_16">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8342,7 +8436,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_145">
+                         <widget class="QLabel" name="label_137">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -8352,14 +8446,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_155" native="true">
+                      <widget class="QWidget" name="widget_151" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_101">
+                       <layout class="QHBoxLayout" name="horizontalLayout_97">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8373,7 +8467,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_158">
+                         <widget class="QLabel" name="label_150">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -8386,7 +8480,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_20">
+                         <widget class="QLineEdit" name="water_interval_le_16">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8402,7 +8496,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_159">
+                         <widget class="QLabel" name="label_151">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -8412,14 +8506,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_162" native="true">
+                      <widget class="QWidget" name="widget_158" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_108">
+                       <layout class="QHBoxLayout" name="horizontalLayout_104">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8433,7 +8527,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_172">
+                         <widget class="QLabel" name="label_164">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -8446,7 +8540,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_20">
+                         <widget class="QLineEdit" name="water_end_le_16">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8462,7 +8556,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_173">
+                         <widget class="QLabel" name="label_165">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -8540,14 +8634,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_142" native="true">
+                      <widget class="QWidget" name="widget_136" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>200</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_88">
+                       <layout class="QHBoxLayout" name="horizontalLayout_82">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8561,7 +8655,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_132">
+                         <widget class="QLabel" name="label_120">
                           <property name="maximumSize">
                            <size>
                             <width>115</width>
@@ -8574,7 +8668,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_start_le_21">
+                         <widget class="QLineEdit" name="water_start_le_15">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8590,7 +8684,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_133">
+                         <widget class="QLabel" name="label_121">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -8600,14 +8694,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_149" native="true">
+                      <widget class="QWidget" name="widget_143" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>165</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_95">
+                       <layout class="QHBoxLayout" name="horizontalLayout_89">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8621,7 +8715,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_146">
+                         <widget class="QLabel" name="label_134">
                           <property name="maximumSize">
                            <size>
                             <width>75</width>
@@ -8634,7 +8728,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_dur_le_21">
+                         <widget class="QLineEdit" name="water_dur_le_15">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8650,7 +8744,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_147">
+                         <widget class="QLabel" name="label_135">
                           <property name="text">
                            <string>s</string>
                           </property>
@@ -8660,14 +8754,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_156" native="true">
+                      <widget class="QWidget" name="widget_150" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>210</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_102">
+                       <layout class="QHBoxLayout" name="horizontalLayout_96">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8681,7 +8775,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_160">
+                         <widget class="QLabel" name="label_148">
                           <property name="maximumSize">
                            <size>
                             <width>110</width>
@@ -8694,7 +8788,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_interval_le_21">
+                         <widget class="QLineEdit" name="water_interval_le_15">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8710,7 +8804,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_161">
+                         <widget class="QLabel" name="label_149">
                           <property name="text">
                            <string>min</string>
                           </property>
@@ -8720,14 +8814,14 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QWidget" name="widget_163" native="true">
+                      <widget class="QWidget" name="widget_157" native="true">
                        <property name="maximumSize">
                         <size>
                          <width>195</width>
                          <height>16777215</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_109">
+                       <layout class="QHBoxLayout" name="horizontalLayout_103">
                         <property name="leftMargin">
                          <number>2</number>
                         </property>
@@ -8741,7 +8835,7 @@ QPushButton:pressed {
                          <number>2</number>
                         </property>
                         <item>
-                         <widget class="QLabel" name="label_174">
+                         <widget class="QLabel" name="label_162">
                           <property name="maximumSize">
                            <size>
                             <width>105</width>
@@ -8754,7 +8848,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="water_end_le_21">
+                         <widget class="QLineEdit" name="water_end_le_15">
                           <property name="minimumSize">
                            <size>
                             <width>0</width>
@@ -8770,7 +8864,7 @@ QPushButton:pressed {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_175">
+                         <widget class="QLabel" name="label_163">
                           <property name="text">
                            <string>čas</string>
                           </property>
@@ -8787,6 +8881,41 @@ QPushButton:pressed {
                </item>
               </layout>
              </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="solution_config_pg">
+          <layout class="QVBoxLayout" name="verticalLayout_26">
+           <item>
+            <widget class="QWidget" name="widget_189" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_166">
+              <item>
+               <widget class="QWidget" name="widget_190" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>1000</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_167">
+                 <item>
+                  <widget class="QWidget" name="widget_191" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_192" native="true"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
           </layout>
