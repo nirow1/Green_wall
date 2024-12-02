@@ -17,6 +17,7 @@ Controller Integration: Employs Snap7 for efficient communication with Siemens L
 Camera Integration: Uses OpenCV2 to handle IP camera functionalities.
 
 **Technologies Used**
+
 PySide6: For creating the GUI.
 
 Snap7: For integrating Siemens LOGO! controllers.
