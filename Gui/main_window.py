@@ -1,12 +1,15 @@
-from datetime import datetime
-from random import randrange
-
-import cv2
 import numpy as np
+import csv
+import cv2
+import os
+
 from PySide6.QtWidgets import QMainWindow, QFileDialog, QLineEdit, QPushButton, QMessageBox, QLabel
 from PySide6.QtCore import QPropertyAnimation, QTimer, Qt
 from PySide6.QtGui import QIcon, QImage, QPixmap
+from datetime import datetime
 from functools import partial
+from random import randrange
+from typing import List, Any
 
 from Utils.static_methods import dict_to_bytearray, time_to_hexa, ushort_to_hexa
 from Utils.number_validator import NumberValidator
@@ -27,29 +30,41 @@ class MainWindow(QMainWindow):
         # variables
         self.valve_byte_1 =  {i: False for i in range(1, 17)}
         self.valve_byte_2 = {i: False for i in range(1, 17)}
+        self.data_to_save: List[Any] = [0.0 for _ in range(12)]
+        self.reset_save_file = False
+        self.save_file_path: str= ""
+        self.saving: bool= False
+        self.dir_name: str= ""
 
         self.logo = LogoControl("192.168.1.10")
         self.logo_2 = LogoControl("192.168.1.11")
         self.cam = Camera("192.168.1.50", 10)
         self.cam_2 = Camera("192.168.1.51", 10)
+        self.save_timer = QTimer()
+        self.save_timer.timeout.connect(self._save_data)
         self.pictures = [[], []]
 
-
-        #self.logo.start()
+        self.logo.start()
         #self.logo_2.start()
-        #self.cam.start()
-        #self.cam_2.start()
+        self.cam.start()
+        self.cam_2.start()
 
         # cart initializations
         self.line_chart = LineChart("test", 200, (-100, 100), ["test_line", "test_line_2"], 2)
         self.line_chart_2 = LineChart("test2", 200, (-100, 100))
+        self.line_chart_3 = LineChart("test3", 200, (-100, 100))
+        self.line_chart_4 = LineChart("test4", 200, (-100, 100))
+        self.line_chart_5 = LineChart("test5", 200, (-100, 100))
         self.ui.chart_1.addWidget(self.line_chart)
         self.ui.chart_2.addWidget(self.line_chart_2)
+        self.ui.chart_3.addWidget(self.line_chart_3)
+        self.ui.chart_4.addWidget(self.line_chart_4)
+        self.ui.chart_5.addWidget(self.line_chart_5)
 
-        self.setup_validators()
+        self._setup_validators()
 
         self.side_panel_animation = QPropertyAnimation(self.ui.widget, b"maximumWidth")
-        self.button_functions()
+        self._button_functions()
         self._handle_emits()
 
     def _init_graphical_changes(self):
@@ -73,7 +88,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentWidget(self.ui.watering_pg)
         self.showMaximized()
 
-    def setup_validators(self):
+    def _setup_validators(self):
         time_validator = TimeValidator()
         n3_validator = NumberValidator(3)
         n4_validator = NumberValidator(4)
@@ -95,7 +110,7 @@ class MainWindow(QMainWindow):
         self.ui.add_ph_solution_le.setValidator(n3_validator)
 
 
-    def button_functions(self):
+    def _button_functions(self):
         self.ui.logo_4j_btn.clicked.connect(lambda: self._menu_animation(True))
         self.ui.expand_menu_btn.clicked.connect(lambda: self._menu_animation(False))
 
@@ -105,6 +120,11 @@ class MainWindow(QMainWindow):
         self.ui.solutio_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.solution_pg))
         self.ui.cams_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.camera_pg))
         self.ui.chart_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.chart_pg))
+        self.ui.solution_config_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.solution_config_pg))
+
+        self.ui.dir_name_btn.clicked.connect(self._set_dir_mame)
+        self.ui.start_saving_btn.clicked.connect(lambda: self._set_saving(True))
+        self.ui.stop_saving_btn.clicked.connect(lambda: self._set_saving(False))
 
         self.ui.cam_dir_btn.clicked.connect(lambda: self._open_dir_dialog(self.ui.cam_dir_le))
         self.ui.solution_dir_btn.clicked.connect(lambda: self._open_dir_dialog(self.ui.solution_dir_le))
@@ -124,9 +144,9 @@ class MainWindow(QMainWindow):
         self.ui.water_all_btn.clicked.connect(lambda: self._manage_all(True, "green"))
         self.ui.stop_watering_btn.clicked.connect(lambda: self._manage_all(False, "grey"))
 
-        self.ui.stop_watering_col_1.clicked.connect(lambda: self._manage_col(1, True))
-        self.ui.stop_watering_col_2.clicked.connect(lambda: self._manage_col(2, True))
-        self.ui.stop_watering_col_3.clicked.connect(lambda: self._manage_col(3, True))
+        self.ui.stop_watering_col_1.clicked.connect(lambda: self._manage_col(1, False))
+        self.ui.stop_watering_col_2.clicked.connect(lambda: self._manage_col(2, False))
+        self.ui.stop_watering_col_3.clicked.connect(lambda: self._manage_col(3, False))
         self.ui.water_col_btn_1.clicked.connect(lambda: self._manage_col(1, True))
         self.ui.water_col_btn_2.clicked.connect(lambda: self._manage_col(2, True))
         self.ui.water_col_btn_3.clicked.connect(lambda: self._manage_col(3, True))
@@ -147,8 +167,6 @@ class MainWindow(QMainWindow):
             water_btn: QPushButton = self.ui.scrollArea.findChild(QPushButton, f"water_btn_{i}")
             water_btn.clicked.connect(partial(self._open_valve, i=i))
 
-        self.ui.pushButton_4.clicked.connect(lambda: print(f"{self.valve_byte_1}, {self.valve_byte_2}"))
-
     def _open_valve(self, i):
         if i <= 8:
             self.valve_byte_1[i] = not self.valve_byte_1[i]
@@ -165,20 +183,20 @@ class MainWindow(QMainWindow):
         if col == 1:
             for i in range(1, 8):
                 self.valve_byte_1[i] = state
-                self._switch_led(i, "green" if state else "gray")
+                self._switch_led(i, "green" if state else "grey")
             self.logo.write_logo_byte(1, dict_to_bytearray(self.valve_byte_1))
         elif col == 2:
             self.valve_byte_1[8] = state
-            self._switch_led(8,  "green" if state else "gray")
+            self._switch_led(8,  "green" if state else "grey")
             for i in range(1, 7):
                 self.valve_byte_2[i] = state
-                self._switch_led(i + 8, "green" if state else "gray")
+                self._switch_led(i + 8, "green" if state else "grey")
             self.logo.write_logo_byte(1, dict_to_bytearray(self.valve_byte_1))
             self.logo_2.write_logo_byte(1, dict_to_bytearray(self.valve_byte_2))
         else:
             for i in range(7, 14):
                 self.valve_byte_2[i] = state
-                self._switch_led(i + 8, "green" if state else "gray")
+                self._switch_led(i + 8, "green" if state else "grey")
             self.logo_2.write_logo_byte(1, dict_to_bytearray(self.valve_byte_2))
 
     def _fill_column(self, col):
@@ -237,6 +255,8 @@ class MainWindow(QMainWindow):
         self.ui.expand_wgt.setHidden(not state)
 
     def _update_cam_view(self, i: str, frame):
+        time :QLabel= self.ui.widget_7.findChild(QLabel, f"time_cam_lbl_{i}")
+        time.setText(datetime.now().strftime("%d.%m. %H:%M"))
         self.pictures[int(i)-1] = frame
 
         cam_display: QLabel= self.ui.widget_7.findChild(QLabel, f"cam_lbl_{i}")
@@ -295,6 +315,39 @@ class MainWindow(QMainWindow):
     def _switch_led(self, led, color):
         led: QLabel = self.ui.scrollArea.findChild(QLabel, f"valve_state_lbl_{led}")
         led.setPixmap(QPixmap(f'./App_data/{color}_led_15.png'))
+
+    def _set_dir_mame(self):
+        self.dir_name = self.ui.dir_name_le.text()
+
+    def _set_saving(self, state):
+        self.saving = state
+        self.reset_save_file = state
+        self.save_file_path = (f"{self.ui.solution_dir_le.text() if self.ui.solution_dir_le.text() != "" else"."}"
+                               f"/{self.dir_name if self.ui.dir_name_le.text() != "" else datetime.now().strftime("%Y-%m-%d_%H%M")}.csv")
+        self.ui.start_saving_btn.setHidden(state)
+        self.ui.stop_saving_btn.setHidden(not state)
+        if state:
+            self.save_timer.start(1000)
+        else:
+            self.save_timer.stop()
+
+    def _save_data(self):
+        exists = os.path.exists(self.save_file_path)
+
+        time = datetime.now().time()
+        self.data_to_save[0] = time
+
+        if self.reset_save_file:
+            open(self.save_file_path, "w")
+            exists = False
+            self.reset_save_file = False
+
+        with open(self.save_file_path, 'a', newline="") as f:
+            writer = csv.writer(f)
+            if not exists:
+                writer.writerow(["Time", "%", "Pa", "oC", "Pa", "m.s-1", "kg.m-3",
+                                 "boiler", "T3", "T4", "T5", "T6"])
+            writer.writerow(self.data_to_save)
 
     def _switch_all_leds(self, color: str):
         led = f'./App_data/{color}_led_15.png'

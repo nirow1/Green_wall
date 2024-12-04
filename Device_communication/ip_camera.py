@@ -30,12 +30,12 @@ class Camera(QThread):
             self.connected = self.capture.isOpened()
             if self.connected:
                 self.thread.start()
-                self.update_image()
+                self._update_image()
                 break
 
             sleep(5)
 
-    def update_image(self):
+    def _update_image(self):
         while self.connected:
             if self.capture.isOpened():
                 (self.status, self.frame) = self.capture.read()
