@@ -19,7 +19,6 @@ class LogoControl(QThread):
         self.vfd_connected = False
         self.sending = False
         self.lasers = [0, 0, 0]
-        print(struct.unpack(">HHH",  b'\x11\x11\x11\x12\x11\x13'))
 
     def run(self):
         self._connect_to_logo()
@@ -34,7 +33,7 @@ class LogoControl(QThread):
                 break
             except Exception as e:
                 print(e)
-                sleep(5)
+                sleep(10)
 
     def _get_logo_data(self):
         while self.connected:
@@ -52,7 +51,7 @@ class LogoControl(QThread):
                 logo_data.append(2 * water_data[2]) # Conductivity
                 logo_data.append(2* water_data[3]-1000) # Radox potential
                 logo_data.append(water_data[5] / 10) # temperature
-                self.LOGO_DATA.emit(logo_data)
+                self.LOGO_DATA.emit(logo_data) # 0-2 green wall info (temp, hum, co2), 3-7 general info (ph, O2, cond, radox, temp)
                 sleep(0.2)
             else:
                 sleep(0.05)
@@ -72,7 +71,7 @@ class LogoControl(QThread):
         while self.connected:
             if not self.sending:
                 self.sending = True
-                print(f"{pos}, {logo_bytes}")
+                # print(f"{pos}, {logo_bytes}")
                 self.logo.db_write(0, pos, logo_bytes)
                 self.sending = False
                 break

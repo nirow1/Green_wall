@@ -30,6 +30,10 @@ class MainWindow(QMainWindow):
         # variables
         self.valve_byte_1 =  {i: False for i in range(1, 17)}
         self.valve_byte_2 = {i: False for i in range(1, 17)}
+        self.cond_byte = {i: False for i in range(1, 9)}
+        self.ph_byte = {i: False for i in range(1, 9)}
+        self.oxyd_byte = {i: False for i in range(1, 9)}
+
         self.data_to_save: List[Any] = [0.0 for _ in range(12)]
         self.reset_save_file = False
         self.save_file_path: str= ""
@@ -138,8 +142,9 @@ class MainWindow(QMainWindow):
         self.ui.oxidation_on_btn.clicked.connect(lambda: self._regulate_oxidation(True))
         self.ui.oxidation_off_btn.clicked.connect(lambda: self._regulate_oxidation(False))
 
-        self.ui.lights_on_btn.clicked.connect(lambda: self._lights(True))
-        self.ui.lights_off_btn.clicked.connect(lambda: self._lights(False))
+        self.ui.lights_on_btn.clicked.connect(lambda: self._on_off_lights(True))
+        self.ui.lights_off_btn.clicked.connect(lambda: self._on_off_lights(False))
+        self.ui.save_lights_btn.clicked.connect(self.save_lights)
 
         self.ui.water_all_btn.clicked.connect(lambda: self._manage_all(True, "green"))
         self.ui.stop_watering_btn.clicked.connect(lambda: self._manage_all(False, "grey"))
@@ -226,18 +231,41 @@ class MainWindow(QMainWindow):
     def _regulate_conductivity(self, state: bool):
         self.ui.cond_reg_on_btn.setHidden(state)
         self.ui.cond_reg_off_btn.setHidden(not state)
+        self.cond_byte[1] = state
+        self.cond_byte[2] = state
+        self.cond_byte[4] = state
+        if state:
+            self.logo.write_logo_byte(300, dict_to_bytearray(self.cond_byte))
+            self.logo.write_logo_ushort(302, int(self.ui.cond_reg_le.text()))
 
     def _regulate_oxidation(self, state: bool):
         self.ui.oxidation_on_btn.setHidden(state)
         self.ui.oxidation_off_btn.setHidden(not state)
+        self.oxyd_byte[1] = state
+        self.oxyd_byte[2] = state
+        self.oxyd_byte[4] = state
+        if state:
+            self.logo.write_logo_byte(300, dict_to_bytearray(self.oxyd_byte))
+            self.logo.write_logo_ushort(302, int(self.ui.cond_reg_le.text()))
 
     def _regulate_ph(self, state: bool):
         self.ui.ph_on_btn.setHidden(state)
         self.ui.ph_off_btn.setHidden(not state)
+        self.ph_byte[1] = state
+        self.ph_byte[2] = state
+        self.ph_byte[4] = state
+        if state:
+            self.logo.write_logo_byte(300, dict_to_bytearray(self.ph_byte))
+            self.logo.write_logo_ushort(302, int(self.ui.cond_reg_le.text()))
 
-    def _lights(self, state: bool):
+    def _on_off_lights(self, state: bool):
         self.ui.lights_on_btn.setHidden(state)
         self.ui.lights_off_btn.setHidden(not state)
+        self.logo.write_logo_byte(2, bytearray(b'\x01') if state else bytearray(b'\x00'))
+
+    def save_lights(self):
+        self.logo.write_logo_byte(376, time_to_hexa(self.ui.lights_on_le.text()))
+        self.logo.write_logo_byte(378, time_to_hexa(self.ui.lights_off_le.text()))
 
     def _open_dir_dialog(self, lineedit: QLineEdit):
         options = QFileDialog(self).options()
@@ -299,17 +327,26 @@ class MainWindow(QMainWindow):
         self.line_chart_2.update_chart([chart2])
 
     def _save_watering_data(self):
+        with open("./App_data/valve_settings.csv", 'w') as f:
+            pass
         self.logo.write_logo_byte(400, self._data_to_bytearray(1, 17))
-        self.logo_2.write_logo_byte(400, self._data_to_bytearray(17, 21))
+        self.logo_2.write_logo_byte(400, self._data_to_bytearray(17, 22))
 
     def _data_to_bytearray(self, start, end) -> bytearray:
         data_array = b''
         for i in range(start, end):
-            data_array += time_to_hexa(self.ui.scrollArea.findChild(QLineEdit, f"water_start_le_{str(i)}").text())
-            data_array += ushort_to_hexa(self.ui.scrollArea.findChild(QLineEdit, f"water_dur_le_{str(i)}").text())
-            data_array += ushort_to_hexa(self.ui.scrollArea.findChild(QLineEdit, f"water_interval_le_{str(i)}").text())
-            data_array += time_to_hexa(self.ui.scrollArea.findChild(QLineEdit, f"water_end_le_{str(i)}").text())
-        print(data_array)
+            start_time = self.ui.scrollArea.findChild(QLineEdit, f"water_start_le_{str(i)}").text()
+            duration = self.ui.scrollArea.findChild(QLineEdit, f"water_dur_le_{str(i)}").text()
+            pause = self.ui.scrollArea.findChild(QLineEdit, f"water_interval_le_{str(i)}").text()
+            end_time = self.ui.scrollArea.findChild(QLineEdit, f"water_end_le_{str(i)}").text()
+            data_array += time_to_hexa(start_time)
+            data_array += ushort_to_hexa(duration)
+            data_array += ushort_to_hexa(pause)
+            data_array += time_to_hexa(end_time)
+            with open("./App_data/valve_settings.csv", 'a') as f:
+                writer = csv.writer(f)
+                writer.writerow([f"v{i}", start_time, duration, pause, end_time])
+
         return bytearray(data_array)
 
     def _switch_led(self, led, color):
