@@ -120,6 +120,7 @@ class MainWindow(QMainWindow):
 
         self.ui.watering_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.watering_pg))
         self.ui.save_watering_setting_btn.clicked.connect(self._save_watering_data)
+        self.ui.current_settings_btn.clicked.connect(self._load_valve_settings)
 
         self.ui.solutio_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.solution_pg))
         self.ui.cams_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.camera_pg))
@@ -214,7 +215,7 @@ class MainWindow(QMainWindow):
         if alert == QMessageBox.StandardButton.Yes:
             for name in le_names:
                 le_values.append(self.ui.scrollArea.findChild(QLineEdit, name+str(pos)).text())
-            for i in range(pos+1, pos+7):
+            for i in range(pos+6, pos-1, -1):
                 for j, name in enumerate(le_names):
                     start_le: QLineEdit = self.ui.scrollArea.findChild(QLineEdit, name + str(i))
                     start_le.setText(le_values[j])
@@ -343,11 +344,20 @@ class MainWindow(QMainWindow):
             data_array += ushort_to_hexa(duration)
             data_array += ushort_to_hexa(pause)
             data_array += time_to_hexa(end_time)
-            with open("./App_data/valve_settings.csv", 'a') as f:
+            with open("./App_data/valve_settings.csv", 'a', newline='') as f:
                 writer = csv.writer(f)
                 writer.writerow([f"v{i}", start_time, duration, pause, end_time])
 
         return bytearray(data_array)
+
+    def _load_valve_settings(self):
+        with open("./App_data/valve_settings.csv", 'r') as f:
+            reader = list(csv.reader(f))
+            le_names = ["water_start_le_", "water_dur_le_", "water_interval_le_", "water_end_le_"]
+            for i in range(22):
+                for name in range(4):
+                    line: QLineEdit= self.ui.scrollArea.findChild(QLineEdit, le_names[name] + str(i+1))
+                    line.setText(reader[i][name+1])
 
     def _switch_led(self, led, color):
         led: QLabel = self.ui.scrollArea.findChild(QLabel, f"valve_state_lbl_{led}")

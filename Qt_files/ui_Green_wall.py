@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_wallecFwUt.ui'
+## Form generated from reading UI file 'Green_wallMPKcxm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -1119,7 +1119,7 @@ class Ui_MainWindow(object):
 
         self.current_settings_btn = QPushButton(self.widget_14)
         self.current_settings_btn.setObjectName(u"current_settings_btn")
-        self.current_settings_btn.setEnabled(False)
+        self.current_settings_btn.setEnabled(True)
         self.current_settings_btn.setMinimumSize(QSize(0, 40))
         self.current_settings_btn.setMaximumSize(QSize(173, 16777215))
 
@@ -4672,7 +4672,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
