@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_wallMPKcxm.ui'
+## Form generated from reading UI file 'Green_wallSJdgLS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -294,7 +294,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_141.setContentsMargins(-1, 0, -1, 0)
         self.widget_39 = QWidget(self.widget_166)
         self.widget_39.setObjectName(u"widget_39")
-        self.widget_39.setMaximumSize(QSize(350, 16777215))
+        self.widget_39.setMaximumSize(QSize(360, 16777215))
         self.verticalLayout_18 = QVBoxLayout(self.widget_39)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.verticalLayout_18.setContentsMargins(1, 1, 1, 1)
@@ -385,7 +385,7 @@ class Ui_MainWindow(object):
 
         self.widget_38 = QWidget(self.widget_166)
         self.widget_38.setObjectName(u"widget_38")
-        self.widget_38.setMaximumSize(QSize(350, 16777215))
+        self.widget_38.setMaximumSize(QSize(360, 16777215))
         self.verticalLayout_16 = QVBoxLayout(self.widget_38)
         self.verticalLayout_16.setSpacing(2)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
@@ -527,7 +527,7 @@ class Ui_MainWindow(object):
 
         self.widget_40 = QWidget(self.widget_166)
         self.widget_40.setObjectName(u"widget_40")
-        self.widget_40.setMaximumSize(QSize(350, 16777215))
+        self.widget_40.setMaximumSize(QSize(360, 16777215))
         self.verticalLayout_19 = QVBoxLayout(self.widget_40)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.verticalLayout_19.setContentsMargins(1, 1, 1, 1)
@@ -641,10 +641,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_142.setContentsMargins(-1, 0, -1, 0)
         self.widget_31 = QWidget(self.widget_167)
         self.widget_31.setObjectName(u"widget_31")
-        self.widget_31.setMaximumSize(QSize(350, 16777215))
+        self.widget_31.setMaximumSize(QSize(360, 16777215))
         self.verticalLayout_24 = QVBoxLayout(self.widget_31)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
-        self.verticalLayout_24.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_24.setContentsMargins(5, 9, 5, 9)
         self.label_208 = QLabel(self.widget_31)
         self.label_208.setObjectName(u"label_208")
         self.label_208.setMaximumSize(QSize(16777215, 25))
@@ -725,9 +725,10 @@ class Ui_MainWindow(object):
 
         self.widget_75 = QWidget(self.widget_167)
         self.widget_75.setObjectName(u"widget_75")
-        self.widget_75.setMaximumSize(QSize(350, 16777215))
+        self.widget_75.setMaximumSize(QSize(360, 16777215))
         self.verticalLayout_20 = QVBoxLayout(self.widget_75)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.verticalLayout_20.setContentsMargins(5, -1, 5, -1)
         self.label_211 = QLabel(self.widget_75)
         self.label_211.setObjectName(u"label_211")
         self.label_211.setMaximumSize(QSize(16777215, 25))
@@ -804,10 +805,10 @@ class Ui_MainWindow(object):
 
         self.widget_32 = QWidget(self.widget_167)
         self.widget_32.setObjectName(u"widget_32")
-        self.widget_32.setMaximumSize(QSize(350, 16777215))
+        self.widget_32.setMaximumSize(QSize(360, 16777215))
         self.verticalLayout_23 = QVBoxLayout(self.widget_32)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
-        self.verticalLayout_23.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_23.setContentsMargins(5, 9, 5, 9)
         self.label_207 = QLabel(self.widget_32)
         self.label_207.setObjectName(u"label_207")
         self.label_207.setMaximumSize(QSize(16777215, 25))
@@ -875,6 +876,27 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_130.addWidget(self.label_201)
 
+        self.widget_201 = QWidget(self.widget_34)
+        self.widget_201.setObjectName(u"widget_201")
+
+        self.horizontalLayout_130.addWidget(self.widget_201)
+
+        self.label_241 = QLabel(self.widget_34)
+        self.label_241.setObjectName(u"label_241")
+
+        self.horizontalLayout_130.addWidget(self.label_241)
+
+        self.cond_ratio_le = QLineEdit(self.widget_34)
+        self.cond_ratio_le.setObjectName(u"cond_ratio_le")
+        self.cond_ratio_le.setMaximumSize(QSize(30, 35))
+
+        self.horizontalLayout_130.addWidget(self.cond_ratio_le)
+
+        self.label_242 = QLabel(self.widget_34)
+        self.label_242.setObjectName(u"label_242")
+
+        self.horizontalLayout_130.addWidget(self.label_242)
+
         self.cond_add_btn = QPushButton(self.widget_34)
         self.cond_add_btn.setObjectName(u"cond_add_btn")
         self.cond_add_btn.setMinimumSize(QSize(50, 35))
@@ -900,7 +922,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_137.setContentsMargins(-1, 1, -1, 1)
         self.widget_30 = QWidget(self.widget_36)
         self.widget_30.setObjectName(u"widget_30")
-        self.widget_30.setMaximumSize(QSize(350, 16777215))
+        self.widget_30.setMaximumSize(QSize(360, 16777215))
         self.verticalLayout_25 = QVBoxLayout(self.widget_30)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
         self.verticalLayout_25.setContentsMargins(9, 9, 9, 9)
@@ -918,6 +940,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_133.setContentsMargins(0, 1, 0, 1)
         self.label_205 = QLabel(self.widget_51)
         self.label_205.setObjectName(u"label_205")
+        self.label_205.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_133.addWidget(self.label_205)
 
@@ -940,6 +963,7 @@ class Ui_MainWindow(object):
         self.label_206 = QLabel(self.widget_52)
         self.label_206.setObjectName(u"label_206")
         self.label_206.setMaximumSize(QSize(16777215, 16777215))
+        self.label_206.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_134.addWidget(self.label_206)
 
@@ -1103,19 +1127,32 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7 = QHBoxLayout(self.widget_14)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.horizontalLayout_7.setContentsMargins(0, 3, 0, 3)
+        self.widget_200 = QWidget(self.widget_14)
+        self.widget_200.setObjectName(u"widget_200")
+        self.widget_200.setMaximumSize(QSize(235, 16777215))
+        self.horizontalLayout_176 = QHBoxLayout(self.widget_200)
+        self.horizontalLayout_176.setObjectName(u"horizontalLayout_176")
+        self.horizontalLayout_176.setContentsMargins(0, 0, 0, 0)
+        self.checkBox = AnimatedToggle(self.widget_200)
+        self.checkBox.setObjectName(u"checkBox")
+        self.checkBox.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_176.addWidget(self.checkBox)
+
+        self.label_240 = QLabel(self.widget_200)
+        self.label_240.setObjectName(u"label_240")
+
+        self.horizontalLayout_176.addWidget(self.label_240)
+
+
+        self.horizontalLayout_7.addWidget(self.widget_200)
+
         self.save_watering_setting_btn = QPushButton(self.widget_14)
         self.save_watering_setting_btn.setObjectName(u"save_watering_setting_btn")
         self.save_watering_setting_btn.setMinimumSize(QSize(0, 40))
         self.save_watering_setting_btn.setMaximumSize(QSize(150, 16777215))
 
         self.horizontalLayout_7.addWidget(self.save_watering_setting_btn)
-
-        self.enable_auto_watering_btn = QPushButton(self.widget_14)
-        self.enable_auto_watering_btn.setObjectName(u"enable_auto_watering_btn")
-        self.enable_auto_watering_btn.setEnabled(False)
-        self.enable_auto_watering_btn.setMaximumSize(QSize(175, 40))
-
-        self.horizontalLayout_7.addWidget(self.enable_auto_watering_btn)
 
         self.current_settings_btn = QPushButton(self.widget_14)
         self.current_settings_btn.setObjectName(u"current_settings_btn")
@@ -1172,7 +1209,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1179, 1732))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 769, 1732))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.widget_77 = QWidget(self.scrollAreaWidgetContents)
@@ -4672,7 +4709,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4682,7 +4719,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.logo_4j_btn.setText("")
         self.watering_page_btn.setText(QCoreApplication.translate("MainWindow", u"Zavla\u017eov\u00e1n\u00ed", None))
-        self.solutio_page_btn.setText(QCoreApplication.translate("MainWindow", u"Nastaven\u00ed roztoku", None))
+        self.solutio_page_btn.setText(QCoreApplication.translate("MainWindow", u"\u0158\u00edzen\u00ed", None))
         self.solution_config_btn.setText(QCoreApplication.translate("MainWindow", u"Ukladan\u00ed roztoku", None))
         self.cams_page_btn.setText(QCoreApplication.translate("MainWindow", u"Kamery", None))
         self.chart_page_btn.setText(QCoreApplication.translate("MainWindow", u"Grafy", None))
@@ -4694,7 +4731,7 @@ class Ui_MainWindow(object):
         self.solution_dir_btn.setText("")
         self.stop_saving_btn.setText(QCoreApplication.translate("MainWindow", u"P\u0159estat ukl\u00e1dat", None))
         self.start_saving_btn.setText(QCoreApplication.translate("MainWindow", u"Za\u010d\u00edt ukl\u00e1dat", None))
-        self.label_185.setText(QCoreApplication.translate("MainWindow", u"Vn\u011bj\u0161\u00ed podm\u00ednky prestabn\u00ed st\u011bna", None))
+        self.label_185.setText(QCoreApplication.translate("MainWindow", u"Vn\u011bj\u0161\u00ed podm\u00ednky p\u011bstebn\u00ed st\u011bna", None))
         self.label_186.setText(QCoreApplication.translate("MainWindow", u"Teplota:", None))
         self.wall_tep_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
         self.label_178.setText(QCoreApplication.translate("MainWindow", u"\u00baC", None))
@@ -4708,7 +4745,7 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Kysl\u00edk:", None))
         self.water_oxyd_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
         self.label_184.setText(QCoreApplication.translate("MainWindow", u"mg/l", None))
-        self.label_177.setText(QCoreApplication.translate("MainWindow", u"Ph:", None))
+        self.label_177.setText(QCoreApplication.translate("MainWindow", u"pH:", None))
         self.water_ph_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
         self.label_187.setText("")
         self.label_179.setText(QCoreApplication.translate("MainWindow", u"Redox potenci\u00e1l:", None))
@@ -4730,7 +4767,7 @@ class Ui_MainWindow(object):
         self.label_192.setText(QCoreApplication.translate("MainWindow", u"CO2:", None))
         self.outside_co2_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
         self.label_213.setText("")
-        self.label_208.setText(QCoreApplication.translate("MainWindow", u"Regulace Ph", None))
+        self.label_208.setText(QCoreApplication.translate("MainWindow", u"Regulace pH", None))
         self.label_202.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
         self.ph_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
         self.ph_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
@@ -4749,15 +4786,18 @@ class Ui_MainWindow(object):
         self.cond_reg_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
         self.label_200.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat: ", None))
         self.label_201.setText(QCoreApplication.translate("MainWindow", u"ml roztoku", None))
+        self.label_241.setText(QCoreApplication.translate("MainWindow", u"1/", None))
+        self.label_242.setText(QCoreApplication.translate("MainWindow", u"Pom\u011br", None))
         self.cond_add_btn.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat", None))
         self.label_209.setText(QCoreApplication.translate("MainWindow", u"Nastaven\u00ed sv\u011btel", None))
-        self.label_205.setText(QCoreApplication.translate("MainWindow", u"\u010cas v\u00fdchodu slunce:", None))
-        self.label_206.setText(QCoreApplication.translate("MainWindow", u"\u010cas z\u00e1padu slunce:", None))
+        self.label_205.setText(QCoreApplication.translate("MainWindow", u"Zap\u00edn\u00e1n\u00ed sv\u011btel:", None))
+        self.label_206.setText(QCoreApplication.translate("MainWindow", u"Vyp\u00edn\u00e1n\u00ed sv\u011btel:", None))
         self.save_lights_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit", None))
         self.lights_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout sv\u011btla", None))
         self.lights_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout sv\u011btla", None))
+        self.checkBox.setText("")
+        self.label_240.setText(QCoreApplication.translate("MainWindow", u"Automatick\u00e9 zavla\u017eov\u00e1n\u00ed", None))
         self.save_watering_setting_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit nastaven\u00ed", None))
-        self.enable_auto_watering_btn.setText(QCoreApplication.translate("MainWindow", u"Povolit auto. zavla\u017eov\u00e1n\u00ed", None))
         self.current_settings_btn.setText(QCoreApplication.translate("MainWindow", u"Vratit aktualn\u00ed nastaven\u00ed", None))
         self.water_all_btn.setText(QCoreApplication.translate("MainWindow", u"Zal\u00edt v\u0161e", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Sloupec 1:", None))
@@ -4990,15 +5030,15 @@ class Ui_MainWindow(object):
         self.label_230.setText(QCoreApplication.translate("MainWindow", u"ml", None))
         self.label_221.setText(QCoreApplication.translate("MainWindow", u"Vodivost 2 \u010dasov\u00fd rozestup:", None))
         self.label_228.setText(QCoreApplication.translate("MainWindow", u"min", None))
-        self.label_219.setText(QCoreApplication.translate("MainWindow", u"Ph:", None))
+        self.label_219.setText(QCoreApplication.translate("MainWindow", u"pH:", None))
         self.label_220.setText(QCoreApplication.translate("MainWindow", u"ml", None))
-        self.label_216.setText(QCoreApplication.translate("MainWindow", u"Ph \u010dasov\u00fd rozestup:", None))
+        self.label_216.setText(QCoreApplication.translate("MainWindow", u"pH \u010dasov\u00fd rozestup:", None))
         self.label_218.setText(QCoreApplication.translate("MainWindow", u"min", None))
         self.label_217.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed vodivost 1:", None))
         self.label_224.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed vodivost 2:", None))
         self.label_225.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))
         self.label_235.setText(QCoreApplication.translate("MainWindow", u"XX", None))
-        self.label_226.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed Ph:", None))
+        self.label_226.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed pH:", None))
         self.label_222.setText(QCoreApplication.translate("MainWindow", u"XX", None))
         self.label_223.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))
         self.label_227.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))

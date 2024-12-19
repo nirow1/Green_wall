@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
         self.pictures = [[], []]
 
         self.logo.start()
-        #self.logo_2.start()
+        self.logo_2.start()
         self.cam.start()
         self.cam_2.start()
 
@@ -167,6 +167,7 @@ class MainWindow(QMainWindow):
     def _handle_emits(self):
         self.cam.NEW_IMAGE.connect(lambda frame: self._update_cam_view("1", frame))
         self.cam_2.NEW_IMAGE.connect(lambda frame: self._update_cam_view("2", frame))
+        self.logo.LOGO_DATA.connect(lambda data: self._add_data_to_gui(data))
 
     def _bind_watering_panel_btns(self):
         for i in range(1, 22):
@@ -178,12 +179,10 @@ class MainWindow(QMainWindow):
             self.valve_byte_1[i] = not self.valve_byte_1[i]
             self.logo.write_logo_byte(1, dict_to_bytearray(self.valve_byte_1))
             self._switch_led(i, "green" if self.valve_byte_1[i] else "grey")
-            print(dict_to_bytearray(self.valve_byte_1))
         else:
             self.valve_byte_2[i-8] = not self.valve_byte_2[i-8]
             self.logo_2.write_logo_byte(1, dict_to_bytearray(self.valve_byte_2))
             self._switch_led(i, "green" if self.valve_byte_2[i-8] else "grey")
-            print(dict_to_bytearray(self.valve_byte_2))
 
     def _manage_col(self, col: int, state: bool):
         if col == 1:
@@ -237,7 +236,7 @@ class MainWindow(QMainWindow):
         self.cond_byte[4] = state
         if state:
             self.logo.write_logo_byte(300, dict_to_bytearray(self.cond_byte))
-            self.logo.write_logo_ushort(302, int(self.ui.cond_reg_le.text()))
+            self.logo.write_logo_ushort(302, int(self.ui.cond_reg_le.text())) #  d2 aka cond regulation 2 is 320 and 322
 
     def _regulate_oxidation(self, state: bool):
         self.ui.oxidation_on_btn.setHidden(state)
@@ -246,8 +245,8 @@ class MainWindow(QMainWindow):
         self.oxyd_byte[2] = state
         self.oxyd_byte[4] = state
         if state:
-            self.logo.write_logo_byte(300, dict_to_bytearray(self.oxyd_byte))
-            self.logo.write_logo_ushort(302, int(self.ui.cond_reg_le.text()))
+            self.logo.write_logo_byte(360, dict_to_bytearray(self.oxyd_byte))
+            self.logo.write_logo_ushort(362, int(self.ui.cond_reg_le.text()))
 
     def _regulate_ph(self, state: bool):
         self.ui.ph_on_btn.setHidden(state)
@@ -256,17 +255,18 @@ class MainWindow(QMainWindow):
         self.ph_byte[2] = state
         self.ph_byte[4] = state
         if state:
-            self.logo.write_logo_byte(300, dict_to_bytearray(self.ph_byte))
-            self.logo.write_logo_ushort(302, int(self.ui.cond_reg_le.text()))
+            self.logo.write_logo_byte(340, dict_to_bytearray(self.ph_byte))
+            self.logo.write_logo_ushort(342, int(self.ui.cond_reg_le.text()))
 
     def _on_off_lights(self, state: bool):
         self.ui.lights_on_btn.setHidden(state)
         self.ui.lights_off_btn.setHidden(not state)
+        self.logo.write_logo_byte(374, bytearray(b'\x01') if state else bytearray(b'\x00'))
         self.logo.write_logo_byte(2, bytearray(b'\x01') if state else bytearray(b'\x00'))
 
     def save_lights(self):
-        self.logo.write_logo_byte(376, time_to_hexa(self.ui.lights_on_le.text()))
-        self.logo.write_logo_byte(378, time_to_hexa(self.ui.lights_off_le.text()))
+        self.logo_2.write_logo_byte(440, time_to_hexa(self.ui.lights_on_le.text()))
+        self.logo_2.write_logo_byte(442, time_to_hexa(self.ui.lights_off_le.text()))
 
     def _open_dir_dialog(self, lineedit: QLineEdit):
         options = QFileDialog(self).options()
@@ -282,6 +282,17 @@ class MainWindow(QMainWindow):
         self.side_panel_animation.finished.connect(lambda: self.ui.widget.setMaximumWidth(end))
         self.side_panel_animation.start()
         self.ui.expand_wgt.setHidden(not state)
+
+    def _add_data_to_gui(self, data):
+        self.ui.wall_tep_lbl.setText(str(data[0]))
+        self.ui.wall_hum_lbl.setText(str(data[1]))
+        self.ui.wall_co2_lbl.setText(str(data[2]))
+
+        self.ui.water_ph_lbl.setText(str(data[3]))
+        self.ui.water_oxyd_lbl.setText(str(data[4]))
+        self.ui.water_cond_lbl.setText(str(data[5]))
+        self.ui.water_redox_lbl.setText(str(data[6]))
+        self.ui.water_temp_lbl.setText(str(data[7]))
 
     def _update_cam_view(self, i: str, frame):
         time :QLabel= self.ui.widget_7.findChild(QLabel, f"time_cam_lbl_{i}")

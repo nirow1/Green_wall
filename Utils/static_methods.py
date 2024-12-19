@@ -31,6 +31,5 @@ def time_to_hexa(time: str) -> bytearray:
 def dict_to_bytearray(dictionary) -> bytearray:
     bits = np.array([int(dictionary[i]) for i in range(1, len(dictionary) + 1)])
     chunks = np.split(bits, len(bits) // 8)
-    bytes_list = [np.packbits(chunk)[0] for chunk in chunks]
-
+    bytes_list = [np.packbits(chunk[::-1])[0] for chunk in chunks]
     return bytearray(bytes_list)

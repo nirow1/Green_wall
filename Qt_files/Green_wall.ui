@@ -179,7 +179,7 @@ QPushButton:pressed {
              </size>
             </property>
             <property name="text">
-             <string>Nastavení roztoku</string>
+             <string>Řízení</string>
             </property>
            </widget>
           </item>
@@ -343,7 +343,7 @@ QPushButton:pressed {
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="solution_pg">
           <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -507,7 +507,7 @@ QPushButton:pressed {
                   <widget class="QWidget" name="widget_39" native="true">
                    <property name="maximumSize">
                     <size>
-                     <width>350</width>
+                     <width>360</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -533,7 +533,7 @@ QPushButton:pressed {
                        </size>
                       </property>
                       <property name="text">
-                       <string>Vnější podmínky prestabní stěna</string>
+                       <string>Vnější podmínky pěstební stěna</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -691,7 +691,7 @@ QPushButton:pressed {
                   <widget class="QWidget" name="widget_38" native="true">
                    <property name="maximumSize">
                     <size>
-                     <width>350</width>
+                     <width>360</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -793,7 +793,7 @@ QPushButton:pressed {
                        <item>
                         <widget class="QLabel" name="label_177">
                          <property name="text">
-                          <string>Ph:</string>
+                          <string>pH:</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -974,7 +974,7 @@ QPushButton:pressed {
                   <widget class="QWidget" name="widget_40" native="true">
                    <property name="maximumSize">
                     <size>
-                     <width>350</width>
+                     <width>360</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -1201,19 +1201,19 @@ QPushButton:pressed {
                   <widget class="QWidget" name="widget_31" native="true">
                    <property name="maximumSize">
                     <size>
-                     <width>350</width>
+                     <width>360</width>
                      <height>16777215</height>
                     </size>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_24">
                     <property name="leftMargin">
-                     <number>9</number>
+                     <number>5</number>
                     </property>
                     <property name="topMargin">
                      <number>9</number>
                     </property>
                     <property name="rightMargin">
-                     <number>9</number>
+                     <number>5</number>
                     </property>
                     <property name="bottomMargin">
                      <number>9</number>
@@ -1227,7 +1227,7 @@ QPushButton:pressed {
                        </size>
                       </property>
                       <property name="text">
-                       <string>Regulace Ph</string>
+                       <string>Regulace pH</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1381,11 +1381,17 @@ QPushButton:pressed {
                   <widget class="QWidget" name="widget_75" native="true">
                    <property name="maximumSize">
                     <size>
-                     <width>350</width>
+                     <width>360</width>
                      <height>16777215</height>
                     </size>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_20">
+                    <property name="leftMargin">
+                     <number>5</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>5</number>
+                    </property>
                     <item>
                      <widget class="QLabel" name="label_211">
                       <property name="maximumSize">
@@ -1547,19 +1553,19 @@ QPushButton:pressed {
                   <widget class="QWidget" name="widget_32" native="true">
                    <property name="maximumSize">
                     <size>
-                     <width>350</width>
+                     <width>360</width>
                      <height>16777215</height>
                     </size>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_23">
                     <property name="leftMargin">
-                     <number>9</number>
+                     <number>5</number>
                     </property>
                     <property name="topMargin">
                      <number>9</number>
                     </property>
                     <property name="rightMargin">
-                     <number>9</number>
+                     <number>5</number>
                     </property>
                     <property name="bottomMargin">
                      <number>9</number>
@@ -1708,6 +1714,33 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
+                        <widget class="QWidget" name="widget_201" native="true"/>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_241">
+                         <property name="text">
+                          <string>1/</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="cond_ratio_le">
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_242">
+                         <property name="text">
+                          <string>Poměr</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
                         <widget class="QPushButton" name="cond_add_btn">
                          <property name="minimumSize">
                           <size>
@@ -1745,7 +1778,7 @@ QPushButton:pressed {
                <widget class="QWidget" name="widget_30" native="true">
                 <property name="maximumSize">
                  <size>
-                  <width>350</width>
+                  <width>360</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -1796,7 +1829,10 @@ QPushButton:pressed {
                     <item>
                      <widget class="QLabel" name="label_205">
                       <property name="text">
-                       <string>Čas východu slunce:</string>
+                       <string>Zapínání světel:</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -1846,7 +1882,10 @@ QPushButton:pressed {
                        </size>
                       </property>
                       <property name="text">
-                       <string>Čas západu slunce:</string>
+                       <string>Vypínání světel:</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -2185,6 +2224,50 @@ QPushButton:pressed {
                   <number>3</number>
                  </property>
                  <item>
+                  <widget class="QWidget" name="widget_200" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>235</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_176">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="AnimatedToggle" name="checkBox">
+                      <property name="maximumSize">
+                       <size>
+                        <width>70</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_240">
+                      <property name="text">
+                       <string>Automatické zavlažování</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QPushButton" name="save_watering_setting_btn">
                    <property name="minimumSize">
                     <size>
@@ -2200,22 +2283,6 @@ QPushButton:pressed {
                    </property>
                    <property name="text">
                     <string>Uložit nastavení</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="enable_auto_watering_btn">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>175</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Povolit auto. zavlažování</string>
                    </property>
                   </widget>
                  </item>
@@ -2316,7 +2383,7 @@ background: none; }</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>1179</width>
+                <width>769</width>
                 <height>1732</height>
                </rect>
               </property>
@@ -9487,7 +9554,7 @@ background: none; }</string>
                              </size>
                             </property>
                             <property name="text">
-                             <string>Ph:</string>
+                             <string>pH:</string>
                             </property>
                            </widget>
                           </item>
@@ -9553,7 +9620,7 @@ background: none; }</string>
                              </size>
                             </property>
                             <property name="text">
-                             <string>Ph časový rozestup:</string>
+                             <string>pH časový rozestup:</string>
                             </property>
                            </widget>
                           </item>
@@ -9626,7 +9693,7 @@ background: none; }</string>
                        <item row="4" column="0">
                         <widget class="QLabel" name="label_226">
                          <property name="text">
-                          <string>Aktualní Ph:</string>
+                          <string>Aktualní pH:</string>
                          </property>
                         </widget>
                        </item>
