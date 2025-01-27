@@ -1,4 +1,5 @@
 import struct
+import time
 
 from PySide6.QtCore import QThread, Signal
 from snap7.logo import Logo
@@ -33,7 +34,14 @@ class LogoControl(QThread):
                 break
             except Exception as e:
                 print(e)
+                self.test_function()
                 sleep(10)
+
+    def test_function(self):
+        i = 0
+        while i < 500:
+            self.LOGO_DATA.emit([1,2,3,4,5,6,7,8])
+            time.sleep(0.2)
 
     def _get_logo_data(self):
         while self.connected:
@@ -46,13 +54,13 @@ class LogoControl(QThread):
                 water_data = struct.unpack(">HHHHHH", byte_water_data)
 
                 logo_data = [i/10 for i in green_wall_data]
-                logo_data.append(1.4 * water_data[0] / 100) # Ph
+                logo_data.append(round(1.4 * water_data[0] / 100, 1)) # Ph
                 logo_data.append(2 * water_data[1] / 100) # Oxygen
                 logo_data.append(2 * water_data[2]) # Conductivity
-                logo_data.append(2* water_data[3]-1000) # Radox potential
+                logo_data.append(2 * water_data[3]-1000) # Radox potential
                 logo_data.append(water_data[5] / 10) # temperature
                 self.LOGO_DATA.emit(logo_data) # 0-2 green wall info (temp, hum, co2), 3-7 general info (ph, O2, cond, radox, temp)
-                sleep(0.2)
+                sleep(0.1)
             else:
                 sleep(0.05)
 
@@ -67,11 +75,18 @@ class LogoControl(QThread):
             else:
                 sleep(0.05)
 
+    def read_logo_byte(self, pos, size):
+        while self.connected:
+            if not self.sending:
+                print(self.logo.db_read(0, pos, size))
+                break
+            else:
+                time.sleep(0.05)
+
     def write_logo_byte(self, pos :int, logo_bytes: bytearray):
         while self.connected:
             if not self.sending:
                 self.sending = True
-                # print(f"{pos}, {logo_bytes}")
                 self.logo.db_write(0, pos, logo_bytes)
                 self.sending = False
                 break

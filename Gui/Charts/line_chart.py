@@ -1,8 +1,9 @@
 from typing import List
 
-from PySide6.QtCharts import QLineSeries, QChart, QChartView
+from PySide6.QtCharts import QLineSeries, QChart, QChartView, QDateTimeAxis, QValueAxis
+from PySide6.QtCore import QDateTime
 from PySide6.QtWidgets import QSizePolicy
-from PySide6.QtGui import QPainter
+from PySide6.QtGui import QPainter, Qt
 
 
 class LineChart(QChartView):
@@ -56,3 +57,68 @@ class LineChart(QChartView):
             self.count += 1
         except Exception as e:
             print(e)
+
+class TimedLineChart(QChartView):
+    def __init__(self, name: str, x_axis_seconds: int, y_axis: (int, int), line_name: List[str] = None,
+                 line_count: int = 1):
+        super(TimedLineChart, self).__init__()
+        self.seconds = x_axis_seconds
+        self.max_length = -self.seconds
+
+        # Create a QChart
+        self.chart = QChart()
+        self.chart.setTitle(name)
+        self.chart.legend().setVisible(True)
+
+        # Series creation
+        self.series_list = []
+        line_name = line_name if line_name else [""] * line_count
+        for i in range(line_count):
+            series = QLineSeries()
+            series.setName(line_name[i])
+            self.series_list.append(series)
+            self.chart.addSeries(series)
+
+        # Defining x-axis
+        self.axis_x = QDateTimeAxis()
+        self.axis_x.setFormat("HH:mm:ss")
+        self.axis_x.setTitleText("Time (s)")
+        self.chart.addAxis(self.axis_x, Qt.AlignmentFlag.AlignBottom)
+
+        # Defining y-axis
+        self.axis_y = QValueAxis()
+        self.axis_y.setRange(y_axis[0], y_axis[1])
+        self.axis_y.setTitleText("Force (N)")
+        self.chart.addAxis(self.axis_y, Qt.AlignmentFlag.AlignLeft)
+
+        for series in self.series_list:
+            series.attachAxis(self.axis_x)
+            series.attachAxis(self.axis_y)
+
+        size_policy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        size_policy.setHeightForWidth(self.sizePolicy().hasHeightForWidth())
+        self.setSizePolicy(size_policy)
+        self.chart.setTheme(QChart.ChartTheme.ChartThemeDark)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setChart(self.chart)
+
+    def update_chart(self, values: list):
+        current_time = QDateTime.currentDateTime()
+
+        for series, value in zip(self.series_list, values):
+            # Add new value
+            series.append(current_time.toMSecsSinceEpoch(), value)
+
+            # Remove old values
+            while series.count() > 0 and series.at(0).x() < current_time.addSecs(self.max_length - 1).toMSecsSinceEpoch():
+                series.remove(0)
+                print(f"{series.count() = }")
+                print(f"{series.at(0).x() = }")
+                print(f"{current_time.addSecs(self.max_length).toMSecsSinceEpoch() = }")
+
+
+        self.axis_x.setMin(current_time.addSecs(-self.seconds))
+        self.axis_x.setMax(current_time)
+
+    def set_displayed_seconds(self, value: int):
+        self.seconds = value

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_wallSJdgLS.ui'
+## Form generated from reading UI file 'Green_wallnBNaFK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -671,54 +671,39 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_131.addWidget(self.ph_reg_le)
 
-        self.ph_on_btn = QPushButton(self.widget_48)
+
+        self.verticalLayout_24.addWidget(self.widget_48)
+
+        self.widget_202 = QWidget(self.widget_31)
+        self.widget_202.setObjectName(u"widget_202")
+        self.horizontalLayout_132 = QHBoxLayout(self.widget_202)
+        self.horizontalLayout_132.setObjectName(u"horizontalLayout_132")
+        self.widget_207 = QWidget(self.widget_202)
+        self.widget_207.setObjectName(u"widget_207")
+
+        self.horizontalLayout_132.addWidget(self.widget_207)
+
+        self.ph_on_btn = QPushButton(self.widget_202)
         self.ph_on_btn.setObjectName(u"ph_on_btn")
         self.ph_on_btn.setMinimumSize(QSize(0, 35))
         self.ph_on_btn.setMaximumSize(QSize(70, 16777215))
 
-        self.horizontalLayout_131.addWidget(self.ph_on_btn)
+        self.horizontalLayout_132.addWidget(self.ph_on_btn)
 
-        self.ph_off_btn = QPushButton(self.widget_48)
+        self.ph_off_btn = QPushButton(self.widget_202)
         self.ph_off_btn.setObjectName(u"ph_off_btn")
         self.ph_off_btn.setMinimumSize(QSize(0, 35))
         self.ph_off_btn.setMaximumSize(QSize(70, 16777215))
 
-        self.horizontalLayout_131.addWidget(self.ph_off_btn)
+        self.horizontalLayout_132.addWidget(self.ph_off_btn)
+
+        self.widget_208 = QWidget(self.widget_202)
+        self.widget_208.setObjectName(u"widget_208")
+
+        self.horizontalLayout_132.addWidget(self.widget_208)
 
 
-        self.verticalLayout_24.addWidget(self.widget_48)
-
-        self.widget_50 = QWidget(self.widget_31)
-        self.widget_50.setObjectName(u"widget_50")
-        self.horizontalLayout_132 = QHBoxLayout(self.widget_50)
-        self.horizontalLayout_132.setObjectName(u"horizontalLayout_132")
-        self.horizontalLayout_132.setContentsMargins(0, -1, 0, -1)
-        self.label_203 = QLabel(self.widget_50)
-        self.label_203.setObjectName(u"label_203")
-        self.label_203.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.horizontalLayout_132.addWidget(self.label_203)
-
-        self.add_ph_solution_le = QLineEdit(self.widget_50)
-        self.add_ph_solution_le.setObjectName(u"add_ph_solution_le")
-        self.add_ph_solution_le.setMinimumSize(QSize(0, 35))
-        self.add_ph_solution_le.setMaximumSize(QSize(80, 16777215))
-
-        self.horizontalLayout_132.addWidget(self.add_ph_solution_le)
-
-        self.label_204 = QLabel(self.widget_50)
-        self.label_204.setObjectName(u"label_204")
-
-        self.horizontalLayout_132.addWidget(self.label_204)
-
-        self.ph_add_btn = QPushButton(self.widget_50)
-        self.ph_add_btn.setObjectName(u"ph_add_btn")
-        self.ph_add_btn.setMinimumSize(QSize(50, 35))
-
-        self.horizontalLayout_132.addWidget(self.ph_add_btn)
-
-
-        self.verticalLayout_24.addWidget(self.widget_50)
+        self.verticalLayout_24.addWidget(self.widget_202)
 
 
         self.horizontalLayout_142.addWidget(self.widget_31)
@@ -835,20 +820,22 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_129.addWidget(self.cond_reg_le)
 
-        self.cond_reg_on_btn = QPushButton(self.widget_33)
-        self.cond_reg_on_btn.setObjectName(u"cond_reg_on_btn")
-        self.cond_reg_on_btn.setMinimumSize(QSize(0, 35))
-        self.cond_reg_on_btn.setMaximumSize(QSize(70, 16777215))
+        self.label_241 = QLabel(self.widget_33)
+        self.label_241.setObjectName(u"label_241")
+        self.label_241.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
-        self.horizontalLayout_129.addWidget(self.cond_reg_on_btn)
+        self.horizontalLayout_129.addWidget(self.label_241)
 
-        self.cond_reg_off_btn = QPushButton(self.widget_33)
-        self.cond_reg_off_btn.setObjectName(u"cond_reg_off_btn")
-        self.cond_reg_off_btn.setEnabled(True)
-        self.cond_reg_off_btn.setMinimumSize(QSize(0, 35))
-        self.cond_reg_off_btn.setMaximumSize(QSize(70, 16777215))
+        self.cond_ratio_le = QLineEdit(self.widget_33)
+        self.cond_ratio_le.setObjectName(u"cond_ratio_le")
+        self.cond_ratio_le.setMaximumSize(QSize(30, 35))
 
-        self.horizontalLayout_129.addWidget(self.cond_reg_off_btn)
+        self.horizontalLayout_129.addWidget(self.cond_ratio_le)
+
+        self.label_242 = QLabel(self.widget_33)
+        self.label_242.setObjectName(u"label_242")
+
+        self.horizontalLayout_129.addWidget(self.label_242)
 
 
         self.verticalLayout_23.addWidget(self.widget_33)
@@ -858,50 +845,30 @@ class Ui_MainWindow(object):
         self.horizontalLayout_130 = QHBoxLayout(self.widget_34)
         self.horizontalLayout_130.setObjectName(u"horizontalLayout_130")
         self.horizontalLayout_130.setContentsMargins(0, -1, 0, -1)
-        self.label_200 = QLabel(self.widget_34)
-        self.label_200.setObjectName(u"label_200")
-        self.label_200.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.horizontalLayout_130.addWidget(self.label_200)
-
-        self.add_cond_solution_le = QLineEdit(self.widget_34)
-        self.add_cond_solution_le.setObjectName(u"add_cond_solution_le")
-        self.add_cond_solution_le.setMinimumSize(QSize(0, 35))
-        self.add_cond_solution_le.setMaximumSize(QSize(80, 16777215))
-
-        self.horizontalLayout_130.addWidget(self.add_cond_solution_le)
-
-        self.label_201 = QLabel(self.widget_34)
-        self.label_201.setObjectName(u"label_201")
-
-        self.horizontalLayout_130.addWidget(self.label_201)
-
         self.widget_201 = QWidget(self.widget_34)
         self.widget_201.setObjectName(u"widget_201")
 
         self.horizontalLayout_130.addWidget(self.widget_201)
 
-        self.label_241 = QLabel(self.widget_34)
-        self.label_241.setObjectName(u"label_241")
+        self.cond_reg_on_btn = QPushButton(self.widget_34)
+        self.cond_reg_on_btn.setObjectName(u"cond_reg_on_btn")
+        self.cond_reg_on_btn.setMinimumSize(QSize(0, 35))
+        self.cond_reg_on_btn.setMaximumSize(QSize(70, 16777215))
 
-        self.horizontalLayout_130.addWidget(self.label_241)
+        self.horizontalLayout_130.addWidget(self.cond_reg_on_btn)
 
-        self.cond_ratio_le = QLineEdit(self.widget_34)
-        self.cond_ratio_le.setObjectName(u"cond_ratio_le")
-        self.cond_ratio_le.setMaximumSize(QSize(30, 35))
+        self.cond_reg_off_btn = QPushButton(self.widget_34)
+        self.cond_reg_off_btn.setObjectName(u"cond_reg_off_btn")
+        self.cond_reg_off_btn.setEnabled(True)
+        self.cond_reg_off_btn.setMinimumSize(QSize(0, 35))
+        self.cond_reg_off_btn.setMaximumSize(QSize(70, 16777215))
 
-        self.horizontalLayout_130.addWidget(self.cond_ratio_le)
+        self.horizontalLayout_130.addWidget(self.cond_reg_off_btn)
 
-        self.label_242 = QLabel(self.widget_34)
-        self.label_242.setObjectName(u"label_242")
+        self.widget_50 = QWidget(self.widget_34)
+        self.widget_50.setObjectName(u"widget_50")
 
-        self.horizontalLayout_130.addWidget(self.label_242)
-
-        self.cond_add_btn = QPushButton(self.widget_34)
-        self.cond_add_btn.setObjectName(u"cond_add_btn")
-        self.cond_add_btn.setMinimumSize(QSize(50, 35))
-
-        self.horizontalLayout_130.addWidget(self.cond_add_btn)
+        self.horizontalLayout_130.addWidget(self.widget_50)
 
 
         self.verticalLayout_23.addWidget(self.widget_34)
@@ -940,6 +907,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_133.setContentsMargins(0, 1, 0, 1)
         self.label_205 = QLabel(self.widget_51)
         self.label_205.setObjectName(u"label_205")
+        self.label_205.setMaximumSize(QSize(150, 16777215))
         self.label_205.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_133.addWidget(self.label_205)
@@ -947,7 +915,7 @@ class Ui_MainWindow(object):
         self.lights_on_le = QLineEdit(self.widget_51)
         self.lights_on_le.setObjectName(u"lights_on_le")
         self.lights_on_le.setMinimumSize(QSize(0, 35))
-        self.lights_on_le.setMaximumSize(QSize(190, 16777215))
+        self.lights_on_le.setMaximumSize(QSize(70, 16777215))
         self.lights_on_le.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_133.addWidget(self.lights_on_le)
@@ -962,7 +930,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_134.setContentsMargins(0, 1, 0, 1)
         self.label_206 = QLabel(self.widget_52)
         self.label_206.setObjectName(u"label_206")
-        self.label_206.setMaximumSize(QSize(16777215, 16777215))
+        self.label_206.setMaximumSize(QSize(150, 16777215))
         self.label_206.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_134.addWidget(self.label_206)
@@ -970,7 +938,7 @@ class Ui_MainWindow(object):
         self.lights_off_le = QLineEdit(self.widget_52)
         self.lights_off_le.setObjectName(u"lights_off_le")
         self.lights_off_le.setMinimumSize(QSize(0, 35))
-        self.lights_off_le.setMaximumSize(QSize(190, 16777215))
+        self.lights_off_le.setMaximumSize(QSize(70, 16777215))
         self.lights_off_le.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_134.addWidget(self.lights_off_le)
@@ -1209,7 +1177,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 769, 1732))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1179, 1732))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.widget_77 = QWidget(self.scrollAreaWidgetContents)
@@ -4655,17 +4623,6 @@ class Ui_MainWindow(object):
         self.widget_192.setMaximumSize(QSize(16777215, 50))
         self.horizontalLayout_167 = QHBoxLayout(self.widget_192)
         self.horizontalLayout_167.setObjectName(u"horizontalLayout_167")
-        self.label_215 = QLabel(self.widget_192)
-        self.label_215.setObjectName(u"label_215")
-        self.label_215.setMaximumSize(QSize(160, 16777215))
-
-        self.horizontalLayout_167.addWidget(self.label_215)
-
-        self.time_cam_lbl_2 = QLabel(self.widget_192)
-        self.time_cam_lbl_2.setObjectName(u"time_cam_lbl_2")
-
-        self.horizontalLayout_167.addWidget(self.time_cam_lbl_2)
-
 
         self.verticalLayout_7.addWidget(self.widget_192)
 
@@ -4771,9 +4728,6 @@ class Ui_MainWindow(object):
         self.label_202.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
         self.ph_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
         self.ph_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
-        self.label_203.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat: ", None))
-        self.label_204.setText(QCoreApplication.translate("MainWindow", u"ml roztoku", None))
-        self.ph_add_btn.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat", None))
         self.label_211.setText(QCoreApplication.translate("MainWindow", u"Regulace okysli\u010den\u00ed", None))
         self.label_210.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
         self.oxidation_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
@@ -4782,13 +4736,10 @@ class Ui_MainWindow(object):
         self.label_212.setText(QCoreApplication.translate("MainWindow", u"Kompresor", None))
         self.label_207.setText(QCoreApplication.translate("MainWindow", u"Regulace vodivosti", None))
         self.label_199.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
-        self.cond_reg_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
-        self.cond_reg_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
-        self.label_200.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat: ", None))
-        self.label_201.setText(QCoreApplication.translate("MainWindow", u"ml roztoku", None))
         self.label_241.setText(QCoreApplication.translate("MainWindow", u"1/", None))
         self.label_242.setText(QCoreApplication.translate("MainWindow", u"Pom\u011br", None))
-        self.cond_add_btn.setText(QCoreApplication.translate("MainWindow", u"P\u0159idat", None))
+        self.cond_reg_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
+        self.cond_reg_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
         self.label_209.setText(QCoreApplication.translate("MainWindow", u"Nastaven\u00ed sv\u011btel", None))
         self.label_205.setText(QCoreApplication.translate("MainWindow", u"Zap\u00edn\u00e1n\u00ed sv\u011btel:", None))
         self.label_206.setText(QCoreApplication.translate("MainWindow", u"Vyp\u00edn\u00e1n\u00ed sv\u011btel:", None))
@@ -5053,8 +5004,6 @@ class Ui_MainWindow(object):
         self.label_214.setText(QCoreApplication.translate("MainWindow", u"\u010cas posledn\u00edho sn\u00edmku:", None))
         self.time_cam_lbl_1.setText("")
         self.cam_lbl_1.setText("")
-        self.label_215.setText(QCoreApplication.translate("MainWindow", u"\u010cas posledn\u00edho sn\u00edmku:", None))
-        self.time_cam_lbl_2.setText("")
         self.cam_lbl_2.setText("")
     # retranslateUi
 

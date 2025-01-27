@@ -1275,6 +1275,15 @@ QPushButton:pressed {
                          </property>
                         </widget>
                        </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_202" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_132">
+                       <item>
+                        <widget class="QWidget" name="widget_207" native="true"/>
+                       </item>
                        <item>
                         <widget class="QPushButton" name="ph_on_btn">
                          <property name="minimumSize">
@@ -1313,63 +1322,8 @@ QPushButton:pressed {
                          </property>
                         </widget>
                        </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QWidget" name="widget_50" native="true">
-                      <layout class="QHBoxLayout" name="horizontalLayout_132">
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
                        <item>
-                        <widget class="QLabel" name="label_203">
-                         <property name="text">
-                          <string>Přidat: </string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="add_ph_solution_le">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>35</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>80</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_204">
-                         <property name="text">
-                          <string>ml roztoku</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="ph_add_btn">
-                         <property name="minimumSize">
-                          <size>
-                           <width>50</width>
-                           <height>35</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string>Přidat</string>
-                         </property>
-                        </widget>
+                        <widget class="QWidget" name="widget_208" native="true"/>
                        </item>
                       </layout>
                      </widget>
@@ -1628,6 +1582,48 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
+                        <widget class="QLabel" name="label_241">
+                         <property name="text">
+                          <string>1/</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="cond_ratio_le">
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_242">
+                         <property name="text">
+                          <string>Poměr</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_34" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_130">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QWidget" name="widget_201" native="true"/>
+                       </item>
+                       <item>
                         <widget class="QPushButton" name="cond_reg_on_btn">
                          <property name="minimumSize">
                           <size>
@@ -1668,90 +1664,8 @@ QPushButton:pressed {
                          </property>
                         </widget>
                        </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QWidget" name="widget_34" native="true">
-                      <layout class="QHBoxLayout" name="horizontalLayout_130">
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
                        <item>
-                        <widget class="QLabel" name="label_200">
-                         <property name="text">
-                          <string>Přidat: </string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="add_cond_solution_le">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>35</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>80</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_201">
-                         <property name="text">
-                          <string>ml roztoku</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QWidget" name="widget_201" native="true"/>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_241">
-                         <property name="text">
-                          <string>1/</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="cond_ratio_le">
-                         <property name="maximumSize">
-                          <size>
-                           <width>30</width>
-                           <height>35</height>
-                          </size>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_242">
-                         <property name="text">
-                          <string>Poměr</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="cond_add_btn">
-                         <property name="minimumSize">
-                          <size>
-                           <width>50</width>
-                           <height>35</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string>Přidat</string>
-                         </property>
-                        </widget>
+                        <widget class="QWidget" name="widget_50" native="true"/>
                        </item>
                       </layout>
                      </widget>
@@ -1828,6 +1742,12 @@ QPushButton:pressed {
                     </property>
                     <item>
                      <widget class="QLabel" name="label_205">
+                      <property name="maximumSize">
+                       <size>
+                        <width>150</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="text">
                        <string>Zapínání světel:</string>
                       </property>
@@ -1846,7 +1766,7 @@ QPushButton:pressed {
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>190</width>
+                        <width>70</width>
                         <height>16777215</height>
                        </size>
                       </property>
@@ -1877,7 +1797,7 @@ QPushButton:pressed {
                      <widget class="QLabel" name="label_206">
                       <property name="maximumSize">
                        <size>
-                        <width>16777215</width>
+                        <width>150</width>
                         <height>16777215</height>
                        </size>
                       </property>
@@ -1899,7 +1819,7 @@ QPushButton:pressed {
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>190</width>
+                        <width>70</width>
                         <height>16777215</height>
                        </size>
                       </property>
@@ -2383,7 +2303,7 @@ background: none; }</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>769</width>
+                <width>1179</width>
                 <height>1732</height>
                </rect>
               </property>
@@ -10009,28 +9929,7 @@ background: none; }</string>
                      <height>50</height>
                     </size>
                    </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_167">
-                    <item>
-                     <widget class="QLabel" name="label_215">
-                      <property name="maximumSize">
-                       <size>
-                        <width>160</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>Čas posledního snímku:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="time_cam_lbl_2">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
+                   <layout class="QHBoxLayout" name="horizontalLayout_167"/>
                   </widget>
                  </item>
                  <item>
