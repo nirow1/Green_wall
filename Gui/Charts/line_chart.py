@@ -23,7 +23,7 @@ class LineChart(QChartView):
             self.series_list.append(series)
 
         self.line_chart = QChart()
-        #self.line_chart.legend().hide()
+        self.line_chart.legend().hide()
         for series in self.series_list:
             self.line_chart.addSeries(series)
 
@@ -68,7 +68,7 @@ class TimedLineChart(QChartView):
         # Create a QChart
         self.chart = QChart()
         self.chart.setTitle(name)
-        self.chart.legend().setVisible(True)
+        self.chart.legend().setVisible(False)
 
         # Series creation
         self.series_list = []
@@ -82,13 +82,13 @@ class TimedLineChart(QChartView):
         # Defining x-axis
         self.axis_x = QDateTimeAxis()
         self.axis_x.setFormat("HH:mm:ss")
-        self.axis_x.setTitleText("Time (s)")
+        #self.axis_x.setTitleText("Time (s)")
         self.chart.addAxis(self.axis_x, Qt.AlignmentFlag.AlignBottom)
 
         # Defining y-axis
         self.axis_y = QValueAxis()
         self.axis_y.setRange(y_axis[0], y_axis[1])
-        self.axis_y.setTitleText("Force (N)")
+        #self.axis_y.setTitleText("Force (N)")
         self.chart.addAxis(self.axis_y, Qt.AlignmentFlag.AlignLeft)
 
         for series in self.series_list:
@@ -112,10 +112,6 @@ class TimedLineChart(QChartView):
             # Remove old values
             while series.count() > 0 and series.at(0).x() < current_time.addSecs(self.max_length - 1).toMSecsSinceEpoch():
                 series.remove(0)
-                print(f"{series.count() = }")
-                print(f"{series.at(0).x() = }")
-                print(f"{current_time.addSecs(self.max_length).toMSecsSinceEpoch() = }")
-
 
         self.axis_x.setMin(current_time.addSecs(-self.seconds))
         self.axis_x.setMax(current_time)

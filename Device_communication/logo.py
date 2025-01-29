@@ -34,14 +34,7 @@ class LogoControl(QThread):
                 break
             except Exception as e:
                 print(e)
-                self.test_function()
                 sleep(10)
-
-    def test_function(self):
-        i = 0
-        while i < 500:
-            self.LOGO_DATA.emit([1,2,3,4,5,6,7,8])
-            time.sleep(0.2)
 
     def _get_logo_data(self):
         while self.connected:
@@ -53,7 +46,7 @@ class LogoControl(QThread):
                 green_wall_data = struct.unpack(">HHH", green_wall_data)
                 water_data = struct.unpack(">HHHHHH", byte_water_data)
 
-                logo_data = [i/10 for i in green_wall_data]
+                logo_data = [green_wall_data[i]/10 if i<2 else green_wall_data[i] for i in range(len(green_wall_data))]
                 logo_data.append(round(1.4 * water_data[0] / 100, 1)) # Ph
                 logo_data.append(2 * water_data[1] / 100) # Oxygen
                 logo_data.append(2 * water_data[2]) # Conductivity
@@ -66,21 +59,26 @@ class LogoControl(QThread):
 
     def write_logo_ushort(self, pos: int, request: int):
         while self.connected:
-            if not self.sending:
-                ushort_in_bytes = struct.pack('>H', request)
-                self.sending = True
-                self.logo.db_write(0, pos, bytearray(ushort_in_bytes))
-                self.sending = False
-                break
-            else:
-                sleep(0.05)
+            try:
+                if not self.sending:
+                    ushort_in_bytes = struct.pack('>H', request)
+                    self.sending = True
+                    self.logo.db_write(0, pos, bytearray(ushort_in_bytes))
+                    self.sending = False
+                    break
+                else:
+                    sleep(0.05)
+            except Exception as e:
+                print(e)
 
-    def read_logo_byte(self, pos, size):
+    def read_logo_config(self):
         while self.connected:
             if not self.sending:
-                print(self.logo.db_read(0, pos, size))
-                break
+                msg = self.logo.db_read(0, 312, 4)
+                msg += self.logo.db_read(0, 352, 4)
+                return struct.unpack( ">HHHH", msg)
             else:
+                print("sending")
                 time.sleep(0.05)
 
     def write_logo_byte(self, pos :int, logo_bytes: bytearray):

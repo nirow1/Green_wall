@@ -1,7 +1,5 @@
-import time
-from threading import Thread
-
 import numpy as np
+import time
 import csv
 import cv2
 import os
@@ -11,14 +9,15 @@ from PySide6.QtCore import QPropertyAnimation, QTimer, Qt
 from PySide6.QtGui import QIcon, QImage, QPixmap
 from datetime import datetime
 from functools import partial
+from threading import Thread
 
 from Utils.static_methods import dict_to_bytearray, time_to_hexa, ushort_to_hexa
-from Utils.number_validator import NumberValidator
+from Utils.number_validator import NumberValidator, FloatValidator
 from Device_communication.logo import LogoControl
 from Device_communication.ip_camera import Camera
 from Qt_files.ui_Green_wall import Ui_MainWindow
-from Utils.time_validator import TimeValidator
 from Gui.Charts.line_chart import TimedLineChart
+from Utils.time_validator import TimeValidator
 
 
 class MainWindow(QMainWindow):
@@ -53,11 +52,11 @@ class MainWindow(QMainWindow):
         self.cam_2.start()
 
         # cart initializations
-        self.line_chart = TimedLineChart("test", 10, (-10, 10), [], 5)
-        self.line_chart_2 = TimedLineChart("test2", 400, (-100, 100))
-        self.line_chart_3 = TimedLineChart("test3", 86400, (-100, 100))
-        self.line_chart_4 = TimedLineChart("test4", 86400, (-100, 100))
-        self.line_chart_5 = TimedLineChart("test5", 86400, (-100, 100))
+        self.line_chart = TimedLineChart("Parametry vody", 21600, (0, 1700), ["Vodivost", "Redoxní potencial"], 2)
+        self.line_chart_2 = TimedLineChart("parametry ovzduší", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
+        self.line_chart_3 = TimedLineChart("Parametry vody", 21600, (0, 50), ["Kyslík", "pH", "Teplota"], 3)
+        self.line_chart_4 = TimedLineChart("Parametry ovzduší učebna", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
+        self.line_chart_5 = TimedLineChart("CO2", 86400, (0, 100), ["Okolí stěny","Učebna"], 2)
         self.ui.chart_1.addWidget(self.line_chart)
         self.ui.chart_2.addWidget(self.line_chart_2)
         self.ui.chart_3.addWidget(self.line_chart_3)
@@ -66,17 +65,18 @@ class MainWindow(QMainWindow):
 
         environment_update = QTimer(self)
         environment_update.timeout.connect(self.environmental_data_update)
-        environment_update.start(3000)#180000)
+        environment_update.start(1800000)
 
         water_update = QTimer(self)
         water_update.timeout.connect(self.water_data_update)
-        water_update.start(1000)#30000)
+        water_update.start(300000)
 
         self._setup_validators()
 
         self.side_panel_animation = QPropertyAnimation(self.ui.widget, b"maximumWidth")
         self._button_functions()
         self._handle_emits()
+        self._read_configuration()
 
     def _init_graphical_changes(self):
         self.ui.expand_menu_btn.setIcon(QIcon("./App_data/ico.png"))
@@ -101,6 +101,7 @@ class MainWindow(QMainWindow):
 
     def _setup_validators(self):
         time_validator = TimeValidator()
+        float_validator = FloatValidator(1,2)
         n3_validator = NumberValidator(3)
         n4_validator = NumberValidator(4)
         for i in range(1, 22):
@@ -114,7 +115,7 @@ class MainWindow(QMainWindow):
             duration.setValidator(n3_validator)
         self.ui.lights_on_le.setValidator(time_validator)
         self.ui.lights_off_le.setValidator(time_validator)
-        self.ui.ph_reg_le.setValidator(n4_validator)
+        self.ui.ph_reg_le.setValidator(float_validator)
         self.ui.oxygenation_reg_le.setValidator(n4_validator)
         self.ui.cond_reg_le.setValidator(n4_validator)
 
@@ -125,6 +126,7 @@ class MainWindow(QMainWindow):
         self.ui.watering_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.watering_pg))
         self.ui.save_watering_setting_btn.clicked.connect(self._save_watering_data)
         self.ui.current_settings_btn.clicked.connect(self._load_valve_settings)
+        self.ui.auto_watering_chb.clicked.connect(self._change_watering_state)
 
         self.ui.solutio_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.solution_pg))
         self.ui.cams_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.camera_pg))
@@ -154,6 +156,8 @@ class MainWindow(QMainWindow):
         self.ui.lights_off_btn.clicked.connect(lambda: self._switch_lights(False))
         self.ui.save_lights_btn.clicked.connect(self._save_lights)
 
+        self.ui.save_sol_setting_btn.clicked.connect(self._save_configuration)
+
         self.ui.water_all_btn.clicked.connect(lambda: self._manage_all(True, "green"))
         self.ui.stop_watering_btn.clicked.connect(lambda: self._manage_all(False, "grey"))
 
@@ -177,6 +181,12 @@ class MainWindow(QMainWindow):
         for i in range(1, 22):
             water_btn: QPushButton = self.ui.scrollArea.findChild(QPushButton, f"water_btn_{i}")
             water_btn.clicked.connect(partial(self._open_valve, i=i))
+
+    def _change_watering_state(self):
+        if self.ui.auto_watering_chb.isChecked():
+            self.logo.write_logo_byte(390, bytearray(b'\x01'))
+        else:
+            self.logo.write_logo_byte(390, bytearray(b'\x00'))
 
     def _open_valve(self, i):
         if i <= 8:
@@ -237,9 +247,8 @@ class MainWindow(QMainWindow):
     def _regulate_conductivity(self, state: bool):
         self.ui.cond_reg_on_btn.setHidden(state)
         self.ui.cond_reg_off_btn.setHidden(not state)
-        self.cond_byte[1] = state
         self.cond_byte[2] = state
-        self.cond_byte[4] = state
+        self.cond_byte[5] = state
         if state:
             self.logo.write_logo_byte(300, dict_to_bytearray(self.cond_byte))
             self.logo.write_logo_ushort(322, int(self.ui.cond_ratio_le.text()))
@@ -250,25 +259,23 @@ class MainWindow(QMainWindow):
         self.ui.oxidation_off_btn.setHidden(not state)
         self.ui.pump_chb.setEnabled(not state)
         self.oxyd_byte[2] = state
-        self.oxyd_byte[4] = state
+        self.oxyd_byte[5] = state
         if state:
             self.logo.write_logo_byte(360, dict_to_bytearray(self.oxyd_byte))
-            self.logo.write_logo_ushort(362, int(self.ui.cond_reg_le.text()))
+            self.logo.write_logo_ushort(362, int(self.ui.oxygenation_reg_le.text()))
 
     def switch_pump(self):
         self.oxyd_byte[3] = self.ui.pump_chb.isChecked()
-        print(dict_to_bytearray(self.oxyd_byte))
         self.logo.write_logo_byte(360, dict_to_bytearray(self.oxyd_byte))
 
     def _regulate_ph(self, state: bool):
         self.ui.ph_on_btn.setHidden(state)
         self.ui.ph_off_btn.setHidden(not state)
-        self.ph_byte[1] = state
         self.ph_byte[2] = state
-        self.ph_byte[4] = state
+        self.ph_byte[5] = state
         if state:
             self.logo.write_logo_byte(340, dict_to_bytearray(self.ph_byte))
-            self.logo.write_logo_ushort(342, int(self.ui.cond_reg_le.text()))
+            self.logo.write_logo_ushort(342, int(float(self.ui.ph_reg_le.text())*100))
 
     def _switch_lights(self, state: bool):
         self.ui.lights_on_btn.setHidden(state)
@@ -310,13 +317,13 @@ class MainWindow(QMainWindow):
         self.ui.expand_wgt.setHidden(not state)
 
     def _add_data_to_gui(self, data):
-        self.environmental_data = data
+        self.environmental_data = data[:3]
         self.ui.wall_tep_lbl.setText(str(data[0]))
         self.ui.wall_hum_lbl.setText(str(data[1]))
         self.ui.wall_co2_lbl.setText(str(data[2]))
 
     def _add_data_to_gui_2(self, data):
-        self.water_data = data
+        self.water_data = data[3:]
         self.ui.water_ph_lbl.setText(str(data[3]))
         self.ui.water_oxyd_lbl.setText(str(data[4]))
         self.ui.water_cond_lbl.setText(str(data[5]))
@@ -350,7 +357,7 @@ class MainWindow(QMainWindow):
         cam_display.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
     def _save_current_frame(self):
-        name = "snímek obrazovky" + datetime.now().strftime("%Y-%m-%d_%H%M")
+        name = "snimek_obrazovky_" + datetime.now().strftime("%Y-%m-%d_%H_%M")
 
         if self.ui.cam_dir_le.text() != "":
             path = f"{self.ui.cam_dir_le.text()}/{name}"
@@ -403,12 +410,14 @@ class MainWindow(QMainWindow):
         self.ui.stop_saving_btn.setHidden(not state)
 
     def environmental_data_update(self):
-        self.line_chart_2.update_chart(self.environmental_data)
+        self.line_chart_2.update_chart(self.environmental_data[:2])
+        self.line_chart_5.update_chart([self.environmental_data[2]])
         if self.saving:
             self._save_data(self.environmental_data, "Okolí_pes_ste")
 
     def water_data_update(self):
-        self.line_chart.update_chart(self.water_data)
+        self.line_chart.update_chart(self.water_data[2:4])
+        self.line_chart_3.update_chart([self.water_data[0], self.water_data[1], self.water_data[4]])
         if self.saving:
             self._save_data(self.water_data, "parametry_vody")
 
@@ -448,3 +457,33 @@ class MainWindow(QMainWindow):
         for i in range(15,22):
             valve_state: QLabel = self.ui.col_wg_3.findChild(QLabel, f"valve_state_lbl_{i}")
             valve_state.setPixmap(QPixmap(led))
+
+    def _save_configuration(self):
+        conductivity = self.ui.conductivity_set_le_1.text()
+        conductivity_timer = self.ui.con_interval_set_le_1.text()
+        ph = self.ui.ph_set_le.text()
+        ph_timer = self.ui.ph_interval_set_le.text()
+        self.logo.write_logo_ushort(312, int(conductivity))
+        self.logo.write_logo_ushort(314, int(conductivity_timer))
+        self.logo.write_logo_ushort(352, int(ph))
+        self.logo.write_logo_ushort(354, int(ph_timer))
+        self.ui.con_cod_lbl.setText(conductivity)
+        self.ui.con_cod_timer_lbl.setText(conductivity_timer)
+        self.ui.con_ph_lbl.setText(ph)
+        self.ui.con_ph_timer_lbl.setText(ph_timer)
+
+    def _read_configuration(self):
+        while True:
+            if self.logo.connected:
+                values = self.logo.read_logo_config()
+                self.ui.con_cod_lbl.setText(str(values[0]))
+                self.ui.con_cod_timer_lbl.setText(str(values[1]))
+                self.ui.con_ph_lbl.setText(str(values[2]))
+                self.ui.con_ph_timer_lbl.setText(str(values[3]))
+                break
+
+    def on_app_exit(self):
+        self.logo.disconnect()
+        self.logo_2.disconnect()
+        self.cam.disconnect()
+        self.cam_2.disconnect()

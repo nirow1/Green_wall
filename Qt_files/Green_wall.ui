@@ -201,7 +201,7 @@ QPushButton:pressed {
              </size>
             </property>
             <property name="text">
-             <string>Ukladaní roztoku</string>
+             <string>Konfigurace</string>
             </property>
            </widget>
           </item>
@@ -343,7 +343,7 @@ QPushButton:pressed {
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="solution_pg">
           <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -677,7 +677,7 @@ QPushButton:pressed {
                        <item>
                         <widget class="QLabel" name="label_182">
                          <property name="text">
-                          <string/>
+                          <string>ppm</string>
                          </property>
                         </widget>
                        </item>
@@ -2165,7 +2165,7 @@ QPushButton:pressed {
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="AnimatedToggle" name="checkBox">
+                     <widget class="AnimatedToggle" name="auto_watering_chb">
                       <property name="maximumSize">
                        <size>
                         <width>70</width>
@@ -9210,7 +9210,7 @@ background: none; }</string>
                              </size>
                             </property>
                             <property name="text">
-                             <string>Vodivost 1:</string>
+                             <string>Vodivost:</string>
                             </property>
                            </widget>
                           </item>
@@ -9276,7 +9276,7 @@ background: none; }</string>
                              </size>
                             </property>
                             <property name="text">
-                             <string>Vodivost 1 časový rozestup:</string>
+                             <string>Vodivost časový rozestup:</string>
                             </property>
                            </widget>
                           </item>
@@ -9298,138 +9298,6 @@ background: none; }</string>
                           </item>
                           <item>
                            <widget class="QLabel" name="label_232">
-                            <property name="text">
-                             <string>min</string>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QWidget" name="widget_196" native="true">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_173">
-                          <property name="leftMargin">
-                           <number>1</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>1</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>1</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>1</number>
-                          </property>
-                          <item>
-                           <widget class="QLabel" name="label_229">
-                            <property name="maximumSize">
-                             <size>
-                              <width>185</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="text">
-                             <string>Vodivost 2:</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QLineEdit" name="conductivity_set_le_2">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>50</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QLabel" name="label_230">
-                            <property name="text">
-                             <string>ml</string>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QWidget" name="widget_195" native="true">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_172">
-                          <property name="leftMargin">
-                           <number>1</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>1</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>1</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>1</number>
-                          </property>
-                          <item>
-                           <widget class="QLabel" name="label_221">
-                            <property name="maximumSize">
-                             <size>
-                              <width>185</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="text">
-                             <string>Vodivost 2 časový rozestup:</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QLineEdit" name="con_interval_set_le_2">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>50</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QLabel" name="label_228">
                             <property name="text">
                              <string>min</string>
                             </property>
@@ -9585,42 +9453,42 @@ background: none; }</string>
                           </size>
                          </property>
                          <property name="text">
-                          <string>Aktualní vodivost 1:</string>
+                          <string>Aktualní vodivost:</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="2" column="0">
-                        <widget class="QLabel" name="label_224">
-                         <property name="text">
-                          <string>Aktualní vodivost 2:</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="3" column="0">
-                        <widget class="QLabel" name="label_225">
-                         <property name="text">
-                          <string>Aktualní časový rozestup:</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="2">
-                        <widget class="QLabel" name="label_235">
+                       <item row="0" column="2">
+                        <widget class="QLabel" name="con_cod_lbl">
                          <property name="text">
                           <string>XX</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="4" column="0">
+                       <item row="2" column="2">
+                        <widget class="QLabel" name="con_ph_lbl">
+                         <property name="text">
+                          <string>XX</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
                         <widget class="QLabel" name="label_226">
                          <property name="text">
                           <string>Aktualní pH:</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="0" column="2">
-                        <widget class="QLabel" name="label_222">
+                       <item row="3" column="2">
+                        <widget class="QLabel" name="con_ph_timer_lbl">
                          <property name="text">
                           <string>XX</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QLabel" name="label_227">
+                         <property name="text">
+                          <string>Aktualní časový rozestup:</string>
                          </property>
                         </widget>
                        </item>
@@ -9631,36 +9499,8 @@ background: none; }</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="5" column="0">
-                        <widget class="QLabel" name="label_227">
-                         <property name="text">
-                          <string>Aktualní časový rozestup:</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="2" column="2">
-                        <widget class="QLabel" name="label_236">
-                         <property name="text">
-                          <string>XX</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="3" column="2">
-                        <widget class="QLabel" name="label_237">
-                         <property name="text">
-                          <string>XX</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="4" column="2">
-                        <widget class="QLabel" name="label_238">
-                         <property name="text">
-                          <string>XX</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="5" column="2">
-                        <widget class="QLabel" name="label_239">
+                       <item row="1" column="2">
+                        <widget class="QLabel" name="con_cod_timer_lbl">
                          <property name="text">
                           <string>XX</string>
                          </property>

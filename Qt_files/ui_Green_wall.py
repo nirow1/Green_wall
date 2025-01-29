@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_wallnBNaFK.ui'
+## Form generated from reading UI file 'Green_wallppVubm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -1101,11 +1101,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_176 = QHBoxLayout(self.widget_200)
         self.horizontalLayout_176.setObjectName(u"horizontalLayout_176")
         self.horizontalLayout_176.setContentsMargins(0, 0, 0, 0)
-        self.checkBox = AnimatedToggle(self.widget_200)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setMaximumSize(QSize(70, 16777215))
+        self.auto_watering_chb = AnimatedToggle(self.widget_200)
+        self.auto_watering_chb.setObjectName(u"auto_watering_chb")
+        self.auto_watering_chb.setMaximumSize(QSize(70, 16777215))
 
-        self.horizontalLayout_176.addWidget(self.checkBox)
+        self.horizontalLayout_176.addWidget(self.auto_watering_chb)
 
         self.label_240 = QLabel(self.widget_200)
         self.label_240.setObjectName(u"label_240")
@@ -4303,66 +4303,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.widget_197)
 
-        self.widget_196 = QWidget(self.widget_205)
-        self.widget_196.setObjectName(u"widget_196")
-        sizePolicy.setHeightForWidth(self.widget_196.sizePolicy().hasHeightForWidth())
-        self.widget_196.setSizePolicy(sizePolicy)
-        self.widget_196.setMaximumSize(QSize(16777215, 16777215))
-        self.horizontalLayout_173 = QHBoxLayout(self.widget_196)
-        self.horizontalLayout_173.setObjectName(u"horizontalLayout_173")
-        self.horizontalLayout_173.setContentsMargins(1, 1, 1, 1)
-        self.label_229 = QLabel(self.widget_196)
-        self.label_229.setObjectName(u"label_229")
-        self.label_229.setMaximumSize(QSize(185, 16777215))
-
-        self.horizontalLayout_173.addWidget(self.label_229)
-
-        self.conductivity_set_le_2 = QLineEdit(self.widget_196)
-        self.conductivity_set_le_2.setObjectName(u"conductivity_set_le_2")
-        sizePolicy1.setHeightForWidth(self.conductivity_set_le_2.sizePolicy().hasHeightForWidth())
-        self.conductivity_set_le_2.setSizePolicy(sizePolicy1)
-        self.conductivity_set_le_2.setMaximumSize(QSize(50, 30))
-
-        self.horizontalLayout_173.addWidget(self.conductivity_set_le_2)
-
-        self.label_230 = QLabel(self.widget_196)
-        self.label_230.setObjectName(u"label_230")
-
-        self.horizontalLayout_173.addWidget(self.label_230)
-
-
-        self.verticalLayout_28.addWidget(self.widget_196)
-
-        self.widget_195 = QWidget(self.widget_205)
-        self.widget_195.setObjectName(u"widget_195")
-        sizePolicy.setHeightForWidth(self.widget_195.sizePolicy().hasHeightForWidth())
-        self.widget_195.setSizePolicy(sizePolicy)
-        self.widget_195.setMaximumSize(QSize(16777215, 16777215))
-        self.horizontalLayout_172 = QHBoxLayout(self.widget_195)
-        self.horizontalLayout_172.setObjectName(u"horizontalLayout_172")
-        self.horizontalLayout_172.setContentsMargins(1, 1, 1, 1)
-        self.label_221 = QLabel(self.widget_195)
-        self.label_221.setObjectName(u"label_221")
-        self.label_221.setMaximumSize(QSize(185, 16777215))
-
-        self.horizontalLayout_172.addWidget(self.label_221)
-
-        self.con_interval_set_le_2 = QLineEdit(self.widget_195)
-        self.con_interval_set_le_2.setObjectName(u"con_interval_set_le_2")
-        sizePolicy1.setHeightForWidth(self.con_interval_set_le_2.sizePolicy().hasHeightForWidth())
-        self.con_interval_set_le_2.setSizePolicy(sizePolicy1)
-        self.con_interval_set_le_2.setMaximumSize(QSize(50, 30))
-
-        self.horizontalLayout_172.addWidget(self.con_interval_set_le_2)
-
-        self.label_228 = QLabel(self.widget_195)
-        self.label_228.setObjectName(u"label_228")
-
-        self.horizontalLayout_172.addWidget(self.label_228)
-
-
-        self.verticalLayout_28.addWidget(self.widget_195)
-
         self.widget_194 = QWidget(self.widget_205)
         self.widget_194.setObjectName(u"widget_194")
         sizePolicy.setHeightForWidth(self.widget_194.sizePolicy().hasHeightForWidth())
@@ -4436,60 +4376,40 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_217, 0, 0, 1, 1)
 
-        self.label_224 = QLabel(self.widget_206)
-        self.label_224.setObjectName(u"label_224")
+        self.con_cod_lbl = QLabel(self.widget_206)
+        self.con_cod_lbl.setObjectName(u"con_cod_lbl")
 
-        self.gridLayout_2.addWidget(self.label_224, 2, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.con_cod_lbl, 0, 2, 1, 1)
 
-        self.label_225 = QLabel(self.widget_206)
-        self.label_225.setObjectName(u"label_225")
+        self.con_ph_lbl = QLabel(self.widget_206)
+        self.con_ph_lbl.setObjectName(u"con_ph_lbl")
 
-        self.gridLayout_2.addWidget(self.label_225, 3, 0, 1, 1)
-
-        self.label_235 = QLabel(self.widget_206)
-        self.label_235.setObjectName(u"label_235")
-
-        self.gridLayout_2.addWidget(self.label_235, 1, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.con_ph_lbl, 2, 2, 1, 1)
 
         self.label_226 = QLabel(self.widget_206)
         self.label_226.setObjectName(u"label_226")
 
-        self.gridLayout_2.addWidget(self.label_226, 4, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_226, 2, 0, 1, 1)
 
-        self.label_222 = QLabel(self.widget_206)
-        self.label_222.setObjectName(u"label_222")
+        self.con_ph_timer_lbl = QLabel(self.widget_206)
+        self.con_ph_timer_lbl.setObjectName(u"con_ph_timer_lbl")
 
-        self.gridLayout_2.addWidget(self.label_222, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.con_ph_timer_lbl, 3, 2, 1, 1)
+
+        self.label_227 = QLabel(self.widget_206)
+        self.label_227.setObjectName(u"label_227")
+
+        self.gridLayout_2.addWidget(self.label_227, 3, 0, 1, 1)
 
         self.label_223 = QLabel(self.widget_206)
         self.label_223.setObjectName(u"label_223")
 
         self.gridLayout_2.addWidget(self.label_223, 1, 0, 1, 1)
 
-        self.label_227 = QLabel(self.widget_206)
-        self.label_227.setObjectName(u"label_227")
+        self.con_cod_timer_lbl = QLabel(self.widget_206)
+        self.con_cod_timer_lbl.setObjectName(u"con_cod_timer_lbl")
 
-        self.gridLayout_2.addWidget(self.label_227, 5, 0, 1, 1)
-
-        self.label_236 = QLabel(self.widget_206)
-        self.label_236.setObjectName(u"label_236")
-
-        self.gridLayout_2.addWidget(self.label_236, 2, 2, 1, 1)
-
-        self.label_237 = QLabel(self.widget_206)
-        self.label_237.setObjectName(u"label_237")
-
-        self.gridLayout_2.addWidget(self.label_237, 3, 2, 1, 1)
-
-        self.label_238 = QLabel(self.widget_206)
-        self.label_238.setObjectName(u"label_238")
-
-        self.gridLayout_2.addWidget(self.label_238, 4, 2, 1, 1)
-
-        self.label_239 = QLabel(self.widget_206)
-        self.label_239.setObjectName(u"label_239")
-
-        self.gridLayout_2.addWidget(self.label_239, 5, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.con_cod_timer_lbl, 1, 2, 1, 1)
 
 
         self.horizontalLayout_171.addWidget(self.widget_206)
@@ -4666,7 +4586,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4677,7 +4597,7 @@ class Ui_MainWindow(object):
         self.logo_4j_btn.setText("")
         self.watering_page_btn.setText(QCoreApplication.translate("MainWindow", u"Zavla\u017eov\u00e1n\u00ed", None))
         self.solutio_page_btn.setText(QCoreApplication.translate("MainWindow", u"\u0158\u00edzen\u00ed", None))
-        self.solution_config_btn.setText(QCoreApplication.translate("MainWindow", u"Ukladan\u00ed roztoku", None))
+        self.solution_config_btn.setText(QCoreApplication.translate("MainWindow", u"Konfigurace", None))
         self.cams_page_btn.setText(QCoreApplication.translate("MainWindow", u"Kamery", None))
         self.chart_page_btn.setText(QCoreApplication.translate("MainWindow", u"Grafy", None))
         self.stop_watering_btn.setText(QCoreApplication.translate("MainWindow", u"Zastavit zal\u00e9v\u00e1n\u00ed", None))
@@ -4697,7 +4617,7 @@ class Ui_MainWindow(object):
         self.label_180.setText(QCoreApplication.translate("MainWindow", u"%", None))
         self.label_190.setText(QCoreApplication.translate("MainWindow", u"CO2:", None))
         self.wall_co2_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
-        self.label_182.setText("")
+        self.label_182.setText(QCoreApplication.translate("MainWindow", u"ppm", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Parametry vody", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Kysl\u00edk:", None))
         self.water_oxyd_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
@@ -4746,7 +4666,7 @@ class Ui_MainWindow(object):
         self.save_lights_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit", None))
         self.lights_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout sv\u011btla", None))
         self.lights_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout sv\u011btla", None))
-        self.checkBox.setText("")
+        self.auto_watering_chb.setText("")
         self.label_240.setText(QCoreApplication.translate("MainWindow", u"Automatick\u00e9 zavla\u017eov\u00e1n\u00ed", None))
         self.save_watering_setting_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit nastaven\u00ed", None))
         self.current_settings_btn.setText(QCoreApplication.translate("MainWindow", u"Vratit aktualn\u00ed nastaven\u00ed", None))
@@ -4973,30 +4893,22 @@ class Ui_MainWindow(object):
         self.label_149.setText(QCoreApplication.translate("MainWindow", u"min", None))
         self.label_162.setText(QCoreApplication.translate("MainWindow", u"Konec zalev\u00e1n\u00ed:", None))
         self.label_163.setText(QCoreApplication.translate("MainWindow", u"\u010das", None))
-        self.label_233.setText(QCoreApplication.translate("MainWindow", u"Vodivost 1:", None))
+        self.label_233.setText(QCoreApplication.translate("MainWindow", u"Vodivost:", None))
         self.label_234.setText(QCoreApplication.translate("MainWindow", u"ml", None))
-        self.label_231.setText(QCoreApplication.translate("MainWindow", u"Vodivost 1 \u010dasov\u00fd rozestup:", None))
+        self.label_231.setText(QCoreApplication.translate("MainWindow", u"Vodivost \u010dasov\u00fd rozestup:", None))
         self.label_232.setText(QCoreApplication.translate("MainWindow", u"min", None))
-        self.label_229.setText(QCoreApplication.translate("MainWindow", u"Vodivost 2:", None))
-        self.label_230.setText(QCoreApplication.translate("MainWindow", u"ml", None))
-        self.label_221.setText(QCoreApplication.translate("MainWindow", u"Vodivost 2 \u010dasov\u00fd rozestup:", None))
-        self.label_228.setText(QCoreApplication.translate("MainWindow", u"min", None))
         self.label_219.setText(QCoreApplication.translate("MainWindow", u"pH:", None))
         self.label_220.setText(QCoreApplication.translate("MainWindow", u"ml", None))
         self.label_216.setText(QCoreApplication.translate("MainWindow", u"pH \u010dasov\u00fd rozestup:", None))
         self.label_218.setText(QCoreApplication.translate("MainWindow", u"min", None))
-        self.label_217.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed vodivost 1:", None))
-        self.label_224.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed vodivost 2:", None))
-        self.label_225.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))
-        self.label_235.setText(QCoreApplication.translate("MainWindow", u"XX", None))
+        self.label_217.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed vodivost:", None))
+        self.con_cod_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
+        self.con_ph_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
         self.label_226.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed pH:", None))
-        self.label_222.setText(QCoreApplication.translate("MainWindow", u"XX", None))
-        self.label_223.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))
+        self.con_ph_timer_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
         self.label_227.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))
-        self.label_236.setText(QCoreApplication.translate("MainWindow", u"XX", None))
-        self.label_237.setText(QCoreApplication.translate("MainWindow", u"XX", None))
-        self.label_238.setText(QCoreApplication.translate("MainWindow", u"XX", None))
-        self.label_239.setText(QCoreApplication.translate("MainWindow", u"XX", None))
+        self.label_223.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))
+        self.con_cod_timer_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
         self.save_sol_setting_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit nastaven\u00ed", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.cam_dir_btn.setText("")

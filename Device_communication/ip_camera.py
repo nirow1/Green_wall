@@ -1,3 +1,4 @@
+import time
 from asyncio import timeout
 from turtledemo.penrose import start
 
@@ -33,7 +34,7 @@ class Camera(QThread):
                 self._update_image()
                 break
 
-            sleep(5)
+            sleep(600)
 
     def _update_image(self):
         while self.connected:
@@ -46,3 +47,6 @@ class Camera(QThread):
             if self.status:
                 self.NEW_IMAGE.emit(self.frame)
 
+    def disconnect(self):
+        self.connected = False
+        self.capture.release()
