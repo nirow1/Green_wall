@@ -78,7 +78,6 @@ class LogoControl(QThread):
                 msg += self.logo.db_read(0, 352, 4)
                 return struct.unpack( ">HHHH", msg)
             else:
-                print("sending")
                 time.sleep(0.05)
 
     def write_logo_byte(self, pos :int, logo_bytes: bytearray):

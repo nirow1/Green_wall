@@ -1,5 +1,4 @@
 import numpy as np
-import time
 import csv
 import cv2
 import os
@@ -9,7 +8,6 @@ from PySide6.QtCore import QPropertyAnimation, QTimer, Qt
 from PySide6.QtGui import QIcon, QImage, QPixmap
 from datetime import datetime
 from functools import partial
-from threading import Thread
 
 from Utils.static_methods import dict_to_bytearray, time_to_hexa, ushort_to_hexa
 from Utils.number_validator import NumberValidator, FloatValidator
@@ -53,7 +51,7 @@ class MainWindow(QMainWindow):
 
         # cart initializations
         self.line_chart = TimedLineChart("Parametry vody", 21600, (0, 1700), ["Vodivost", "Redoxní potencial"], 2)
-        self.line_chart_2 = TimedLineChart("parametry ovzduší", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
+        self.line_chart_2 = TimedLineChart("Parametry ovzduší", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
         self.line_chart_3 = TimedLineChart("Parametry vody", 21600, (0, 50), ["Kyslík", "pH", "Teplota"], 3)
         self.line_chart_4 = TimedLineChart("Parametry ovzduší učebna", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
         self.line_chart_5 = TimedLineChart("CO2", 86400, (0, 100), ["Okolí stěny","Učebna"], 2)
@@ -228,9 +226,7 @@ class MainWindow(QMainWindow):
         if alert == QMessageBox.StandardButton.Yes:
             for name in le_names:
                 le_values.append(self.ui.scrollArea.findChild(QLineEdit, name+str(pos)).text())
-            print(le_values)
             for i in range(pos, pos-7, -1):
-                print(i)
                 for j, name in enumerate(le_names):
                     start_le: QLineEdit = self.ui.scrollArea.findChild(QLineEdit, name + str(i))
                     start_le.setText(le_values[j])
@@ -284,22 +280,10 @@ class MainWindow(QMainWindow):
         self.logo.write_logo_byte(2, bytearray(b'\x01'))
 
     def _save_lights(self):
-        self.lights_thread = Thread(target=self._check_lights)
-        self.lights_thread.start()
-        self.lights_time = [datetime.strptime(self.ui.lights_on_le.text(), "%H:%M").time(),
-                            datetime.strptime(self.ui.lights_off_le.text(), "%H:%M").time()]
         self.logo.write_logo_byte(374, bytearray(b'\x00'))
         self.logo.write_logo_byte(2, bytearray(b'\x01'))
-        self.logo_2.write_logo_byte(440, time_to_hexa(self.ui.lights_on_le.text()))
-        self.logo_2.write_logo_byte(442, time_to_hexa(self.ui.lights_off_le.text()))
-
-    def _check_lights(self):
-        while True:
-            if self.lights_time[0] <= datetime.now().time() <= self.lights_time[1]:
-                self._switch_lights(True)
-            else:
-                self._switch_lights(False)
-            time.sleep(10)
+        self.logo.write_logo_byte(524, time_to_hexa(self.ui.lights_on_le.text()))
+        self.logo.write_logo_byte(526, time_to_hexa(self.ui.lights_off_le.text()))
 
     def _open_dir_dialog(self, lineedit: QLineEdit):
         options = QFileDialog(self).options()
@@ -370,25 +354,42 @@ class MainWindow(QMainWindow):
     def _save_watering_data(self):
         with open("./App_data/valve_settings.csv", 'w') as f:
             pass
-        self.logo.write_logo_byte(400, self._data_to_bytearray(1, 17))
-        self.logo_2.write_logo_byte(400, self._data_to_bytearray(17, 22))
+        valve_data_structures = self._data_to_bytearray()
+        self.logo.write_logo_byte(400, valve_data_structures[0])
+        self.logo.write_logo_byte(480, valve_data_structures[1])
+        self.logo.write_logo_byte(528, valve_data_structures[2])
+        self.logo_2.write_logo_byte(402, valve_data_structures[3])
 
-    def _data_to_bytearray(self, start, end) -> bytearray:
+    def _data_to_bytearray(self) -> list:
         data_array = b''
-        for i in range(start, end):
+        data_array_times = b''
+        data_array_durations_1 = b''
+        data_array_durations_2 = b''
+        for i in range(1, 22):
             start_time = self.ui.scrollArea.findChild(QLineEdit, f"water_start_le_{str(i)}").text()
             duration = self.ui.scrollArea.findChild(QLineEdit, f"water_dur_le_{str(i)}").text()
             pause = self.ui.scrollArea.findChild(QLineEdit, f"water_interval_le_{str(i)}").text()
             end_time = self.ui.scrollArea.findChild(QLineEdit, f"water_end_le_{str(i)}").text()
-            data_array += time_to_hexa(start_time)
-            data_array += ushort_to_hexa(duration)
-            data_array += ushort_to_hexa(pause)
-            data_array += time_to_hexa(end_time)
+            if i <= 10:
+                data_array += time_to_hexa(start_time)
+                data_array += ushort_to_hexa(duration)
+                data_array += ushort_to_hexa(pause)
+                data_array += time_to_hexa(end_time)
+            else:
+                data_array_times += time_to_hexa(start_time)
+                data_array_times += time_to_hexa(end_time)
+                if i <=  16:
+                    data_array_durations_1 += ushort_to_hexa(duration)
+                    data_array_durations_1 += ushort_to_hexa(pause)
+                else:
+                    data_array_durations_2 += ushort_to_hexa(duration)
+                    data_array_durations_2 += ushort_to_hexa(pause)
+
             with open("./App_data/valve_settings.csv", 'a', newline='') as f:
                 writer = csv.writer(f)
                 writer.writerow([f"v{i}", start_time, duration, pause, end_time])
 
-        return bytearray(data_array)
+        return [data_array, data_array_times, data_array_durations_1, data_array_durations_2]
 
     def _load_valve_settings(self):
         with open("./App_data/valve_settings.csv", 'r') as f:

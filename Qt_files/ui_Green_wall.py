@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_wallppVubm.ui'
+## Form generated from reading UI file 'Green_wallUGzmJO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -4586,7 +4586,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4643,7 +4643,7 @@ class Ui_MainWindow(object):
         self.label_198.setText(QCoreApplication.translate("MainWindow", u"%", None))
         self.label_192.setText(QCoreApplication.translate("MainWindow", u"CO2:", None))
         self.outside_co2_lbl.setText(QCoreApplication.translate("MainWindow", u"00.0", None))
-        self.label_213.setText("")
+        self.label_213.setText(QCoreApplication.translate("MainWindow", u"ppm", None))
         self.label_208.setText(QCoreApplication.translate("MainWindow", u"Regulace pH", None))
         self.label_202.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
         self.ph_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))

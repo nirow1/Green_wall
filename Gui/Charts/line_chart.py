@@ -68,7 +68,7 @@ class TimedLineChart(QChartView):
         # Create a QChart
         self.chart = QChart()
         self.chart.setTitle(name)
-        self.chart.legend().setVisible(False)
+        self.chart.legend().setVisible(True)
 
         # Series creation
         self.series_list = []
