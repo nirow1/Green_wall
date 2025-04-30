@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_wallUGzmJO.ui'
+## Form generated from reading UI file 'Green_wallnGskzc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -680,6 +680,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_132.setObjectName(u"horizontalLayout_132")
         self.widget_207 = QWidget(self.widget_202)
         self.widget_207.setObjectName(u"widget_207")
+        self.widget_207.setMaximumSize(QSize(120, 16777215))
+        self.horizontalLayout_178 = QHBoxLayout(self.widget_207)
+        self.horizontalLayout_178.setObjectName(u"horizontalLayout_178")
+        self.horizontalLayout_178.setContentsMargins(0, 0, 0, 0)
+        self.set_ph_value_btn = QPushButton(self.widget_207)
+        self.set_ph_value_btn.setObjectName(u"set_ph_value_btn")
+        self.set_ph_value_btn.setMaximumSize(QSize(80, 35))
+
+        self.horizontalLayout_178.addWidget(self.set_ph_value_btn)
+
 
         self.horizontalLayout_132.addWidget(self.widget_207)
 
@@ -696,11 +706,6 @@ class Ui_MainWindow(object):
         self.ph_off_btn.setMaximumSize(QSize(70, 16777215))
 
         self.horizontalLayout_132.addWidget(self.ph_off_btn)
-
-        self.widget_208 = QWidget(self.widget_202)
-        self.widget_208.setObjectName(u"widget_208")
-
-        self.horizontalLayout_132.addWidget(self.widget_208)
 
 
         self.verticalLayout_24.addWidget(self.widget_202)
@@ -740,30 +745,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_139.addWidget(self.oxygenation_reg_le)
 
-        self.oxidation_on_btn = QPushButton(self.widget_76)
-        self.oxidation_on_btn.setObjectName(u"oxidation_on_btn")
-        self.oxidation_on_btn.setMinimumSize(QSize(0, 35))
-        self.oxidation_on_btn.setMaximumSize(QSize(70, 16777215))
-
-        self.horizontalLayout_139.addWidget(self.oxidation_on_btn)
-
-        self.oxidation_off_btn = QPushButton(self.widget_76)
-        self.oxidation_off_btn.setObjectName(u"oxidation_off_btn")
-        self.oxidation_off_btn.setMinimumSize(QSize(0, 35))
-        self.oxidation_off_btn.setMaximumSize(QSize(70, 16777215))
-
-        self.horizontalLayout_139.addWidget(self.oxidation_off_btn)
-
-
-        self.verticalLayout_20.addWidget(self.widget_76)
-
-        self.widget_164 = QWidget(self.widget_75)
-        self.widget_164.setObjectName(u"widget_164")
-        self.horizontalLayout_140 = QHBoxLayout(self.widget_164)
-        self.horizontalLayout_140.setObjectName(u"horizontalLayout_140")
-        self.widget_169 = QWidget(self.widget_164)
+        self.widget_169 = QWidget(self.widget_76)
         self.widget_169.setObjectName(u"widget_169")
-        self.widget_169.setMaximumSize(QSize(180, 35))
+        self.widget_169.setMaximumSize(QSize(150, 35))
         self.horizontalLayout_144 = QHBoxLayout(self.widget_169)
         self.horizontalLayout_144.setObjectName(u"horizontalLayout_144")
         self.horizontalLayout_144.setContentsMargins(0, 0, 0, 0)
@@ -780,10 +764,46 @@ class Ui_MainWindow(object):
         self.horizontalLayout_144.addWidget(self.label_212)
 
 
-        self.horizontalLayout_140.addWidget(self.widget_169)
+        self.horizontalLayout_139.addWidget(self.widget_169)
 
 
-        self.verticalLayout_20.addWidget(self.widget_164)
+        self.verticalLayout_20.addWidget(self.widget_76)
+
+        self.widget_209 = QWidget(self.widget_75)
+        self.widget_209.setObjectName(u"widget_209")
+        self.horizontalLayout_179 = QHBoxLayout(self.widget_209)
+        self.horizontalLayout_179.setObjectName(u"horizontalLayout_179")
+        self.widget_211 = QWidget(self.widget_209)
+        self.widget_211.setObjectName(u"widget_211")
+        self.widget_211.setMaximumSize(QSize(120, 16777215))
+        self.horizontalLayout_180 = QHBoxLayout(self.widget_211)
+        self.horizontalLayout_180.setObjectName(u"horizontalLayout_180")
+        self.horizontalLayout_180.setContentsMargins(1, 1, 1, 1)
+        self.set_oxy_value_btn = QPushButton(self.widget_211)
+        self.set_oxy_value_btn.setObjectName(u"set_oxy_value_btn")
+        self.set_oxy_value_btn.setMaximumSize(QSize(80, 35))
+
+        self.horizontalLayout_180.addWidget(self.set_oxy_value_btn)
+
+
+        self.horizontalLayout_179.addWidget(self.widget_211)
+
+        self.oxidation_on_btn = QPushButton(self.widget_209)
+        self.oxidation_on_btn.setObjectName(u"oxidation_on_btn")
+        self.oxidation_on_btn.setMinimumSize(QSize(0, 35))
+        self.oxidation_on_btn.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_179.addWidget(self.oxidation_on_btn)
+
+        self.oxidation_off_btn = QPushButton(self.widget_209)
+        self.oxidation_off_btn.setObjectName(u"oxidation_off_btn")
+        self.oxidation_off_btn.setMinimumSize(QSize(0, 35))
+        self.oxidation_off_btn.setMaximumSize(QSize(70, 16777215))
+
+        self.horizontalLayout_179.addWidget(self.oxidation_off_btn)
+
+
+        self.verticalLayout_20.addWidget(self.widget_209)
 
 
         self.horizontalLayout_142.addWidget(self.widget_75)
@@ -847,6 +867,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_130.setContentsMargins(0, -1, 0, -1)
         self.widget_201 = QWidget(self.widget_34)
         self.widget_201.setObjectName(u"widget_201")
+        self.widget_201.setMaximumSize(QSize(120, 16777215))
+        self.horizontalLayout_177 = QHBoxLayout(self.widget_201)
+        self.horizontalLayout_177.setObjectName(u"horizontalLayout_177")
+        self.horizontalLayout_177.setContentsMargins(0, 0, 0, 0)
+        self.set_cond_value_btn = QPushButton(self.widget_201)
+        self.set_cond_value_btn.setObjectName(u"set_cond_value_btn")
+        self.set_cond_value_btn.setMaximumSize(QSize(80, 35))
+
+        self.horizontalLayout_177.addWidget(self.set_cond_value_btn)
+
 
         self.horizontalLayout_130.addWidget(self.widget_201)
 
@@ -864,11 +894,6 @@ class Ui_MainWindow(object):
         self.cond_reg_off_btn.setMaximumSize(QSize(70, 16777215))
 
         self.horizontalLayout_130.addWidget(self.cond_reg_off_btn)
-
-        self.widget_50 = QWidget(self.widget_34)
-        self.widget_50.setObjectName(u"widget_50")
-
-        self.horizontalLayout_130.addWidget(self.widget_50)
 
 
         self.verticalLayout_23.addWidget(self.widget_34)
@@ -899,6 +924,35 @@ class Ui_MainWindow(object):
         self.label_209.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_25.addWidget(self.label_209)
+
+        self.widget_195 = QWidget(self.widget_30)
+        self.widget_195.setObjectName(u"widget_195")
+        self.horizontalLayout_172 = QHBoxLayout(self.widget_195)
+        self.horizontalLayout_172.setObjectName(u"horizontalLayout_172")
+        self.horizontalLayout_172.setContentsMargins(0, 0, 0, 0)
+        self.widget_196 = QWidget(self.widget_195)
+        self.widget_196.setObjectName(u"widget_196")
+        self.widget_196.setMaximumSize(QSize(211, 16777215))
+        self.horizontalLayout_173 = QHBoxLayout(self.widget_196)
+        self.horizontalLayout_173.setObjectName(u"horizontalLayout_173")
+        self.horizontalLayout_173.setContentsMargins(0, 0, 0, 0)
+        self.automatic_lights_chb = AnimatedToggle(self.widget_196)
+        self.automatic_lights_chb.setObjectName(u"automatic_lights_chb")
+        self.automatic_lights_chb.setMaximumSize(QSize(60, 16777215))
+        self.automatic_lights_chb.setChecked(True)
+
+        self.horizontalLayout_173.addWidget(self.automatic_lights_chb)
+
+        self.label_200 = QLabel(self.widget_196)
+        self.label_200.setObjectName(u"label_200")
+
+        self.horizontalLayout_173.addWidget(self.label_200)
+
+
+        self.horizontalLayout_172.addWidget(self.widget_196)
+
+
+        self.verticalLayout_25.addWidget(self.widget_195)
 
         self.widget_51 = QWidget(self.widget_30)
         self.widget_51.setObjectName(u"widget_51")
@@ -1177,7 +1231,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1179, 1732))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 769, 1732))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.widget_77 = QWidget(self.scrollAreaWidgetContents)
@@ -4465,6 +4519,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.cam_dir_btn)
 
+        self.stop_saving_frames_btn = QPushButton(self.widget_6)
+        self.stop_saving_frames_btn.setObjectName(u"stop_saving_frames_btn")
+        self.stop_saving_frames_btn.setMinimumSize(QSize(115, 0))
+        self.stop_saving_frames_btn.setMaximumSize(QSize(150, 35))
+
+        self.horizontalLayout_3.addWidget(self.stop_saving_frames_btn)
+
         self.save_frame_btn = QPushButton(self.widget_6)
         self.save_frame_btn.setObjectName(u"save_frame_btn")
         self.save_frame_btn.setMinimumSize(QSize(100, 0))
@@ -4586,7 +4647,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4646,21 +4707,26 @@ class Ui_MainWindow(object):
         self.label_213.setText(QCoreApplication.translate("MainWindow", u"ppm", None))
         self.label_208.setText(QCoreApplication.translate("MainWindow", u"Regulace pH", None))
         self.label_202.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
+        self.set_ph_value_btn.setText(QCoreApplication.translate("MainWindow", u"Nastavit", None))
         self.ph_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
         self.ph_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
         self.label_211.setText(QCoreApplication.translate("MainWindow", u"Regulace okysli\u010den\u00ed", None))
         self.label_210.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
-        self.oxidation_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
-        self.oxidation_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
         self.pump_chb.setText("")
         self.label_212.setText(QCoreApplication.translate("MainWindow", u"Kompresor", None))
+        self.set_oxy_value_btn.setText(QCoreApplication.translate("MainWindow", u"Nastavit", None))
+        self.oxidation_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
+        self.oxidation_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
         self.label_207.setText(QCoreApplication.translate("MainWindow", u"Regulace vodivosti", None))
         self.label_199.setText(QCoreApplication.translate("MainWindow", u"Vy\u017eadovan\u00e1 hodnota:", None))
         self.label_241.setText(QCoreApplication.translate("MainWindow", u"1/", None))
-        self.label_242.setText(QCoreApplication.translate("MainWindow", u"Pom\u011br", None))
+        self.label_242.setText(QCoreApplication.translate("MainWindow", u"Pom\u011br A/B", None))
+        self.set_cond_value_btn.setText(QCoreApplication.translate("MainWindow", u"Nastavit", None))
         self.cond_reg_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout", None))
         self.cond_reg_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout", None))
         self.label_209.setText(QCoreApplication.translate("MainWindow", u"Nastaven\u00ed sv\u011btel", None))
+        self.automatic_lights_chb.setText("")
+        self.label_200.setText(QCoreApplication.translate("MainWindow", u"automatick\u00e9 osv\u011btlen\u00ed", None))
         self.label_205.setText(QCoreApplication.translate("MainWindow", u"Zap\u00edn\u00e1n\u00ed sv\u011btel:", None))
         self.label_206.setText(QCoreApplication.translate("MainWindow", u"Vyp\u00edn\u00e1n\u00ed sv\u011btel:", None))
         self.save_lights_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit", None))
@@ -4901,17 +4967,18 @@ class Ui_MainWindow(object):
         self.label_220.setText(QCoreApplication.translate("MainWindow", u"ml", None))
         self.label_216.setText(QCoreApplication.translate("MainWindow", u"pH \u010dasov\u00fd rozestup:", None))
         self.label_218.setText(QCoreApplication.translate("MainWindow", u"min", None))
-        self.label_217.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed vodivost:", None))
+        self.label_217.setText(QCoreApplication.translate("MainWindow", u"Nastaveno:", None))
         self.con_cod_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
         self.con_ph_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
-        self.label_226.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed pH:", None))
+        self.label_226.setText(QCoreApplication.translate("MainWindow", u"Nastaveno:", None))
         self.con_ph_timer_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
-        self.label_227.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))
-        self.label_223.setText(QCoreApplication.translate("MainWindow", u"Aktualn\u00ed \u010dasov\u00fd rozestup:", None))
+        self.label_227.setText(QCoreApplication.translate("MainWindow", u"Nastaveno:", None))
+        self.label_223.setText(QCoreApplication.translate("MainWindow", u"Nastaveno:", None))
         self.con_cod_timer_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
         self.save_sol_setting_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit nastaven\u00ed", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.cam_dir_btn.setText("")
+        self.stop_saving_frames_btn.setText(QCoreApplication.translate("MainWindow", u"P\u0159estat ukl\u00e1dat", None))
         self.save_frame_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit sn\u00edmek", None))
         self.label_214.setText(QCoreApplication.translate("MainWindow", u"\u010cas posledn\u00edho sn\u00edmku:", None))
         self.time_cam_lbl_1.setText("")

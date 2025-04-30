@@ -25,7 +25,6 @@ def time_to_hexa(time: str) -> bytearray:
         time_str = '0' + time_str + '00'
     elif time_len == 0:
         time_str = "0000"
-    print(bytearray.fromhex(time_str))
     return bytearray.fromhex(time_str)
 
 def dict_to_bytearray(dictionary) -> bytearray:
@@ -33,3 +32,12 @@ def dict_to_bytearray(dictionary) -> bytearray:
     chunks = np.split(bits, len(bits) // 8)
     bytes_list = [np.packbits(chunk[::-1])[0] for chunk in chunks]
     return bytearray(bytes_list)
+
+def combine_to_float( float_list ):
+    # Combine the high and low 16-bit numbers into a 32-bit integer
+    combined = (float_list[0] << 16) | float_list[1]
+
+    # Convert the 32-bit integer to a float
+    float_value = struct.unpack('!f', struct.pack('!I', combined))[0]
+
+    return float_value

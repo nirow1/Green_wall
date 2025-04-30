@@ -343,7 +343,7 @@ QPushButton:pressed {
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>4</number>
          </property>
          <widget class="QWidget" name="solution_pg">
           <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1282,7 +1282,41 @@ QPushButton:pressed {
                      <widget class="QWidget" name="widget_202" native="true">
                       <layout class="QHBoxLayout" name="horizontalLayout_132">
                        <item>
-                        <widget class="QWidget" name="widget_207" native="true"/>
+                        <widget class="QWidget" name="widget_207" native="true">
+                         <property name="maximumSize">
+                          <size>
+                           <width>120</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_178">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QPushButton" name="set_ph_value_btn">
+                            <property name="maximumSize">
+                             <size>
+                              <width>80</width>
+                              <height>35</height>
+                             </size>
+                            </property>
+                            <property name="text">
+                             <string>Nastavit</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
                        </item>
                        <item>
                         <widget class="QPushButton" name="ph_on_btn">
@@ -1321,9 +1355,6 @@ QPushButton:pressed {
                           <string>Vypnout</string>
                          </property>
                         </widget>
-                       </item>
-                       <item>
-                        <widget class="QWidget" name="widget_208" native="true"/>
                        </item>
                       </layout>
                      </widget>
@@ -1404,54 +1435,10 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="oxidation_on_btn">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>35</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>70</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string>Zapnout</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="oxidation_off_btn">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>35</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>70</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string>Vypnout</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QWidget" name="widget_164" native="true">
-                      <layout class="QHBoxLayout" name="horizontalLayout_140">
-                       <item>
                         <widget class="QWidget" name="widget_169" native="true">
                          <property name="maximumSize">
                           <size>
-                           <width>180</width>
+                           <width>150</width>
                            <height>35</height>
                           </size>
                          </property>
@@ -1495,6 +1482,87 @@ QPushButton:pressed {
                            </widget>
                           </item>
                          </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_209" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_179">
+                       <item>
+                        <widget class="QWidget" name="widget_211" native="true">
+                         <property name="maximumSize">
+                          <size>
+                           <width>120</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_180">
+                          <property name="leftMargin">
+                           <number>1</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>1</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>1</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>1</number>
+                          </property>
+                          <item>
+                           <widget class="QPushButton" name="set_oxy_value_btn">
+                            <property name="maximumSize">
+                             <size>
+                              <width>80</width>
+                              <height>35</height>
+                             </size>
+                            </property>
+                            <property name="text">
+                             <string>Nastavit</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="oxidation_on_btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Zapnout</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="oxidation_off_btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Vypnout</string>
+                         </property>
                         </widget>
                        </item>
                       </layout>
@@ -1604,7 +1672,7 @@ QPushButton:pressed {
                        <item>
                         <widget class="QLabel" name="label_242">
                          <property name="text">
-                          <string>Poměr</string>
+                          <string>Poměr A/B</string>
                          </property>
                         </widget>
                        </item>
@@ -1621,7 +1689,41 @@ QPushButton:pressed {
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QWidget" name="widget_201" native="true"/>
+                        <widget class="QWidget" name="widget_201" native="true">
+                         <property name="maximumSize">
+                          <size>
+                           <width>120</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_177">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QPushButton" name="set_cond_value_btn">
+                            <property name="maximumSize">
+                             <size>
+                              <width>80</width>
+                              <height>35</height>
+                             </size>
+                            </property>
+                            <property name="text">
+                             <string>Nastavit</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
                        </item>
                        <item>
                         <widget class="QPushButton" name="cond_reg_on_btn">
@@ -1663,9 +1765,6 @@ QPushButton:pressed {
                           <string>Vypnout</string>
                          </property>
                         </widget>
-                       </item>
-                       <item>
-                        <widget class="QWidget" name="widget_50" native="true"/>
                        </item>
                       </layout>
                      </widget>
@@ -1723,6 +1822,71 @@ QPushButton:pressed {
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_195" native="true">
+                   <layout class="QHBoxLayout" name="horizontalLayout_172">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QWidget" name="widget_196" native="true">
+                      <property name="maximumSize">
+                       <size>
+                        <width>211</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_173">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="AnimatedToggle" name="automatic_lights_chb">
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="checked">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_200">
+                         <property name="text">
+                          <string>automatické osvětlení</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                  <item>
@@ -2303,7 +2467,7 @@ background: none; }</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>1179</width>
+                <width>769</width>
                 <height>1732</height>
                </rect>
               </property>
@@ -9453,7 +9617,7 @@ background: none; }</string>
                           </size>
                          </property>
                          <property name="text">
-                          <string>Aktualní vodivost:</string>
+                          <string>Nastaveno:</string>
                          </property>
                         </widget>
                        </item>
@@ -9474,7 +9638,7 @@ background: none; }</string>
                        <item row="2" column="0">
                         <widget class="QLabel" name="label_226">
                          <property name="text">
-                          <string>Aktualní pH:</string>
+                          <string>Nastaveno:</string>
                          </property>
                         </widget>
                        </item>
@@ -9488,14 +9652,14 @@ background: none; }</string>
                        <item row="3" column="0">
                         <widget class="QLabel" name="label_227">
                          <property name="text">
-                          <string>Aktualní časový rozestup:</string>
+                          <string>Nastaveno:</string>
                          </property>
                         </widget>
                        </item>
                        <item row="1" column="0">
                         <widget class="QLabel" name="label_223">
                          <property name="text">
-                          <string>Aktualní časový rozestup:</string>
+                          <string>Nastaveno:</string>
                          </property>
                         </widget>
                        </item>
@@ -9589,6 +9753,25 @@ background: none; }</string>
                   <width>40</width>
                   <height>35</height>
                  </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="stop_saving_frames_btn">
+                <property name="minimumSize">
+                 <size>
+                  <width>115</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Přestat ukládat</string>
                 </property>
                </widget>
               </item>
