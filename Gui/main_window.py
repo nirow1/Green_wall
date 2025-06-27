@@ -7,6 +7,7 @@ import csv
 import cv2
 import os
 
+from PySide6.QtCore import QByteArray
 from PySide6.QtWidgets import QMainWindow, QFileDialog, QLineEdit, QPushButton, QMessageBox, QLabel
 from PySide6.QtCore import QPropertyAnimation, QTimer, Qt
 from PySide6.QtGui import QIcon, QImage, QPixmap
@@ -44,7 +45,7 @@ class MainWindow(QMainWindow):
         self.saving: bool= False
         self.dir_name: str= ""
 
-        self.logo = LogoControl("192.168.1.10")
+        self.logo = LogoControl("192.168.1.3")
         self.logo_2 = LogoControl("192.168.1.11")
         self.cam = Camera("192.168.1.50", 10)
         self.cam_2 = Camera("192.168.1.51", 10)
@@ -52,30 +53,34 @@ class MainWindow(QMainWindow):
         self.pictures = [[], []]
 
         self.logo.start()
-        self.logo_2.start()
-        self.cam.start()
-        self.cam_2.start()
-        self.papago.start()
+        #self.logo_2.start()
+        #self.cam.start()
+        #self.cam_2.start()
+        #self.papago.start()
 
         # cart initializations
-        self.line_chart = TimedLineChart("Parametry vody", 21600, (0, 3000), ["Vodivost", "Redoxní potencial"], 2)
+        self.conductivity_chart = TimedLineChart("Vodivost vody", 21600, (0, 2000), ["Vodivost"], 1)
         self.line_chart_2 = TimedLineChart("Parametry ovzduší", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
-        self.line_chart_3 = TimedLineChart("Parametry vody", 21600, (0, 30), ["pH", "Kyslík", "Teplota"], 3)
+        self.water_data_chart = TimedLineChart("Parametry vody", 21600, (0, 30), ["pH", "Kyslík", "Teplota"], 3)
         self.line_chart_4 = TimedLineChart("Parametry ovzduší učebna", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
-        self.line_chart_5 = TimedLineChart("CO2", 86400, (0, 100), ["Okolí stěny","Učebna"], 2)
-        self.ui.chart_1.addWidget(self.line_chart)
-        self.ui.chart_2.addWidget(self.line_chart_2)
-        self.ui.chart_3.addWidget(self.line_chart_3)
+        self.line_chart_5 = TimedLineChart("CO2", 86400, (300, 600), ["Okolí stěny","Učebna"], 2)
+        self.redox_chart = TimedLineChart("Redoxní potenciál vody", 21600, (-200, 600), ["Redoxní potenciál"], 1)
+        self.ui.chart_1.addWidget(self.water_data_chart)
+        self.ui.chart_2.addWidget(self.conductivity_chart)
+        self.ui.chart_3.addWidget(self.line_chart_2)
         self.ui.chart_4.addWidget(self.line_chart_4)
         self.ui.chart_5.addWidget(self.line_chart_5)
+        self.ui.chart_6.addWidget(self.redox_chart)
 
         environment_update = QTimer(self)
         environment_update.timeout.connect(self.environmental_data_update)
-        environment_update.start(1800000)
+        timer_5_min = 5*60*1000
+        environment_update.start(timer_5_min)
 
         water_update = QTimer(self)
         water_update.timeout.connect(self.water_data_update)
-        water_update.start(300000)
+        timer_1_min = 1*60*1000
+        water_update.start(timer_1_min)
 
 
         self.save_image_timer = QTimer(self)
@@ -83,12 +88,10 @@ class MainWindow(QMainWindow):
 
         self._setup_validators()
 
-        self.side_panel_animation = QPropertyAnimation(self.ui.widget, b"maximumWidth")
+        self.side_panel_animation = QPropertyAnimation(self.ui.widget, QByteArray(b"maximumWidth"))
         self._button_functions()
         self._handle_emits()
         self._show_current_config()
-        time.sleep(0.1)
-        self._on_connection_send()
 
     def _init_graphical_changes(self):
         self.ui.expand_menu_btn.setIcon(QIcon("./App_data/ico.png"))
@@ -162,8 +165,8 @@ class MainWindow(QMainWindow):
         self.ui.ph_off_btn.clicked.connect(lambda: self._regulate_ph(False))
         self.ui.set_ph_value_btn.clicked.connect(self._set_ph_value)
 
-        self.ui.oxidation_on_btn.clicked.connect(lambda: self._regulate_oxidation(True))
-        self.ui.oxidation_off_btn.clicked.connect(lambda: self._regulate_oxidation(False))
+        self.ui.oxidation_on_btn.clicked.connect(lambda: self._regulate_oxygenation(True))
+        self.ui.oxidation_off_btn.clicked.connect(lambda: self._regulate_oxygenation(False))
         self.ui.set_oxy_value_btn.clicked.connect(self._set_oxy_value)
         self.ui.pump_chb.clicked.connect(self.switch_pump)
 
@@ -210,7 +213,7 @@ class MainWindow(QMainWindow):
         self.logo.LOGO_DATA.connect(lambda data: self._add_data_to_gui(data))
         self.logo_2.LOGO_DATA.connect(lambda data: self._add_data_to_gui_2(data))
         self.papago.PAPAGO_DATA.connect(lambda data: self._update_papago_data(data))
-        self.logo.CONNECTION_LOSS.connect(self._on_connection_send)
+        self.logo.NEW_CONNECTION_ESTABLISHED.connect(self._on_connection_send)
 
     def _update_papago_data(self, outside_data):
         self.ui.outside_temp_lbl.setText(str(outside_data[0]))
@@ -286,20 +289,23 @@ class MainWindow(QMainWindow):
     def _regulate_conductivity(self, state: bool):
         self.ui.cond_reg_on_btn.setHidden(state)
         self.ui.cond_reg_off_btn.setHidden(not state)
+        #self.cond_byte[1] = state
         self.cond_byte[2] = state
         self.cond_byte[5] = state
+        print("vodivost")
         self.logo.write_logo_byte(300, dict_to_bytearray(self.cond_byte))
 
     def _set_cond_value(self):
         self.logo.write_logo_ushort(322, int(self.ui.cond_ratio_le.text()))
         self.logo.write_logo_ushort(302, int(self.ui.cond_reg_le.text()))
 
-    def _regulate_oxidation(self, state: bool):
+    def _regulate_oxygenation(self, state: bool):
         self.ui.oxidation_on_btn.setHidden(state)
         self.ui.oxidation_off_btn.setHidden(not state)
         self.ui.pump_chb.setEnabled(not state)
         self.oxyd_byte[2] = state
-        self.oxyd_byte[5] = state
+        self.oxyd_byte[5] = state # tohle byla 5
+        print("oxygenace")
         self.logo.write_logo_byte(360, dict_to_bytearray(self.oxyd_byte))
 
     def _set_oxy_value(self):
@@ -312,8 +318,9 @@ class MainWindow(QMainWindow):
     def _regulate_ph(self, state: bool):
         self.ui.ph_on_btn.setHidden(state)
         self.ui.ph_off_btn.setHidden(not state)
-        self.ph_byte[2] = state
-        self.ph_byte[5] = state
+        self.cond_byte[1] = state
+        self.cond_byte[2] = True
+        self.cond_byte[5] = state
         self.logo.write_logo_byte(340, dict_to_bytearray(self.ph_byte))
 
     def _set_ph_value(self):
@@ -402,15 +409,9 @@ class MainWindow(QMainWindow):
         cur_time = datetime.now().time()
 
         lower_limit = dt.time(12, 0)
-        upper_limit = dt.time(13,0)
+        upper_limit = dt.time(14,0)
         if lower_limit <= cur_time <= upper_limit:
-            frame_thread = Thread(target=self._take_frames)
-            frame_thread.start()
-
-    def _take_frames(self):
-        self._save_current_frame()
-        time.sleep(30)
-        self._save_current_frame()
+            self._save_current_frame()
 
     def _save_current_frame(self):
         name = "snimek_obrazovky_" + datetime.now().strftime("%Y-%m-%d_%H_%M")
@@ -491,8 +492,9 @@ class MainWindow(QMainWindow):
             self._save_data(self.environmental_data, "Okolí_pes_ste")
 
     def water_data_update(self):
-        self.line_chart.update_chart(self.water_data[2:4])
-        self.line_chart_3.update_chart([self.water_data[0], self.water_data[1], self.water_data[4]])
+        self.conductivity_chart.update_chart([self.water_data[2]])
+        self.water_data_chart.update_chart([self.water_data[0], self.water_data[1], self.water_data[4]])
+        self.redox_chart.update_chart([self.water_data[3]])
         if self.saving:
             self._save_data(self.water_data, "parametry_vody")
 

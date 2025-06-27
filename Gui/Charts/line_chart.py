@@ -57,6 +57,7 @@ class LineChart(QChartView):
             self.count += 1
         except Exception as e:
             print(e)
+            print("chart update error")
 
 class TimedLineChart(QChartView):
     def __init__(self, name: str, x_axis_seconds: int, y_axis: (int, int), line_name: List[str] = None,
