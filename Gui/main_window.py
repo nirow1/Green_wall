@@ -1,7 +1,4 @@
 import datetime as dt
-import time
-from threading import Thread
-
 import numpy as np
 import csv
 import cv2
@@ -13,14 +10,13 @@ from PySide6.QtCore import QPropertyAnimation, QTimer, Qt
 from PySide6.QtGui import QIcon, QImage, QPixmap
 from datetime import datetime
 from functools import partial
-
 from Device_communication.papago_controller import PapagoController
 from Utils.static_methods import dict_to_bytearray, time_to_hexa, ushort_to_hexa
 from Utils.number_validator import NumberValidator, FloatValidator
 from Device_communication.logo import LogoControl
 from Device_communication.ip_camera import Camera
 from Qt_files.ui_Green_wall import Ui_MainWindow
-from Gui.Charts.line_chart import TimedLineChart
+from Gui.Charts.zoomable_chart import ZoomableChart
 from Utils.time_validator import TimeValidator
 
 
@@ -45,7 +41,7 @@ class MainWindow(QMainWindow):
         self.saving: bool= False
         self.dir_name: str= ""
 
-        self.logo = LogoControl("192.168.1.3")
+        self.logo = LogoControl("192.168.1.10")
         self.logo_2 = LogoControl("192.168.1.11")
         self.cam = Camera("192.168.1.50", 10)
         self.cam_2 = Camera("192.168.1.51", 10)
@@ -53,23 +49,23 @@ class MainWindow(QMainWindow):
         self.pictures = [[], []]
 
         self.logo.start()
-        #self.logo_2.start()
-        #self.cam.start()
-        #self.cam_2.start()
-        #self.papago.start()
+        self.logo_2.start()
+        self.cam.start()
+        self.cam_2.start()
+        self.papago.start()
 
         # cart initializations
-        self.conductivity_chart = TimedLineChart("Vodivost vody", 21600, (0, 2000), ["Vodivost"], 1)
-        self.line_chart_2 = TimedLineChart("Parametry ovzduší", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
-        self.water_data_chart = TimedLineChart("Parametry vody", 21600, (0, 30), ["pH", "Kyslík", "Teplota"], 3)
-        self.line_chart_4 = TimedLineChart("Parametry ovzduší učebna", 86400, (0, 100), ["Teplota","Vlhkost"], 2)
-        self.line_chart_5 = TimedLineChart("CO2", 86400, (300, 600), ["Okolí stěny","Učebna"], 2)
-        self.redox_chart = TimedLineChart("Redoxní potenciál vody", 21600, (-200, 600), ["Redoxní potenciál"], 1)
+        self.conductivity_chart = ZoomableChart("Vodivost vody", 21600, (0, 2000), ["Vodivost"], 1)
+        self.air_condition_chart = ZoomableChart("Parametry ovzduší", 86400, (0, 100), ["Teplota", "Vlhkost"], 2)
+        self.water_data_chart = ZoomableChart("Parametry vody", 21600, (0, 30), ["pH", "Kyslík", "Teplota"], 3)
+        self.air_condition_class_chart = ZoomableChart("Parametry ovzduší učebna", 86400, (0, 100), ["Teplota", "Vlhkost"], 2)
+        self.co2_chart = ZoomableChart("CO2", 86400, (300, 600), ["Okolí stěny", "Učebna"], 2)
+        self.redox_chart = ZoomableChart("Redoxní potenciál vody", 21600, (-200, 600), ["Redoxní potenciál"], 1)
         self.ui.chart_1.addWidget(self.water_data_chart)
         self.ui.chart_2.addWidget(self.conductivity_chart)
-        self.ui.chart_3.addWidget(self.line_chart_2)
-        self.ui.chart_4.addWidget(self.line_chart_4)
-        self.ui.chart_5.addWidget(self.line_chart_5)
+        self.ui.chart_3.addWidget(self.air_condition_chart)
+        self.ui.chart_4.addWidget(self.air_condition_class_chart)
+        self.ui.chart_5.addWidget(self.co2_chart)
         self.ui.chart_6.addWidget(self.redox_chart)
 
         environment_update = QTimer(self)
@@ -176,6 +172,8 @@ class MainWindow(QMainWindow):
         self.ui.automatic_lights_chb.clicked.connect(self._set_automatic_lighting)
 
         self.ui.save_sol_setting_btn.clicked.connect(self._save_configuration)
+
+        self.ui.reset_chart_axis_btn.clicked.connect(self._reset_chart_axis)
 
         self.ui.water_all_btn.clicked.connect(lambda: self._manage_all(True, "green"))
         self.ui.stop_watering_btn.clicked.connect(lambda: self._manage_all(False, "grey"))
@@ -289,10 +287,8 @@ class MainWindow(QMainWindow):
     def _regulate_conductivity(self, state: bool):
         self.ui.cond_reg_on_btn.setHidden(state)
         self.ui.cond_reg_off_btn.setHidden(not state)
-        #self.cond_byte[1] = state
         self.cond_byte[2] = state
         self.cond_byte[5] = state
-        print("vodivost")
         self.logo.write_logo_byte(300, dict_to_bytearray(self.cond_byte))
 
     def _set_cond_value(self):
@@ -305,7 +301,6 @@ class MainWindow(QMainWindow):
         self.ui.pump_chb.setEnabled(not state)
         self.oxyd_byte[2] = state
         self.oxyd_byte[5] = state # tohle byla 5
-        print("oxygenace")
         self.logo.write_logo_byte(360, dict_to_bytearray(self.oxyd_byte))
 
     def _set_oxy_value(self):
@@ -318,8 +313,7 @@ class MainWindow(QMainWindow):
     def _regulate_ph(self, state: bool):
         self.ui.ph_on_btn.setHidden(state)
         self.ui.ph_off_btn.setHidden(not state)
-        self.cond_byte[1] = state
-        self.cond_byte[2] = True
+        self.cond_byte[2] = state
         self.cond_byte[5] = state
         self.logo.write_logo_byte(340, dict_to_bytearray(self.ph_byte))
 
@@ -484,9 +478,9 @@ class MainWindow(QMainWindow):
         self.ui.stop_saving_btn.setHidden(not state)
 
     def environmental_data_update(self):
-        self.line_chart_2.update_chart(self.environmental_data[:2])
-        self.line_chart_5.update_chart([self.environmental_data[2]])
-        self.line_chart_4.update_chart(self.outside_data[:2])
+        self.air_condition_chart.update_chart(self.environmental_data[:2])
+        self.co2_chart.update_chart([self.environmental_data[2]])
+        self.air_condition_class_chart.update_chart(self.outside_data[:2])
 
         if self.saving:
             self._save_data(self.environmental_data, "Okolí_pes_ste")
@@ -565,6 +559,14 @@ class MainWindow(QMainWindow):
             self.logo.write_logo_ushort(314, int(row[1]))
             self.logo.write_logo_ushort(352, int(row[2]))
             self.logo.write_logo_ushort(354, int(row[3]))
+
+    def _reset_chart_axis(self):
+        self.conductivity_chart.reset_axis()
+        self.air_condition_chart.reset_axis()
+        self.water_data_chart.reset_axis()
+        self.air_condition_class_chart.reset_axis()
+        self.co2_chart.reset_axis()
+        self.redox_chart.reset_axis()
 
     def on_app_exit(self):
         self.logo.disconnect()

@@ -343,7 +343,7 @@ QPushButton:pressed {
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="solution_pg">
           <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -2194,10 +2194,7 @@ QPushButton:pressed {
               </property>
               <item>
                <widget class="QWidget" name="widget_41" native="true">
-                <layout class="QVBoxLayout" name="verticalLayout_9">
-                 <property name="spacing">
-                  <number>2</number>
-                 </property>
+                <layout class="QGridLayout" name="gridLayout">
                  <property name="leftMargin">
                   <number>1</number>
                  </property>
@@ -2210,7 +2207,61 @@ QPushButton:pressed {
                  <property name="bottomMargin">
                   <number>1</number>
                  </property>
-                 <item>
+                 <item row="2" column="1">
+                  <widget class="QWidget" name="widget_45" native="true">
+                   <layout class="QHBoxLayout" name="chart_3">
+                    <property name="leftMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>2</number>
+                    </property>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QWidget" name="widget_46" native="true">
+                   <layout class="QHBoxLayout" name="chart_4">
+                    <property name="leftMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>2</number>
+                    </property>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QWidget" name="widget_47" native="true">
+                   <layout class="QHBoxLayout" name="chart_5">
+                    <property name="leftMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>2</number>
+                    </property>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
                   <widget class="QWidget" name="widget_43" native="true">
                    <layout class="QHBoxLayout" name="chart_1">
                     <property name="spacing">
@@ -2231,7 +2282,7 @@ QPushButton:pressed {
                    </layout>
                   </widget>
                  </item>
-                 <item>
+                 <item row="3" column="0">
                   <widget class="QWidget" name="widget_44" native="true">
                    <layout class="QHBoxLayout" name="chart_2">
                     <property name="leftMargin">
@@ -2249,7 +2300,7 @@ QPushButton:pressed {
                    </layout>
                   </widget>
                  </item>
-                 <item>
+                 <item row="4" column="0">
                   <widget class="QWidget" name="widget_214" native="true">
                    <layout class="QGridLayout" name="chart_6">
                     <property name="leftMargin">
@@ -2267,105 +2318,43 @@ QPushButton:pressed {
                    </layout>
                   </widget>
                  </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QWidget" name="widget_42" native="true">
-                <layout class="QVBoxLayout" name="verticalLayout_10">
-                 <property name="spacing">
-                  <number>2</number>
-                 </property>
-                 <property name="leftMargin">
-                  <number>1</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>1</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>1</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>1</number>
-                 </property>
-                 <item>
-                  <widget class="QWidget" name="widget_45" native="true">
-                   <layout class="QHBoxLayout" name="chart_3">
+                 <item row="0" column="0" colspan="2">
+                  <widget class="QWidget" name="widget_42" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_182">
                     <property name="leftMargin">
-                     <number>2</number>
+                     <number>0</number>
                     </property>
                     <property name="topMargin">
-                     <number>2</number>
+                     <number>0</number>
                     </property>
                     <property name="rightMargin">
-                     <number>2</number>
+                     <number>0</number>
                     </property>
                     <property name="bottomMargin">
-                     <number>2</number>
+                     <number>0</number>
                     </property>
                     <item>
-                     <widget class="QFrame" name="frame">
-                      <property name="frameShape">
-                       <enum>QFrame::Shape::StyledPanel</enum>
+                     <widget class="QPushButton" name="reset_chart_axis_btn">
+                      <property name="maximumSize">
+                       <size>
+                        <width>250</width>
+                        <height>35</height>
+                       </size>
                       </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QWidget" name="widget_46" native="true">
-                   <layout class="QHBoxLayout" name="chart_4">
-                    <property name="leftMargin">
-                     <number>2</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>2</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>2</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>2</number>
-                    </property>
-                    <item>
-                     <widget class="QFrame" name="frame_2">
-                      <property name="frameShape">
-                       <enum>QFrame::Shape::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QWidget" name="widget_47" native="true">
-                   <layout class="QHBoxLayout" name="chart_5">
-                    <property name="leftMargin">
-                     <number>2</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>2</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>2</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>2</number>
-                    </property>
-                    <item>
-                     <widget class="QFrame" name="frame_3">
-                      <property name="frameShape">
-                       <enum>QFrame::Shape::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                      <property name="text">
+                       <string>Základní hodnoty grafů</string>
                       </property>
                      </widget>
                     </item>
@@ -9759,14 +9748,14 @@ background: none; }</string>
                           </size>
                          </property>
                          <property name="text">
-                          <string>XX</string>
+                          <string>0.0</string>
                          </property>
                         </widget>
                        </item>
                        <item row="2" column="2">
                         <widget class="QLabel" name="con_ph_lbl">
                          <property name="text">
-                          <string>XX</string>
+                          <string>0.0</string>
                          </property>
                         </widget>
                        </item>
@@ -9780,7 +9769,7 @@ background: none; }</string>
                        <item row="3" column="2">
                         <widget class="QLabel" name="con_ph_timer_lbl">
                          <property name="text">
-                          <string>XX</string>
+                          <string>0.0</string>
                          </property>
                         </widget>
                        </item>
@@ -9801,7 +9790,7 @@ background: none; }</string>
                        <item row="1" column="2">
                         <widget class="QLabel" name="con_cod_timer_lbl">
                          <property name="text">
-                          <string>XX</string>
+                          <string>0.0</string>
                          </property>
                         </widget>
                        </item>

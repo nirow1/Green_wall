@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Green_wallLoUKrx.ui'
+## Form generated from reading UI file 'Green_wallBhQnxR.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.0
+## Created by: Qt User Interface Compiler version 6.9.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QMenuBar,
-    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QStackedWidget, QStatusBar, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
+    QLineEdit, QMainWindow, QMenuBar, QPushButton,
+    QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
+    QStatusBar, QVBoxLayout, QWidget)
 
 from Gui.Custom_widgets.toggle import AnimatedToggle
 
@@ -1101,10 +1101,33 @@ class Ui_MainWindow(object):
         self.horizontalLayout_117.setContentsMargins(1, 1, 1, 1)
         self.widget_41 = QWidget(self.widget_15)
         self.widget_41.setObjectName(u"widget_41")
-        self.verticalLayout_9 = QVBoxLayout(self.widget_41)
-        self.verticalLayout_9.setSpacing(2)
-        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.verticalLayout_9.setContentsMargins(1, 1, 1, 1)
+        self.gridLayout = QGridLayout(self.widget_41)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(1, 1, 1, 1)
+        self.widget_45 = QWidget(self.widget_41)
+        self.widget_45.setObjectName(u"widget_45")
+        self.chart_3 = QHBoxLayout(self.widget_45)
+        self.chart_3.setObjectName(u"chart_3")
+        self.chart_3.setContentsMargins(2, 2, 2, 2)
+
+        self.gridLayout.addWidget(self.widget_45, 2, 1, 1, 1)
+
+        self.widget_46 = QWidget(self.widget_41)
+        self.widget_46.setObjectName(u"widget_46")
+        self.chart_4 = QHBoxLayout(self.widget_46)
+        self.chart_4.setObjectName(u"chart_4")
+        self.chart_4.setContentsMargins(2, 2, 2, 2)
+
+        self.gridLayout.addWidget(self.widget_46, 3, 1, 1, 1)
+
+        self.widget_47 = QWidget(self.widget_41)
+        self.widget_47.setObjectName(u"widget_47")
+        self.chart_5 = QHBoxLayout(self.widget_47)
+        self.chart_5.setObjectName(u"chart_5")
+        self.chart_5.setContentsMargins(2, 2, 2, 2)
+
+        self.gridLayout.addWidget(self.widget_47, 4, 1, 1, 1)
+
         self.widget_43 = QWidget(self.widget_41)
         self.widget_43.setObjectName(u"widget_43")
         self.chart_1 = QHBoxLayout(self.widget_43)
@@ -1112,7 +1135,7 @@ class Ui_MainWindow(object):
         self.chart_1.setObjectName(u"chart_1")
         self.chart_1.setContentsMargins(0, 0, 0, 0)
 
-        self.verticalLayout_9.addWidget(self.widget_43)
+        self.gridLayout.addWidget(self.widget_43, 2, 0, 1, 1)
 
         self.widget_44 = QWidget(self.widget_41)
         self.widget_44.setObjectName(u"widget_44")
@@ -1120,7 +1143,7 @@ class Ui_MainWindow(object):
         self.chart_2.setObjectName(u"chart_2")
         self.chart_2.setContentsMargins(0, 0, 0, 0)
 
-        self.verticalLayout_9.addWidget(self.widget_44)
+        self.gridLayout.addWidget(self.widget_44, 3, 0, 1, 1)
 
         self.widget_214 = QWidget(self.widget_41)
         self.widget_214.setObjectName(u"widget_214")
@@ -1128,64 +1151,26 @@ class Ui_MainWindow(object):
         self.chart_6.setObjectName(u"chart_6")
         self.chart_6.setContentsMargins(0, 0, 0, 0)
 
-        self.verticalLayout_9.addWidget(self.widget_214)
+        self.gridLayout.addWidget(self.widget_214, 4, 0, 1, 1)
+
+        self.widget_42 = QWidget(self.widget_41)
+        self.widget_42.setObjectName(u"widget_42")
+        self.widget_42.setMinimumSize(QSize(0, 30))
+        self.widget_42.setMaximumSize(QSize(16777215, 40))
+        self.horizontalLayout_182 = QHBoxLayout(self.widget_42)
+        self.horizontalLayout_182.setObjectName(u"horizontalLayout_182")
+        self.horizontalLayout_182.setContentsMargins(0, 0, 0, 0)
+        self.reset_chart_axis_btn = QPushButton(self.widget_42)
+        self.reset_chart_axis_btn.setObjectName(u"reset_chart_axis_btn")
+        self.reset_chart_axis_btn.setMaximumSize(QSize(250, 35))
+
+        self.horizontalLayout_182.addWidget(self.reset_chart_axis_btn)
+
+
+        self.gridLayout.addWidget(self.widget_42, 0, 0, 1, 2)
 
 
         self.horizontalLayout_117.addWidget(self.widget_41)
-
-        self.widget_42 = QWidget(self.widget_15)
-        self.widget_42.setObjectName(u"widget_42")
-        self.verticalLayout_10 = QVBoxLayout(self.widget_42)
-        self.verticalLayout_10.setSpacing(2)
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.verticalLayout_10.setContentsMargins(1, 1, 1, 1)
-        self.widget_45 = QWidget(self.widget_42)
-        self.widget_45.setObjectName(u"widget_45")
-        self.chart_3 = QHBoxLayout(self.widget_45)
-        self.chart_3.setObjectName(u"chart_3")
-        self.chart_3.setContentsMargins(2, 2, 2, 2)
-        self.frame = QFrame(self.widget_45)
-        self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Shadow.Raised)
-
-        self.chart_3.addWidget(self.frame)
-
-
-        self.verticalLayout_10.addWidget(self.widget_45)
-
-        self.widget_46 = QWidget(self.widget_42)
-        self.widget_46.setObjectName(u"widget_46")
-        self.chart_4 = QHBoxLayout(self.widget_46)
-        self.chart_4.setObjectName(u"chart_4")
-        self.chart_4.setContentsMargins(2, 2, 2, 2)
-        self.frame_2 = QFrame(self.widget_46)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
-
-        self.chart_4.addWidget(self.frame_2)
-
-
-        self.verticalLayout_10.addWidget(self.widget_46)
-
-        self.widget_47 = QWidget(self.widget_42)
-        self.widget_47.setObjectName(u"widget_47")
-        self.chart_5 = QHBoxLayout(self.widget_47)
-        self.chart_5.setObjectName(u"chart_5")
-        self.chart_5.setContentsMargins(2, 2, 2, 2)
-        self.frame_3 = QFrame(self.widget_47)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
-
-        self.chart_5.addWidget(self.frame_3)
-
-
-        self.verticalLayout_10.addWidget(self.widget_47)
-
-
-        self.horizontalLayout_117.addWidget(self.widget_42)
 
 
         self.horizontalLayout_118.addWidget(self.widget_15)
@@ -4710,7 +4695,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4795,6 +4780,7 @@ class Ui_MainWindow(object):
         self.save_lights_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit", None))
         self.lights_on_btn.setText(QCoreApplication.translate("MainWindow", u"Zapnout sv\u011btla", None))
         self.lights_off_btn.setText(QCoreApplication.translate("MainWindow", u"Vypnout sv\u011btla", None))
+        self.reset_chart_axis_btn.setText(QCoreApplication.translate("MainWindow", u"Z\u00e1kladn\u00ed hodnoty graf\u016f", None))
         self.auto_watering_chb.setText("")
         self.label_240.setText(QCoreApplication.translate("MainWindow", u"Automatick\u00e9 zavla\u017eov\u00e1n\u00ed", None))
         self.save_watering_setting_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit nastaven\u00ed", None))
@@ -5031,13 +5017,13 @@ class Ui_MainWindow(object):
         self.label_216.setText(QCoreApplication.translate("MainWindow", u"pH \u010dasov\u00fd rozestup:", None))
         self.label_218.setText(QCoreApplication.translate("MainWindow", u"min", None))
         self.label_217.setText(QCoreApplication.translate("MainWindow", u"Nastaveno:", None))
-        self.con_cod_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
-        self.con_ph_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
+        self.con_cod_lbl.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
+        self.con_ph_lbl.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
         self.label_226.setText(QCoreApplication.translate("MainWindow", u"Nastaveno:", None))
-        self.con_ph_timer_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
+        self.con_ph_timer_lbl.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
         self.label_227.setText(QCoreApplication.translate("MainWindow", u"Nastaveno:", None))
         self.label_223.setText(QCoreApplication.translate("MainWindow", u"Nastaveno:", None))
-        self.con_cod_timer_lbl.setText(QCoreApplication.translate("MainWindow", u"XX", None))
+        self.con_cod_timer_lbl.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
         self.save_sol_setting_btn.setText(QCoreApplication.translate("MainWindow", u"Ulo\u017eit nastaven\u00ed", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.cam_dir_btn.setText("")

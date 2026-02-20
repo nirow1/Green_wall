@@ -13,7 +13,7 @@ class LogoControl(QThread):
     LOGO_DATA = Signal(list)
     NEW_CONNECTION_ESTABLISHED = Signal(bool)
 
-    def __init__(self, ip :str="192.168.1.3"):
+    def __init__(self, ip :str="192.168.1.10"):
         super().__init__()
         self.ip = ip
         self.port = 512
@@ -34,7 +34,6 @@ class LogoControl(QThread):
                 self.logo = Logo()
                 self.logo.connect(self.ip, 768, self.port)
                 self.connected = self.logo.get_connected()
-                print(f"{self.connected = }")
                 self.NEW_CONNECTION_ESTABLISHED.emit(True)
                 self._get_logo_data()
                 break
@@ -59,7 +58,6 @@ class LogoControl(QThread):
                     logo_data.append(2 * water_data[2]) # Conductivity
                     logo_data.append(2 * water_data[3]-1000) # Radox potential
                     logo_data.append(water_data[5] / 10) # temperature
-                    print(green_wall_data)
                     self.LOGO_DATA.emit(logo_data) # 0-2 green wall info (temp, hum, co2), 3-7 general info (ph, O2, cond, radox, temp)
                     sleep(0.1)
                 else:
